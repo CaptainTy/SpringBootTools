@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.minsu.services.guest.dao.map.GuestFeedbackMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.minsu.entity.guest.GuestFeedback" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="guest_fid" property="guestFid" jdbcType="VARCHAR" />
+    <result column="scene_fid" property="sceneFid" jdbcType="VARCHAR" />
+    <result column="feedback_type" property="feedbackType" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_fid" property="createFid" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="last_modify_fid" property="lastModifyFid" jdbcType="VARCHAR" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, guest_fid, scene_fid, feedback_type, code, is_del, create_fid, create_date, 
+    last_modify_fid, last_modify_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_guest_feedback
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_guest_feedback
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.minsu.entity.guest.GuestFeedback" >
+    insert into t_guest_feedback (id, fid, guest_fid, 
+      scene_fid, feedback_type, code, 
+      is_del, create_fid, create_date, 
+      last_modify_fid, last_modify_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{guestFid,jdbcType=VARCHAR}, 
+      #{sceneFid,jdbcType=VARCHAR}, #{feedbackType,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=INTEGER}, #{createFid,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{lastModifyFid,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.minsu.entity.guest.GuestFeedback" >
+    insert into t_guest_feedback
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="guestFid != null" >
+        guest_fid,
+      </if>
+      <if test="sceneFid != null" >
+        scene_fid,
+      </if>
+      <if test="feedbackType != null" >
+        feedback_type,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createFid != null" >
+        create_fid,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="lastModifyFid != null" >
+        last_modify_fid,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="guestFid != null" >
+        #{guestFid,jdbcType=VARCHAR},
+      </if>
+      <if test="sceneFid != null" >
+        #{sceneFid,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackType != null" >
+        #{feedbackType,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null" >
+        #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null" >
+        #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.minsu.entity.guest.GuestFeedback" >
+    update t_guest_feedback
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="guestFid != null" >
+        guest_fid = #{guestFid,jdbcType=VARCHAR},
+      </if>
+      <if test="sceneFid != null" >
+        scene_fid = #{sceneFid,jdbcType=VARCHAR},
+      </if>
+      <if test="feedbackType != null" >
+        feedback_type = #{feedbackType,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null" >
+        create_fid = #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null" >
+        last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.minsu.entity.guest.GuestFeedback" >
+    update t_guest_feedback
+    set fid = #{fid,jdbcType=VARCHAR},
+      guest_fid = #{guestFid,jdbcType=VARCHAR},
+      scene_fid = #{sceneFid,jdbcType=VARCHAR},
+      feedback_type = #{feedbackType,jdbcType=INTEGER},
+      code = #{code,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_fid = #{createFid,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

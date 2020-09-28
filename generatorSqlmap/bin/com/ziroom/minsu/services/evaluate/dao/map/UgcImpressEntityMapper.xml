@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.minsu.services.evaluate.dao.map.UgcImpressEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.minsu.entity.evaluate.UgcImpressEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="project_fid" property="projectFid" jdbcType="VARCHAR" />
+    <result column="impress_title" property="impressTitle" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="impress_status" property="impressStatus" jdbcType="INTEGER" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_user" property="modifyUser" jdbcType="VARCHAR" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.ziroom.minsu.entity.evaluate.UgcImpressEntity" extends="BaseResultMap" >
+    <result column="impress_content" property="impressContent" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, project_fid, impress_title, is_del, impress_status, create_user, create_date, 
+    modify_user, last_modify_date
+  </sql>
+  <sql id="Blob_Column_List" >
+    impress_content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_ugc_impress
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ugc_impress
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressEntity" >
+    insert into t_ugc_impress (id, fid, project_fid, 
+      impress_title, is_del, impress_status, 
+      create_user, create_date, modify_user, 
+      last_modify_date, impress_content)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{projectFid,jdbcType=VARCHAR}, 
+      #{impressTitle,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, #{impressStatus,jdbcType=INTEGER}, 
+      #{createUser,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{modifyUser,jdbcType=VARCHAR}, 
+      #{lastModifyDate,jdbcType=TIMESTAMP}, #{impressContent,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressEntity" >
+    insert into t_ugc_impress
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="projectFid != null" >
+        project_fid,
+      </if>
+      <if test="impressTitle != null" >
+        impress_title,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="impressStatus != null" >
+        impress_status,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="modifyUser != null" >
+        modify_user,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="impressContent != null" >
+        impress_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectFid != null" >
+        #{projectFid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressTitle != null" >
+        #{impressTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="impressStatus != null" >
+        #{impressStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUser != null" >
+        #{modifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="impressContent != null" >
+        #{impressContent,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressEntity" >
+    update t_ugc_impress
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectFid != null" >
+        project_fid = #{projectFid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressTitle != null" >
+        impress_title = #{impressTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="impressStatus != null" >
+        impress_status = #{impressStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUser != null" >
+        modify_user = #{modifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="impressContent != null" >
+        impress_content = #{impressContent,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressEntity" >
+    update t_ugc_impress
+    set fid = #{fid,jdbcType=VARCHAR},
+      project_fid = #{projectFid,jdbcType=VARCHAR},
+      impress_title = #{impressTitle,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      impress_status = #{impressStatus,jdbcType=INTEGER},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_user = #{modifyUser,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      impress_content = #{impressContent,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressEntity" >
+    update t_ugc_impress
+    set fid = #{fid,jdbcType=VARCHAR},
+      project_fid = #{projectFid,jdbcType=VARCHAR},
+      impress_title = #{impressTitle,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      impress_status = #{impressStatus,jdbcType=INTEGER},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_user = #{modifyUser,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.ReceiBillDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.ReceiBillDetailEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="bill_num" property="billNum" jdbcType="VARCHAR" />
+    <result column="f_documentType" property="fDocumenttype" jdbcType="VARCHAR" />
+    <result column="f_uid" property="fUid" jdbcType="VARCHAR" />
+    <result column="f_username" property="fUsername" jdbcType="VARCHAR" />
+    <result column="f_preCollectionDate" property="fPrecollectiondate" jdbcType="VARCHAR" />
+    <result column="f_start_time" property="fStartTime" jdbcType="VARCHAR" />
+    <result column="f_end_time" property="fEndTime" jdbcType="VARCHAR" />
+    <result column="f_houseCode" property="fHousecode" jdbcType="VARCHAR" />
+    <result column="f_costCode" property="fCostcode" jdbcType="VARCHAR" />
+    <result column="f_documentAmount" property="fDocumentamount" jdbcType="INTEGER" />
+    <result column="f_orderCode" property="fOrdercode" jdbcType="VARCHAR" />
+    <result column="f_bill_num" property="fBillNum" jdbcType="VARCHAR" />
+    <result column="f_bill_type" property="fBillType" jdbcType="VARCHAR" />
+    <result column="f_fail_msg" property="fFailMsg" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="modify_code" property="modifyCode" jdbcType="VARCHAR" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, bill_num, f_documentType, f_uid, f_username, f_preCollectionDate, f_start_time, 
+    f_end_time, f_houseCode, f_costCode, f_documentAmount, f_orderCode, f_bill_num, f_bill_type, 
+    f_fail_msg, is_del, create_code, modify_code, last_modify_date, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_space_recei_bill_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_space_recei_bill_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.ReceiBillDetailEntity" >
+    insert into t_space_recei_bill_detail (id, fid, bill_num, 
+      f_documentType, f_uid, f_username, 
+      f_preCollectionDate, f_start_time, f_end_time, 
+      f_houseCode, f_costCode, f_documentAmount, 
+      f_orderCode, f_bill_num, f_bill_type, 
+      f_fail_msg, is_del, create_code, 
+      modify_code, last_modify_date, create_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{billNum,jdbcType=VARCHAR}, 
+      #{fDocumenttype,jdbcType=VARCHAR}, #{fUid,jdbcType=VARCHAR}, #{fUsername,jdbcType=VARCHAR}, 
+      #{fPrecollectiondate,jdbcType=VARCHAR}, #{fStartTime,jdbcType=VARCHAR}, #{fEndTime,jdbcType=VARCHAR}, 
+      #{fHousecode,jdbcType=VARCHAR}, #{fCostcode,jdbcType=VARCHAR}, #{fDocumentamount,jdbcType=INTEGER}, 
+      #{fOrdercode,jdbcType=VARCHAR}, #{fBillNum,jdbcType=VARCHAR}, #{fBillType,jdbcType=VARCHAR}, 
+      #{fFailMsg,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, #{createCode,jdbcType=VARCHAR}, 
+      #{modifyCode,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}, #{createDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.ReceiBillDetailEntity" >
+    insert into t_space_recei_bill_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="billNum != null" >
+        bill_num,
+      </if>
+      <if test="fDocumenttype != null" >
+        f_documentType,
+      </if>
+      <if test="fUid != null" >
+        f_uid,
+      </if>
+      <if test="fUsername != null" >
+        f_username,
+      </if>
+      <if test="fPrecollectiondate != null" >
+        f_preCollectionDate,
+      </if>
+      <if test="fStartTime != null" >
+        f_start_time,
+      </if>
+      <if test="fEndTime != null" >
+        f_end_time,
+      </if>
+      <if test="fHousecode != null" >
+        f_houseCode,
+      </if>
+      <if test="fCostcode != null" >
+        f_costCode,
+      </if>
+      <if test="fDocumentamount != null" >
+        f_documentAmount,
+      </if>
+      <if test="fOrdercode != null" >
+        f_orderCode,
+      </if>
+      <if test="fBillNum != null" >
+        f_bill_num,
+      </if>
+      <if test="fBillType != null" >
+        f_bill_type,
+      </if>
+      <if test="fFailMsg != null" >
+        f_fail_msg,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="modifyCode != null" >
+        modify_code,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fDocumenttype != null" >
+        #{fDocumenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="fUid != null" >
+        #{fUid,jdbcType=VARCHAR},
+      </if>
+      <if test="fUsername != null" >
+        #{fUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="fPrecollectiondate != null" >
+        #{fPrecollectiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="fStartTime != null" >
+        #{fStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="fEndTime != null" >
+        #{fEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="fHousecode != null" >
+        #{fHousecode,jdbcType=VARCHAR},
+      </if>
+      <if test="fCostcode != null" >
+        #{fCostcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fDocumentamount != null" >
+        #{fDocumentamount,jdbcType=INTEGER},
+      </if>
+      <if test="fOrdercode != null" >
+        #{fOrdercode,jdbcType=VARCHAR},
+      </if>
+      <if test="fBillNum != null" >
+        #{fBillNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fBillType != null" >
+        #{fBillType,jdbcType=VARCHAR},
+      </if>
+      <if test="fFailMsg != null" >
+        #{fFailMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.ReceiBillDetailEntity" >
+    update t_space_recei_bill_detail
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        bill_num = #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fDocumenttype != null" >
+        f_documentType = #{fDocumenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="fUid != null" >
+        f_uid = #{fUid,jdbcType=VARCHAR},
+      </if>
+      <if test="fUsername != null" >
+        f_username = #{fUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="fPrecollectiondate != null" >
+        f_preCollectionDate = #{fPrecollectiondate,jdbcType=VARCHAR},
+      </if>
+      <if test="fStartTime != null" >
+        f_start_time = #{fStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="fEndTime != null" >
+        f_end_time = #{fEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="fHousecode != null" >
+        f_houseCode = #{fHousecode,jdbcType=VARCHAR},
+      </if>
+      <if test="fCostcode != null" >
+        f_costCode = #{fCostcode,jdbcType=VARCHAR},
+      </if>
+      <if test="fDocumentamount != null" >
+        f_documentAmount = #{fDocumentamount,jdbcType=INTEGER},
+      </if>
+      <if test="fOrdercode != null" >
+        f_orderCode = #{fOrdercode,jdbcType=VARCHAR},
+      </if>
+      <if test="fBillNum != null" >
+        f_bill_num = #{fBillNum,jdbcType=VARCHAR},
+      </if>
+      <if test="fBillType != null" >
+        f_bill_type = #{fBillType,jdbcType=VARCHAR},
+      </if>
+      <if test="fFailMsg != null" >
+        f_fail_msg = #{fFailMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        modify_code = #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.ReceiBillDetailEntity" >
+    update t_space_recei_bill_detail
+    set fid = #{fid,jdbcType=VARCHAR},
+      bill_num = #{billNum,jdbcType=VARCHAR},
+      f_documentType = #{fDocumenttype,jdbcType=VARCHAR},
+      f_uid = #{fUid,jdbcType=VARCHAR},
+      f_username = #{fUsername,jdbcType=VARCHAR},
+      f_preCollectionDate = #{fPrecollectiondate,jdbcType=VARCHAR},
+      f_start_time = #{fStartTime,jdbcType=VARCHAR},
+      f_end_time = #{fEndTime,jdbcType=VARCHAR},
+      f_houseCode = #{fHousecode,jdbcType=VARCHAR},
+      f_costCode = #{fCostcode,jdbcType=VARCHAR},
+      f_documentAmount = #{fDocumentamount,jdbcType=INTEGER},
+      f_orderCode = #{fOrdercode,jdbcType=VARCHAR},
+      f_bill_num = #{fBillNum,jdbcType=VARCHAR},
+      f_bill_type = #{fBillType,jdbcType=VARCHAR},
+      f_fail_msg = #{fFailMsg,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      modify_code = #{modifyCode,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

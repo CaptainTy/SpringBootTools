@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.DietOrderCustomerEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.DietOrderCustomerEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="tzx_bill_num" property="tzxBillNum" jdbcType="VARCHAR" />
+    <result column="customer_id" property="customerId" jdbcType="INTEGER" />
+    <result column="customer_code" property="customerCode" jdbcType="VARCHAR" />
+    <result column="mobil" property="mobil" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="alias" property="alias" jdbcType="VARCHAR" />
+    <result column="level_name" property="levelName" jdbcType="VARCHAR" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="modify_code" property="modifyCode" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, tzx_bill_num, customer_id, customer_code, mobil, name, alias, level_name, 
+    create_code, modify_code, is_del, last_modify_date, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_space_diet_order_customer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_space_diet_order_customer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.DietOrderCustomerEntity" >
+    insert into t_space_diet_order_customer (id, fid, tzx_bill_num, 
+      customer_id, customer_code, mobil, 
+      name, alias, level_name, 
+      create_code, modify_code, is_del, 
+      last_modify_date, create_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{tzxBillNum,jdbcType=VARCHAR}, 
+      #{customerId,jdbcType=INTEGER}, #{customerCode,jdbcType=VARCHAR}, #{mobil,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR}, #{levelName,jdbcType=VARCHAR}, 
+      #{createCode,jdbcType=VARCHAR}, #{modifyCode,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{lastModifyDate,jdbcType=TIMESTAMP}, #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderCustomerEntity" >
+    insert into t_space_diet_order_customer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="tzxBillNum != null" >
+        tzx_bill_num,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="customerCode != null" >
+        customer_code,
+      </if>
+      <if test="mobil != null" >
+        mobil,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="alias != null" >
+        alias,
+      </if>
+      <if test="levelName != null" >
+        level_name,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="modifyCode != null" >
+        modify_code,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="tzxBillNum != null" >
+        #{tzxBillNum,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="customerCode != null" >
+        #{customerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mobil != null" >
+        #{mobil,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null" >
+        #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="levelName != null" >
+        #{levelName,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderCustomerEntity" >
+    update t_space_diet_order_customer
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="tzxBillNum != null" >
+        tzx_bill_num = #{tzxBillNum,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=INTEGER},
+      </if>
+      <if test="customerCode != null" >
+        customer_code = #{customerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="mobil != null" >
+        mobil = #{mobil,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null" >
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="levelName != null" >
+        level_name = #{levelName,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        modify_code = #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.DietOrderCustomerEntity" >
+    update t_space_diet_order_customer
+    set fid = #{fid,jdbcType=VARCHAR},
+      tzx_bill_num = #{tzxBillNum,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=INTEGER},
+      customer_code = #{customerCode,jdbcType=VARCHAR},
+      mobil = #{mobil,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      alias = #{alias,jdbcType=VARCHAR},
+      level_name = #{levelName,jdbcType=VARCHAR},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      modify_code = #{modifyCode,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

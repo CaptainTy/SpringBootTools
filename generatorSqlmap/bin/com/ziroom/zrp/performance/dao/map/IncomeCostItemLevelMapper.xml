@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zrp.performance.dao.map.IncomeCostItemLevelMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zrp.performance.entity.IncomeCostItemLevel" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="business_code1" property="businessCode1" jdbcType="VARCHAR" />
+    <result column="business_name1" property="businessName1" jdbcType="VARCHAR" />
+    <result column="business_code2" property="businessCode2" jdbcType="VARCHAR" />
+    <result column="business_name2" property="businessName2" jdbcType="VARCHAR" />
+    <result column="business_code3" property="businessCode3" jdbcType="VARCHAR" />
+    <result column="business_name3" property="businessName3" jdbcType="VARCHAR" />
+    <result column="business_code4" property="businessCode4" jdbcType="VARCHAR" />
+    <result column="business_name4" property="businessName4" jdbcType="VARCHAR" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_by" property="lastModifyBy" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, business_code1, business_name1, business_code2, business_name2, business_code3, 
+    business_name3, business_code4, business_name4, create_by, create_time, last_modify_by, 
+    last_modify_time, is_del
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_income_cost_item_level
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_income_cost_item_level
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemLevel" >
+    insert into t_income_cost_item_level (id, business_code1, business_name1, 
+      business_code2, business_name2, business_code3, 
+      business_name3, business_code4, business_name4, 
+      create_by, create_time, last_modify_by, 
+      last_modify_time, is_del)
+    values (#{id,jdbcType=INTEGER}, #{businessCode1,jdbcType=VARCHAR}, #{businessName1,jdbcType=VARCHAR}, 
+      #{businessCode2,jdbcType=VARCHAR}, #{businessName2,jdbcType=VARCHAR}, #{businessCode3,jdbcType=VARCHAR}, 
+      #{businessName3,jdbcType=VARCHAR}, #{businessCode4,jdbcType=VARCHAR}, #{businessName4,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastModifyBy,jdbcType=VARCHAR}, 
+      #{lastModifyTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemLevel" >
+    insert into t_income_cost_item_level
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="businessCode1 != null" >
+        business_code1,
+      </if>
+      <if test="businessName1 != null" >
+        business_name1,
+      </if>
+      <if test="businessCode2 != null" >
+        business_code2,
+      </if>
+      <if test="businessName2 != null" >
+        business_name2,
+      </if>
+      <if test="businessCode3 != null" >
+        business_code3,
+      </if>
+      <if test="businessName3 != null" >
+        business_name3,
+      </if>
+      <if test="businessCode4 != null" >
+        business_code4,
+      </if>
+      <if test="businessName4 != null" >
+        business_name4,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastModifyBy != null" >
+        last_modify_by,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="businessCode1 != null" >
+        #{businessCode1,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName1 != null" >
+        #{businessName1,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode2 != null" >
+        #{businessCode2,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName2 != null" >
+        #{businessName2,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode3 != null" >
+        #{businessCode3,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName3 != null" >
+        #{businessName3,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode4 != null" >
+        #{businessCode4,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName4 != null" >
+        #{businessName4,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyBy != null" >
+        #{lastModifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemLevel" >
+    update t_income_cost_item_level
+    <set >
+      <if test="businessCode1 != null" >
+        business_code1 = #{businessCode1,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName1 != null" >
+        business_name1 = #{businessName1,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode2 != null" >
+        business_code2 = #{businessCode2,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName2 != null" >
+        business_name2 = #{businessName2,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode3 != null" >
+        business_code3 = #{businessCode3,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName3 != null" >
+        business_name3 = #{businessName3,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode4 != null" >
+        business_code4 = #{businessCode4,jdbcType=VARCHAR},
+      </if>
+      <if test="businessName4 != null" >
+        business_name4 = #{businessName4,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyBy != null" >
+        last_modify_by = #{lastModifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemLevel" >
+    update t_income_cost_item_level
+    set business_code1 = #{businessCode1,jdbcType=VARCHAR},
+      business_name1 = #{businessName1,jdbcType=VARCHAR},
+      business_code2 = #{businessCode2,jdbcType=VARCHAR},
+      business_name2 = #{businessName2,jdbcType=VARCHAR},
+      business_code3 = #{businessCode3,jdbcType=VARCHAR},
+      business_name3 = #{businessName3,jdbcType=VARCHAR},
+      business_code4 = #{businessCode4,jdbcType=VARCHAR},
+      business_name4 = #{businessName4,jdbcType=VARCHAR},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_modify_by = #{lastModifyBy,jdbcType=VARCHAR},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.minsu.services.evaluate.dao.map.UgcImpressCommentEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.minsu.entity.evaluate.UgcImpressCommentEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="impress_fid" property="impressFid" jdbcType="VARCHAR" />
+    <result column="a_level_comment_fid" property="aLevelCommentFid" jdbcType="VARCHAR" />
+    <result column="comment_parent_fid" property="commentParentFid" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="reply_user" property="replyUser" jdbcType="VARCHAR" />
+    <result column="post_user" property="postUser" jdbcType="VARCHAR" />
+    <result column="reply_type" property="replyType" jdbcType="INTEGER" />
+    <result column="comment_status" property="commentStatus" jdbcType="INTEGER" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_user" property="modifyUser" jdbcType="VARCHAR" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, impress_fid, a_level_comment_fid, comment_parent_fid, content, reply_user, 
+    post_user, reply_type, comment_status, is_del, create_date, modify_user, last_modify_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ugc_impress_comment
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ugc_impress_comment
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressCommentEntity" >
+    insert into t_ugc_impress_comment (id, fid, impress_fid, 
+      a_level_comment_fid, comment_parent_fid, content, 
+      reply_user, post_user, reply_type, 
+      comment_status, is_del, create_date, 
+      modify_user, last_modify_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{impressFid,jdbcType=VARCHAR}, 
+      #{aLevelCommentFid,jdbcType=VARCHAR}, #{commentParentFid,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{replyUser,jdbcType=VARCHAR}, #{postUser,jdbcType=VARCHAR}, #{replyType,jdbcType=INTEGER}, 
+      #{commentStatus,jdbcType=INTEGER}, #{isDel,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{modifyUser,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressCommentEntity" >
+    insert into t_ugc_impress_comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="impressFid != null" >
+        impress_fid,
+      </if>
+      <if test="aLevelCommentFid != null" >
+        a_level_comment_fid,
+      </if>
+      <if test="commentParentFid != null" >
+        comment_parent_fid,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="replyUser != null" >
+        reply_user,
+      </if>
+      <if test="postUser != null" >
+        post_user,
+      </if>
+      <if test="replyType != null" >
+        reply_type,
+      </if>
+      <if test="commentStatus != null" >
+        comment_status,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="modifyUser != null" >
+        modify_user,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressFid != null" >
+        #{impressFid,jdbcType=VARCHAR},
+      </if>
+      <if test="aLevelCommentFid != null" >
+        #{aLevelCommentFid,jdbcType=VARCHAR},
+      </if>
+      <if test="commentParentFid != null" >
+        #{commentParentFid,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="replyUser != null" >
+        #{replyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="postUser != null" >
+        #{postUser,jdbcType=VARCHAR},
+      </if>
+      <if test="replyType != null" >
+        #{replyType,jdbcType=INTEGER},
+      </if>
+      <if test="commentStatus != null" >
+        #{commentStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUser != null" >
+        #{modifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressCommentEntity" >
+    update t_ugc_impress_comment
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressFid != null" >
+        impress_fid = #{impressFid,jdbcType=VARCHAR},
+      </if>
+      <if test="aLevelCommentFid != null" >
+        a_level_comment_fid = #{aLevelCommentFid,jdbcType=VARCHAR},
+      </if>
+      <if test="commentParentFid != null" >
+        comment_parent_fid = #{commentParentFid,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="replyUser != null" >
+        reply_user = #{replyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="postUser != null" >
+        post_user = #{postUser,jdbcType=VARCHAR},
+      </if>
+      <if test="replyType != null" >
+        reply_type = #{replyType,jdbcType=INTEGER},
+      </if>
+      <if test="commentStatus != null" >
+        comment_status = #{commentStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUser != null" >
+        modify_user = #{modifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressCommentEntity" >
+    update t_ugc_impress_comment
+    set fid = #{fid,jdbcType=VARCHAR},
+      impress_fid = #{impressFid,jdbcType=VARCHAR},
+      a_level_comment_fid = #{aLevelCommentFid,jdbcType=VARCHAR},
+      comment_parent_fid = #{commentParentFid,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      reply_user = #{replyUser,jdbcType=VARCHAR},
+      post_user = #{postUser,jdbcType=VARCHAR},
+      reply_type = #{replyType,jdbcType=INTEGER},
+      comment_status = #{commentStatus,jdbcType=INTEGER},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_user = #{modifyUser,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

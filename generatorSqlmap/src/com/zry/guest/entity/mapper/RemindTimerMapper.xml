@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zry.guest.entity.mapper.RemindTimerMapper" >
+  <resultMap id="BaseResultMap" type="com.zry.guest.entity.RemindTimer" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="task_fid" property="taskFid" jdbcType="VARCHAR" />
+    <result column="run_time" property="runTime" jdbcType="TIMESTAMP" />
+    <result column="is_confirm" property="isConfirm" jdbcType="INTEGER" />
+    <result column="confirm_fid" property="confirmFid" jdbcType="VARCHAR" />
+    <result column="confirm_date" property="confirmDate" jdbcType="TIMESTAMP" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_fid" property="createFid" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="last_modify_fid" property="lastModifyFid" jdbcType="VARCHAR" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, task_fid, run_time, is_confirm, confirm_fid, confirm_date, description, 
+    is_del, create_fid, create_date, last_modify_fid, last_modify_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_remind_timer
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_remind_timer
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zry.guest.entity.RemindTimer" >
+    insert into t_remind_timer (id, fid, task_fid, 
+      run_time, is_confirm, confirm_fid, 
+      confirm_date, description, is_del, 
+      create_fid, create_date, last_modify_fid, 
+      last_modify_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{taskFid,jdbcType=VARCHAR}, 
+      #{runTime,jdbcType=TIMESTAMP}, #{isConfirm,jdbcType=INTEGER}, #{confirmFid,jdbcType=VARCHAR}, 
+      #{confirmDate,jdbcType=TIMESTAMP}, #{description,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{createFid,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{lastModifyFid,jdbcType=VARCHAR}, 
+      #{lastModifyDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zry.guest.entity.RemindTimer" >
+    insert into t_remind_timer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="taskFid != null" >
+        task_fid,
+      </if>
+      <if test="runTime != null" >
+        run_time,
+      </if>
+      <if test="isConfirm != null" >
+        is_confirm,
+      </if>
+      <if test="confirmFid != null" >
+        confirm_fid,
+      </if>
+      <if test="confirmDate != null" >
+        confirm_date,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createFid != null" >
+        create_fid,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="lastModifyFid != null" >
+        last_modify_fid,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="taskFid != null" >
+        #{taskFid,jdbcType=VARCHAR},
+      </if>
+      <if test="runTime != null" >
+        #{runTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isConfirm != null" >
+        #{isConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="confirmFid != null" >
+        #{confirmFid,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmDate != null" >
+        #{confirmDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null" >
+        #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null" >
+        #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zry.guest.entity.RemindTimer" >
+    update t_remind_timer
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="taskFid != null" >
+        task_fid = #{taskFid,jdbcType=VARCHAR},
+      </if>
+      <if test="runTime != null" >
+        run_time = #{runTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isConfirm != null" >
+        is_confirm = #{isConfirm,jdbcType=INTEGER},
+      </if>
+      <if test="confirmFid != null" >
+        confirm_fid = #{confirmFid,jdbcType=VARCHAR},
+      </if>
+      <if test="confirmDate != null" >
+        confirm_date = #{confirmDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null" >
+        create_fid = #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null" >
+        last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zry.guest.entity.RemindTimer" >
+    update t_remind_timer
+    set fid = #{fid,jdbcType=VARCHAR},
+      task_fid = #{taskFid,jdbcType=VARCHAR},
+      run_time = #{runTime,jdbcType=TIMESTAMP},
+      is_confirm = #{isConfirm,jdbcType=INTEGER},
+      confirm_fid = #{confirmFid,jdbcType=VARCHAR},
+      confirm_date = #{confirmDate,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_fid = #{createFid,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

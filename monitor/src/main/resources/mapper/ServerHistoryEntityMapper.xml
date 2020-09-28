@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xxfw.monitor.repository.ServerHistoryEntityMapper" >
+  <sql id="Base_Column_List" >
+    id, time, in_msgs, out_msgs, in_bytes, out_bytes,  connections, slow_consumers, subscriptions,
+    in_msgs_speed,out_msgs_speed,in_bytes_speed,out_bytes_speed
+  </sql>
+
+  <insert id="insertSelective" parameterType="com.xxfw.monitor.entity.ServerHistoryEntity" >
+    insert into server_history
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="in_msgs != null" >
+        in_msgs,
+      </if>
+      <if test="out_msgs != null" >
+        out_msgs,
+      </if>
+      <if test="in_bytes != null" >
+        in_bytes,
+      </if>
+      <if test="out_bytes != null" >
+        out_bytes,
+      </if>
+      <if test="in_msgs_speed != null" >
+        in_msgs_speed,
+      </if>
+      <if test="out_msgs_speed != null" >
+        out_msgs_speed,
+      </if>
+      <if test="in_bytes_speed != null" >
+        in_bytes_speed,
+      </if>
+      <if test="out_bytes_speed != null" >
+        out_bytes_speed,
+      </if>
+      <if test="connections != null" >
+        connections,
+      </if>
+      <if test="slow_consumers != null" >
+        slow_consumers,
+      </if>
+      <if test="subscriptions != null" >
+        subscriptions,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="in_msgs != null" >
+        #{in_msgs,jdbcType=BIGINT},
+      </if>
+      <if test="out_msgs != null" >
+        #{out_msgs,jdbcType=BIGINT},
+      </if>
+      <if test="in_bytes != null" >
+        #{in_bytes,jdbcType=BIGINT},
+      </if>
+      <if test="out_bytes != null" >
+        #{out_bytes,jdbcType=BIGINT},
+      </if>
+      <if test="in_msgs_speed != null" >
+        #{in_msgs_speed,jdbcType=BIGINT},
+      </if>
+      <if test="out_msgs_speed != null" >
+        #{out_msgs_speed,jdbcType=BIGINT},
+      </if>
+      <if test="in_bytes_speed != null" >
+        #{in_bytes_speed,jdbcType=BIGINT},
+      </if>
+      <if test="out_bytes_speed != null" >
+        #{out_bytes_speed,jdbcType=BIGINT},
+      </if>
+      <if test="connections != null" >
+        #{connections,jdbcType=BIGINT},
+      </if>
+      <if test="slow_consumers != null" >
+        #{slow_consumers,jdbcType=BIGINT},
+      </if>
+      <if test="subscriptions != null" >
+        #{subscriptions,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="getServerHistoryInfo" resultType="com.xxfw.monitor.entity.ServerHistoryEntity">
+      select
+          <include refid="Base_Column_List" />
+      from
+          server_history
+      <where>
+        <if test="time != null">
+          and `time`  <![CDATA[ >= ]]> #{time,jdbcType=BIGINT}
+        </if>
+      </where>
+        order by id desc
+  </select>
+  <select id="getPrevServerHistory" resultType="com.xxfw.monitor.entity.ServerHistoryEntity">
+    select
+    <include refid="Base_Column_List" />
+    from
+    server_history
+    order by id desc
+    limit 1
+  </select>
+</mapper>

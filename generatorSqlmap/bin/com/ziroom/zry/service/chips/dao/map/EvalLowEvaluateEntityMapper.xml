@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zry.service.chips.dao.map.EvalLowEvaluateEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zry.service.chips.entity.EvalLowEvaluateEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="bid" property="bid" jdbcType="VARCHAR" />
+    <result column="logic_code" property="logicCode" jdbcType="VARCHAR" />
+    <result column="evaluate_scene_code" property="evaluateSceneCode" jdbcType="VARCHAR" />
+    <result column="business_code" property="businessCode" jdbcType="VARCHAR" />
+    <result column="customer_avg_star_level" property="customerAvgStarLevel" jdbcType="DOUBLE" />
+    <result column="customer_suggestion" property="customerSuggestion" jdbcType="VARCHAR" />
+    <result column="evaluate_person_code" property="evaluatePersonCode" jdbcType="VARCHAR" />
+    <result column="evaluate_person_name" property="evaluatePersonName" jdbcType="VARCHAR" />
+    <result column="evaluate_person_phone" property="evaluatePersonPhone" jdbcType="VARCHAR" />
+    <result column="evaluate_time" property="evaluateTime" jdbcType="TIMESTAMP" />
+    <result column="follow_up_status" property="followUpStatus" jdbcType="INTEGER" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="is_valid" property="isValid" jdbcType="INTEGER" />
+    <result column="create_user_id" property="createUserId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_user_id" property="lastModifyUserId" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bid, logic_code, evaluate_scene_code, business_code, customer_avg_star_level, 
+    customer_suggestion, evaluate_person_code, evaluate_person_name, evaluate_person_phone, 
+    evaluate_time, follow_up_status, is_del, is_valid, create_user_id, create_time, last_modify_user_id, 
+    last_modify_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_eval_low_evaluate
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_eval_low_evaluate
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zry.service.chips.entity.EvalLowEvaluateEntity" >
+    insert into t_eval_low_evaluate (id, bid, logic_code, 
+      evaluate_scene_code, business_code, customer_avg_star_level, 
+      customer_suggestion, evaluate_person_code, 
+      evaluate_person_name, evaluate_person_phone, 
+      evaluate_time, follow_up_status, is_del, 
+      is_valid, create_user_id, create_time, 
+      last_modify_user_id, last_modify_time)
+    values (#{id,jdbcType=INTEGER}, #{bid,jdbcType=VARCHAR}, #{logicCode,jdbcType=VARCHAR}, 
+      #{evaluateSceneCode,jdbcType=VARCHAR}, #{businessCode,jdbcType=VARCHAR}, #{customerAvgStarLevel,jdbcType=DOUBLE}, 
+      #{customerSuggestion,jdbcType=VARCHAR}, #{evaluatePersonCode,jdbcType=VARCHAR}, 
+      #{evaluatePersonName,jdbcType=VARCHAR}, #{evaluatePersonPhone,jdbcType=VARCHAR}, 
+      #{evaluateTime,jdbcType=TIMESTAMP}, #{followUpStatus,jdbcType=INTEGER}, #{isDel,jdbcType=INTEGER}, 
+      #{isValid,jdbcType=INTEGER}, #{createUserId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{lastModifyUserId,jdbcType=VARCHAR}, #{lastModifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zry.service.chips.entity.EvalLowEvaluateEntity" >
+    insert into t_eval_low_evaluate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bid != null" >
+        bid,
+      </if>
+      <if test="logicCode != null" >
+        logic_code,
+      </if>
+      <if test="evaluateSceneCode != null" >
+        evaluate_scene_code,
+      </if>
+      <if test="businessCode != null" >
+        business_code,
+      </if>
+      <if test="customerAvgStarLevel != null" >
+        customer_avg_star_level,
+      </if>
+      <if test="customerSuggestion != null" >
+        customer_suggestion,
+      </if>
+      <if test="evaluatePersonCode != null" >
+        evaluate_person_code,
+      </if>
+      <if test="evaluatePersonName != null" >
+        evaluate_person_name,
+      </if>
+      <if test="evaluatePersonPhone != null" >
+        evaluate_person_phone,
+      </if>
+      <if test="evaluateTime != null" >
+        evaluate_time,
+      </if>
+      <if test="followUpStatus != null" >
+        follow_up_status,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="createUserId != null" >
+        create_user_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bid != null" >
+        #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="logicCode != null" >
+        #{logicCode,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluateSceneCode != null" >
+        #{evaluateSceneCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode != null" >
+        #{businessCode,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAvgStarLevel != null" >
+        #{customerAvgStarLevel,jdbcType=DOUBLE},
+      </if>
+      <if test="customerSuggestion != null" >
+        #{customerSuggestion,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatePersonCode != null" >
+        #{evaluatePersonCode,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatePersonName != null" >
+        #{evaluatePersonName,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatePersonPhone != null" >
+        #{evaluatePersonPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluateTime != null" >
+        #{evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="followUpStatus != null" >
+        #{followUpStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zry.service.chips.entity.EvalLowEvaluateEntity" >
+    update t_eval_low_evaluate
+    <set >
+      <if test="bid != null" >
+        bid = #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="logicCode != null" >
+        logic_code = #{logicCode,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluateSceneCode != null" >
+        evaluate_scene_code = #{evaluateSceneCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessCode != null" >
+        business_code = #{businessCode,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAvgStarLevel != null" >
+        customer_avg_star_level = #{customerAvgStarLevel,jdbcType=DOUBLE},
+      </if>
+      <if test="customerSuggestion != null" >
+        customer_suggestion = #{customerSuggestion,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatePersonCode != null" >
+        evaluate_person_code = #{evaluatePersonCode,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatePersonName != null" >
+        evaluate_person_name = #{evaluatePersonName,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluatePersonPhone != null" >
+        evaluate_person_phone = #{evaluatePersonPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluateTime != null" >
+        evaluate_time = #{evaluateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="followUpStatus != null" >
+        follow_up_status = #{followUpStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="isValid != null" >
+        is_valid = #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zry.service.chips.entity.EvalLowEvaluateEntity" >
+    update t_eval_low_evaluate
+    set bid = #{bid,jdbcType=VARCHAR},
+      logic_code = #{logicCode,jdbcType=VARCHAR},
+      evaluate_scene_code = #{evaluateSceneCode,jdbcType=VARCHAR},
+      business_code = #{businessCode,jdbcType=VARCHAR},
+      customer_avg_star_level = #{customerAvgStarLevel,jdbcType=DOUBLE},
+      customer_suggestion = #{customerSuggestion,jdbcType=VARCHAR},
+      evaluate_person_code = #{evaluatePersonCode,jdbcType=VARCHAR},
+      evaluate_person_name = #{evaluatePersonName,jdbcType=VARCHAR},
+      evaluate_person_phone = #{evaluatePersonPhone,jdbcType=VARCHAR},
+      evaluate_time = #{evaluateTime,jdbcType=TIMESTAMP},
+      follow_up_status = #{followUpStatus,jdbcType=INTEGER},
+      is_del = #{isDel,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=INTEGER},
+      create_user_id = #{createUserId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

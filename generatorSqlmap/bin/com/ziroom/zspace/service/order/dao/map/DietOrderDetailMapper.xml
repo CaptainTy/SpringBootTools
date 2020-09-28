@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.DietOrderDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.DietOrderDetailEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="bill_num" property="billNum" jdbcType="VARCHAR" />
+    <result column="item_num" property="itemNum" jdbcType="VARCHAR" />
+    <result column="item_name" property="itemName" jdbcType="VARCHAR" />
+    <result column="item_price" property="itemPrice" jdbcType="INTEGER" />
+    <result column="item_count" property="itemCount" jdbcType="INTEGER" />
+    <result column="item_unit" property="itemUnit" jdbcType="VARCHAR" />
+    <result column="item_amount" property="itemAmount" jdbcType="INTEGER" />
+    <result column="real_amount" property="realAmount" jdbcType="INTEGER" />
+    <result column="discount_amount" property="discountAmount" jdbcType="INTEGER" />
+    <result column="discountr_amount" property="discountrAmount" jdbcType="INTEGER" />
+    <result column="single_discount_amount" property="singleDiscountAmount" jdbcType="INTEGER" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="modify_code" property="modifyCode" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, bill_num, item_num, item_name, item_price, item_count, item_unit, item_amount, 
+    real_amount, discount_amount, discountr_amount, single_discount_amount, create_code, 
+    modify_code, is_del, last_modify_date, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_space_diet_order_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_space_diet_order_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.DietOrderDetailEntity" >
+    insert into t_space_diet_order_detail (id, fid, bill_num, 
+      item_num, item_name, item_price, 
+      item_count, item_unit, item_amount, 
+      real_amount, discount_amount, discountr_amount, 
+      single_discount_amount, create_code, modify_code, 
+      is_del, last_modify_date, create_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{billNum,jdbcType=VARCHAR}, 
+      #{itemNum,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{itemPrice,jdbcType=INTEGER}, 
+      #{itemCount,jdbcType=INTEGER}, #{itemUnit,jdbcType=VARCHAR}, #{itemAmount,jdbcType=INTEGER}, 
+      #{realAmount,jdbcType=INTEGER}, #{discountAmount,jdbcType=INTEGER}, #{discountrAmount,jdbcType=INTEGER}, 
+      #{singleDiscountAmount,jdbcType=INTEGER}, #{createCode,jdbcType=VARCHAR}, #{modifyCode,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=INTEGER}, #{lastModifyDate,jdbcType=TIMESTAMP}, #{createDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderDetailEntity" >
+    insert into t_space_diet_order_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="billNum != null" >
+        bill_num,
+      </if>
+      <if test="itemNum != null" >
+        item_num,
+      </if>
+      <if test="itemName != null" >
+        item_name,
+      </if>
+      <if test="itemPrice != null" >
+        item_price,
+      </if>
+      <if test="itemCount != null" >
+        item_count,
+      </if>
+      <if test="itemUnit != null" >
+        item_unit,
+      </if>
+      <if test="itemAmount != null" >
+        item_amount,
+      </if>
+      <if test="realAmount != null" >
+        real_amount,
+      </if>
+      <if test="discountAmount != null" >
+        discount_amount,
+      </if>
+      <if test="discountrAmount != null" >
+        discountr_amount,
+      </if>
+      <if test="singleDiscountAmount != null" >
+        single_discount_amount,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="modifyCode != null" >
+        modify_code,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="itemNum != null" >
+        #{itemNum,jdbcType=VARCHAR},
+      </if>
+      <if test="itemName != null" >
+        #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemPrice != null" >
+        #{itemPrice,jdbcType=INTEGER},
+      </if>
+      <if test="itemCount != null" >
+        #{itemCount,jdbcType=INTEGER},
+      </if>
+      <if test="itemUnit != null" >
+        #{itemUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="itemAmount != null" >
+        #{itemAmount,jdbcType=INTEGER},
+      </if>
+      <if test="realAmount != null" >
+        #{realAmount,jdbcType=INTEGER},
+      </if>
+      <if test="discountAmount != null" >
+        #{discountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="discountrAmount != null" >
+        #{discountrAmount,jdbcType=INTEGER},
+      </if>
+      <if test="singleDiscountAmount != null" >
+        #{singleDiscountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderDetailEntity" >
+    update t_space_diet_order_detail
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        bill_num = #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="itemNum != null" >
+        item_num = #{itemNum,jdbcType=VARCHAR},
+      </if>
+      <if test="itemName != null" >
+        item_name = #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemPrice != null" >
+        item_price = #{itemPrice,jdbcType=INTEGER},
+      </if>
+      <if test="itemCount != null" >
+        item_count = #{itemCount,jdbcType=INTEGER},
+      </if>
+      <if test="itemUnit != null" >
+        item_unit = #{itemUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="itemAmount != null" >
+        item_amount = #{itemAmount,jdbcType=INTEGER},
+      </if>
+      <if test="realAmount != null" >
+        real_amount = #{realAmount,jdbcType=INTEGER},
+      </if>
+      <if test="discountAmount != null" >
+        discount_amount = #{discountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="discountrAmount != null" >
+        discountr_amount = #{discountrAmount,jdbcType=INTEGER},
+      </if>
+      <if test="singleDiscountAmount != null" >
+        single_discount_amount = #{singleDiscountAmount,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        modify_code = #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.DietOrderDetailEntity" >
+    update t_space_diet_order_detail
+    set fid = #{fid,jdbcType=VARCHAR},
+      bill_num = #{billNum,jdbcType=VARCHAR},
+      item_num = #{itemNum,jdbcType=VARCHAR},
+      item_name = #{itemName,jdbcType=VARCHAR},
+      item_price = #{itemPrice,jdbcType=INTEGER},
+      item_count = #{itemCount,jdbcType=INTEGER},
+      item_unit = #{itemUnit,jdbcType=VARCHAR},
+      item_amount = #{itemAmount,jdbcType=INTEGER},
+      real_amount = #{realAmount,jdbcType=INTEGER},
+      discount_amount = #{discountAmount,jdbcType=INTEGER},
+      discountr_amount = #{discountrAmount,jdbcType=INTEGER},
+      single_discount_amount = #{singleDiscountAmount,jdbcType=INTEGER},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      modify_code = #{modifyCode,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.minsu.services.evaluate.dao.map.UgcImpressPicEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.minsu.entity.evaluate.UgcImpressPicEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="pic_server_uuid" property="picServerUuid" jdbcType="VARCHAR" />
+    <result column="impress_fid" property="impressFid" jdbcType="VARCHAR" />
+    <result column="pic_name" property="picName" jdbcType="VARCHAR" />
+    <result column="pic_base_url" property="picBaseUrl" jdbcType="VARCHAR" />
+    <result column="pic_suffix" property="picSuffix" jdbcType="VARCHAR" />
+    <result column="is_default" property="isDefault" jdbcType="INTEGER" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="modify_user" property="modifyUser" jdbcType="VARCHAR" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, pic_server_uuid, impress_fid, pic_name, pic_base_url, pic_suffix, is_default, 
+    is_del, create_date, modify_user, last_modify_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ugc_impress_pic
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ugc_impress_pic
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressPicEntity" >
+    insert into t_ugc_impress_pic (id, fid, pic_server_uuid, 
+      impress_fid, pic_name, pic_base_url, 
+      pic_suffix, is_default, is_del, 
+      create_date, modify_user, last_modify_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{picServerUuid,jdbcType=VARCHAR}, 
+      #{impressFid,jdbcType=VARCHAR}, #{picName,jdbcType=VARCHAR}, #{picBaseUrl,jdbcType=VARCHAR}, 
+      #{picSuffix,jdbcType=VARCHAR}, #{isDefault,jdbcType=INTEGER}, #{isDel,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{modifyUser,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressPicEntity" >
+    insert into t_ugc_impress_pic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="picServerUuid != null" >
+        pic_server_uuid,
+      </if>
+      <if test="impressFid != null" >
+        impress_fid,
+      </if>
+      <if test="picName != null" >
+        pic_name,
+      </if>
+      <if test="picBaseUrl != null" >
+        pic_base_url,
+      </if>
+      <if test="picSuffix != null" >
+        pic_suffix,
+      </if>
+      <if test="isDefault != null" >
+        is_default,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="modifyUser != null" >
+        modify_user,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="picServerUuid != null" >
+        #{picServerUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressFid != null" >
+        #{impressFid,jdbcType=VARCHAR},
+      </if>
+      <if test="picName != null" >
+        #{picName,jdbcType=VARCHAR},
+      </if>
+      <if test="picBaseUrl != null" >
+        #{picBaseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="picSuffix != null" >
+        #{picSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="isDefault != null" >
+        #{isDefault,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUser != null" >
+        #{modifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressPicEntity" >
+    update t_ugc_impress_pic
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="picServerUuid != null" >
+        pic_server_uuid = #{picServerUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressFid != null" >
+        impress_fid = #{impressFid,jdbcType=VARCHAR},
+      </if>
+      <if test="picName != null" >
+        pic_name = #{picName,jdbcType=VARCHAR},
+      </if>
+      <if test="picBaseUrl != null" >
+        pic_base_url = #{picBaseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="picSuffix != null" >
+        pic_suffix = #{picSuffix,jdbcType=VARCHAR},
+      </if>
+      <if test="isDefault != null" >
+        is_default = #{isDefault,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUser != null" >
+        modify_user = #{modifyUser,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressPicEntity" >
+    update t_ugc_impress_pic
+    set fid = #{fid,jdbcType=VARCHAR},
+      pic_server_uuid = #{picServerUuid,jdbcType=VARCHAR},
+      impress_fid = #{impressFid,jdbcType=VARCHAR},
+      pic_name = #{picName,jdbcType=VARCHAR},
+      pic_base_url = #{picBaseUrl,jdbcType=VARCHAR},
+      pic_suffix = #{picSuffix,jdbcType=VARCHAR},
+      is_default = #{isDefault,jdbcType=INTEGER},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      modify_user = #{modifyUser,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ziroom.minsu.services.guest.dao.map.GuestEventMapper">
+  <resultMap id="BaseResultMap" type="com.ziroom.minsu.entity.guest.GuestEvent">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fid" jdbcType="VARCHAR" property="fid" />
+    <result column="guest_fid" jdbcType="VARCHAR" property="guestFid" />
+    <result column="scene_fid" jdbcType="VARCHAR" property="sceneFid" />
+    <result column="scene_name" jdbcType="VARCHAR" property="sceneName" />
+    <result column="event_content" jdbcType="VARCHAR" property="eventContent" />
+    <result column="event_type" jdbcType="INTEGER" property="eventType" />
+    <result column="event_level" jdbcType="INTEGER" property="eventLevel" />
+    <result column="event_date" jdbcType="TIMESTAMP" property="eventDate" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+    <result column="create_fid" jdbcType="VARCHAR" property="createFid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="last_modify_fid" jdbcType="VARCHAR" property="lastModifyFid" />
+    <result column="last_modify_date" jdbcType="TIMESTAMP" property="lastModifyDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, fid, guest_fid, scene_fid, scene_name, event_content, event_type, event_level, 
+    event_date, is_del, create_fid, create_date, last_modify_fid, last_modify_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_guest_event
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_guest_event
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    insert into t_guest_event (id, fid, guest_fid, 
+      scene_fid, scene_name, event_content, 
+      event_type, event_level, event_date, 
+      is_del, create_fid, create_date, 
+      last_modify_fid, last_modify_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{guestFid,jdbcType=VARCHAR}, 
+      #{sceneFid,jdbcType=VARCHAR}, #{sceneName,jdbcType=VARCHAR}, #{eventContent,jdbcType=VARCHAR}, 
+      #{eventType,jdbcType=INTEGER}, #{eventLevel,jdbcType=INTEGER}, #{eventDate,jdbcType=TIMESTAMP}, 
+      #{isDel,jdbcType=INTEGER}, #{createFid,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{lastModifyFid,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    insert into t_guest_event
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="guestFid != null">
+        guest_fid,
+      </if>
+      <if test="sceneFid != null">
+        scene_fid,
+      </if>
+      <if test="sceneName != null">
+        scene_name,
+      </if>
+      <if test="eventContent != null">
+        event_content,
+      </if>
+      <if test="eventType != null">
+        event_type,
+      </if>
+      <if test="eventLevel != null">
+        event_level,
+      </if>
+      <if test="eventDate != null">
+        event_date,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="createFid != null">
+        create_fid,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="lastModifyFid != null">
+        last_modify_fid,
+      </if>
+      <if test="lastModifyDate != null">
+        last_modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null">
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="guestFid != null">
+        #{guestFid,jdbcType=VARCHAR},
+      </if>
+      <if test="sceneFid != null">
+        #{sceneFid,jdbcType=VARCHAR},
+      </if>
+      <if test="sceneName != null">
+        #{sceneName,jdbcType=VARCHAR},
+      </if>
+      <if test="eventContent != null">
+        #{eventContent,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        #{eventType,jdbcType=INTEGER},
+      </if>
+      <if test="eventLevel != null">
+        #{eventLevel,jdbcType=INTEGER},
+      </if>
+      <if test="eventDate != null">
+        #{eventDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null">
+        #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null">
+        #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null">
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    update t_guest_event
+    <set>
+      <if test="fid != null">
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="guestFid != null">
+        guest_fid = #{guestFid,jdbcType=VARCHAR},
+      </if>
+      <if test="sceneFid != null">
+        scene_fid = #{sceneFid,jdbcType=VARCHAR},
+      </if>
+      <if test="sceneName != null">
+        scene_name = #{sceneName,jdbcType=VARCHAR},
+      </if>
+      <if test="eventContent != null">
+        event_content = #{eventContent,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        event_type = #{eventType,jdbcType=INTEGER},
+      </if>
+      <if test="eventLevel != null">
+        event_level = #{eventLevel,jdbcType=INTEGER},
+      </if>
+      <if test="eventDate != null">
+        event_date = #{eventDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null">
+        create_fid = #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null">
+        last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null">
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    update t_guest_event
+    set fid = #{fid,jdbcType=VARCHAR},
+      guest_fid = #{guestFid,jdbcType=VARCHAR},
+      scene_fid = #{sceneFid,jdbcType=VARCHAR},
+      scene_name = #{sceneName,jdbcType=VARCHAR},
+      event_content = #{eventContent,jdbcType=VARCHAR},
+      event_type = #{eventType,jdbcType=INTEGER},
+      event_level = #{eventLevel,jdbcType=INTEGER},
+      event_date = #{eventDate,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_fid = #{createFid,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ziroom.minsu.entity.guest.GuestEvent">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fid" jdbcType="VARCHAR" property="fid" />
+    <result column="guest_fid" jdbcType="VARCHAR" property="guestFid" />
+    <result column="sence_fid" jdbcType="VARCHAR" property="senceFid" />
+    <result column="sence_name" jdbcType="VARCHAR" property="senceName" />
+    <result column="event_content" jdbcType="VARCHAR" property="eventContent" />
+    <result column="event_type" jdbcType="INTEGER" property="eventType" />
+    <result column="event_level" jdbcType="INTEGER" property="eventLevel" />
+    <result column="event_date" jdbcType="TIMESTAMP" property="eventDate" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+    <result column="create_fid" jdbcType="VARCHAR" property="createFid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="last_modify_fid" jdbcType="VARCHAR" property="lastModifyFid" />
+    <result column="last_modify_date" jdbcType="TIMESTAMP" property="lastModifyDate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, fid, guest_fid, sence_fid, sence_name, event_content, event_type, event_level, 
+    event_date, is_del, create_fid, create_date, last_modify_fid, last_modify_date
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_guest_event
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_guest_event
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    insert into t_guest_event (id, fid, guest_fid, 
+      sence_fid, sence_name, event_content, 
+      event_type, event_level, event_date, 
+      is_del, create_fid, create_date, 
+      last_modify_fid, last_modify_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{guestFid,jdbcType=VARCHAR}, 
+      #{senceFid,jdbcType=VARCHAR}, #{senceName,jdbcType=VARCHAR}, #{eventContent,jdbcType=VARCHAR}, 
+      #{eventType,jdbcType=INTEGER}, #{eventLevel,jdbcType=INTEGER}, #{eventDate,jdbcType=TIMESTAMP}, 
+      #{isDel,jdbcType=INTEGER}, #{createFid,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{lastModifyFid,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    insert into t_guest_event
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="guestFid != null">
+        guest_fid,
+      </if>
+      <if test="senceFid != null">
+        sence_fid,
+      </if>
+      <if test="senceName != null">
+        sence_name,
+      </if>
+      <if test="eventContent != null">
+        event_content,
+      </if>
+      <if test="eventType != null">
+        event_type,
+      </if>
+      <if test="eventLevel != null">
+        event_level,
+      </if>
+      <if test="eventDate != null">
+        event_date,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="createFid != null">
+        create_fid,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="lastModifyFid != null">
+        last_modify_fid,
+      </if>
+      <if test="lastModifyDate != null">
+        last_modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null">
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="guestFid != null">
+        #{guestFid,jdbcType=VARCHAR},
+      </if>
+      <if test="senceFid != null">
+        #{senceFid,jdbcType=VARCHAR},
+      </if>
+      <if test="senceName != null">
+        #{senceName,jdbcType=VARCHAR},
+      </if>
+      <if test="eventContent != null">
+        #{eventContent,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        #{eventType,jdbcType=INTEGER},
+      </if>
+      <if test="eventLevel != null">
+        #{eventLevel,jdbcType=INTEGER},
+      </if>
+      <if test="eventDate != null">
+        #{eventDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null">
+        #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null">
+        #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null">
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    update t_guest_event
+    <set>
+      <if test="fid != null">
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="guestFid != null">
+        guest_fid = #{guestFid,jdbcType=VARCHAR},
+      </if>
+      <if test="senceFid != null">
+        sence_fid = #{senceFid,jdbcType=VARCHAR},
+      </if>
+      <if test="senceName != null">
+        sence_name = #{senceName,jdbcType=VARCHAR},
+      </if>
+      <if test="eventContent != null">
+        event_content = #{eventContent,jdbcType=VARCHAR},
+      </if>
+      <if test="eventType != null">
+        event_type = #{eventType,jdbcType=INTEGER},
+      </if>
+      <if test="eventLevel != null">
+        event_level = #{eventLevel,jdbcType=INTEGER},
+      </if>
+      <if test="eventDate != null">
+        event_date = #{eventDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createFid != null">
+        create_fid = #{createFid,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyFid != null">
+        last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null">
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.minsu.entity.guest.GuestEvent">
+    update t_guest_event
+    set fid = #{fid,jdbcType=VARCHAR},
+      guest_fid = #{guestFid,jdbcType=VARCHAR},
+      sence_fid = #{senceFid,jdbcType=VARCHAR},
+      sence_name = #{senceName,jdbcType=VARCHAR},
+      event_content = #{eventContent,jdbcType=VARCHAR},
+      event_type = #{eventType,jdbcType=INTEGER},
+      event_level = #{eventLevel,jdbcType=INTEGER},
+      event_date = #{eventDate,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_fid = #{createFid,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      last_modify_fid = #{lastModifyFid,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

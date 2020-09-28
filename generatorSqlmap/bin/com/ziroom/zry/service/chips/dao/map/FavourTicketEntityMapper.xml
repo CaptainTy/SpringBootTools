@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zry.service.chips.dao.map.FavourTicketEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zry.service.chips.entity.FavourTicketEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="bid" property="bid" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_user_id" property="createUserId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_user_id" property="lastModifyUserId" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="is_valid" property="isValid" jdbcType="INTEGER" />
+    <result column="batch_number" property="batchNumber" jdbcType="VARCHAR" />
+    <result column="ticket_number" property="ticketNumber" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="start_date" property="startDate" jdbcType="INTEGER" />
+    <result column="end_date" property="endDate" jdbcType="INTEGER" />
+    <result column="bind_time" property="bindTime" jdbcType="INTEGER" />
+    <result column="limit_date" property="limitDate" jdbcType="INTEGER" />
+    <result column="get_way" property="getWay" jdbcType="INTEGER" />
+    <result column="activity_bid" property="activityBid" jdbcType="VARCHAR" />
+    <result column="customer_phone" property="customerPhone" jdbcType="VARCHAR" />
+    <result column="redeem_code" property="redeemCode" jdbcType="VARCHAR" />
+    <result column="amount" property="amount" jdbcType="DOUBLE" />
+    <result column="apply_time" property="applyTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bid, is_del, create_user_id, create_time, last_modify_user_id, last_modify_time, 
+    is_valid, batch_number, ticket_number, status, start_date, end_date, bind_time, limit_date, 
+    get_way, activity_bid, customer_phone, redeem_code, amount, apply_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_favour_ticket
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_favour_ticket
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zry.service.chips.entity.FavourTicketEntity" >
+    insert into t_favour_ticket (id, bid, is_del, 
+      create_user_id, create_time, last_modify_user_id, 
+      last_modify_time, is_valid, batch_number, 
+      ticket_number, status, start_date, 
+      end_date, bind_time, limit_date, 
+      get_way, activity_bid, customer_phone, 
+      redeem_code, amount, apply_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{bid,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{createUserId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastModifyUserId,jdbcType=VARCHAR}, 
+      #{lastModifyTime,jdbcType=TIMESTAMP}, #{isValid,jdbcType=INTEGER}, #{batchNumber,jdbcType=VARCHAR}, 
+      #{ticketNumber,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{startDate,jdbcType=INTEGER}, 
+      #{endDate,jdbcType=INTEGER}, #{bindTime,jdbcType=INTEGER}, #{limitDate,jdbcType=INTEGER}, 
+      #{getWay,jdbcType=INTEGER}, #{activityBid,jdbcType=VARCHAR}, #{customerPhone,jdbcType=VARCHAR}, 
+      #{redeemCode,jdbcType=VARCHAR}, #{amount,jdbcType=DOUBLE}, #{applyTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zry.service.chips.entity.FavourTicketEntity" >
+    insert into t_favour_ticket
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bid != null" >
+        bid,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createUserId != null" >
+        create_user_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="batchNumber != null" >
+        batch_number,
+      </if>
+      <if test="ticketNumber != null" >
+        ticket_number,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="startDate != null" >
+        start_date,
+      </if>
+      <if test="endDate != null" >
+        end_date,
+      </if>
+      <if test="bindTime != null" >
+        bind_time,
+      </if>
+      <if test="limitDate != null" >
+        limit_date,
+      </if>
+      <if test="getWay != null" >
+        get_way,
+      </if>
+      <if test="activityBid != null" >
+        activity_bid,
+      </if>
+      <if test="customerPhone != null" >
+        customer_phone,
+      </if>
+      <if test="redeemCode != null" >
+        redeem_code,
+      </if>
+      <if test="amount != null" >
+        amount,
+      </if>
+      <if test="applyTime != null" >
+        apply_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bid != null" >
+        #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="batchNumber != null" >
+        #{batchNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ticketNumber != null" >
+        #{ticketNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=INTEGER},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=INTEGER},
+      </if>
+      <if test="bindTime != null" >
+        #{bindTime,jdbcType=INTEGER},
+      </if>
+      <if test="limitDate != null" >
+        #{limitDate,jdbcType=INTEGER},
+      </if>
+      <if test="getWay != null" >
+        #{getWay,jdbcType=INTEGER},
+      </if>
+      <if test="activityBid != null" >
+        #{activityBid,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPhone != null" >
+        #{customerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="redeemCode != null" >
+        #{redeemCode,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=DOUBLE},
+      </if>
+      <if test="applyTime != null" >
+        #{applyTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zry.service.chips.entity.FavourTicketEntity" >
+    update t_favour_ticket
+    <set >
+      <if test="bid != null" >
+        bid = #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null" >
+        is_valid = #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="batchNumber != null" >
+        batch_number = #{batchNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="ticketNumber != null" >
+        ticket_number = #{ticketNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="startDate != null" >
+        start_date = #{startDate,jdbcType=INTEGER},
+      </if>
+      <if test="endDate != null" >
+        end_date = #{endDate,jdbcType=INTEGER},
+      </if>
+      <if test="bindTime != null" >
+        bind_time = #{bindTime,jdbcType=INTEGER},
+      </if>
+      <if test="limitDate != null" >
+        limit_date = #{limitDate,jdbcType=INTEGER},
+      </if>
+      <if test="getWay != null" >
+        get_way = #{getWay,jdbcType=INTEGER},
+      </if>
+      <if test="activityBid != null" >
+        activity_bid = #{activityBid,jdbcType=VARCHAR},
+      </if>
+      <if test="customerPhone != null" >
+        customer_phone = #{customerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="redeemCode != null" >
+        redeem_code = #{redeemCode,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=DOUBLE},
+      </if>
+      <if test="applyTime != null" >
+        apply_time = #{applyTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zry.service.chips.entity.FavourTicketEntity" >
+    update t_favour_ticket
+    set bid = #{bid,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_user_id = #{createUserId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      is_valid = #{isValid,jdbcType=INTEGER},
+      batch_number = #{batchNumber,jdbcType=VARCHAR},
+      ticket_number = #{ticketNumber,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      start_date = #{startDate,jdbcType=INTEGER},
+      end_date = #{endDate,jdbcType=INTEGER},
+      bind_time = #{bindTime,jdbcType=INTEGER},
+      limit_date = #{limitDate,jdbcType=INTEGER},
+      get_way = #{getWay,jdbcType=INTEGER},
+      activity_bid = #{activityBid,jdbcType=VARCHAR},
+      customer_phone = #{customerPhone,jdbcType=VARCHAR},
+      redeem_code = #{redeemCode,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=DOUBLE},
+      apply_time = #{applyTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

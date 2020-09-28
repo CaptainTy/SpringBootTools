@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zrp.service.sojourn.dao.map.ZyuDailyReportEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zrp.sojourn.entity.ZyuDailyReportEntity" >
+    <result column="service_line" property="serviceLine" jdbcType="INTEGER" />
+    <result column="project_fid" property="projectFid" jdbcType="VARCHAR" />
+    <result column="project_name" property="projectName" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="organ_uid" property="organUid" jdbcType="VARCHAR" />
+    <result column="house_count" property="houseCount" jdbcType="VARCHAR" />
+    <result column="today_night_count" property="todayNightCount" jdbcType="INTEGER" />
+    <result column="tmonth_night_count" property="tmonthNightCount" jdbcType="INTEGER" />
+    <result column="today_occupancy_rate" property="todayOccupancyRate" jdbcType="DECIMAL" />
+    <result column="tmonth_occupancy_rate" property="tmonthOccupancyRate" jdbcType="DECIMAL" />
+    <result column="today_trenting_house_price" property="todayTrentingHousePrice" jdbcType="DECIMAL" />
+    <result column="tmonth_trenting_house_price" property="tmonthTrentingHousePrice" jdbcType="DECIMAL" />
+    <result column="today_act_income" property="todayActIncome" jdbcType="DECIMAL" />
+    <result column="tmonth_act_income" property="tmonthActIncome" jdbcType="DECIMAL" />
+    <result column="today_forecast_GOP" property="todayForecastGop" jdbcType="DECIMAL" />
+    <result column="tmonth_forecast_GOP" property="tmonthForecastGop" jdbcType="DECIMAL" />
+    <result column="today_book_count" property="todayBookCount" jdbcType="INTEGER" />
+    <result column="tmonth_book_count" property="tmonthBookCount" jdbcType="INTEGER" />
+    <result column="today_new_sign_count" property="todayNewSignCount" jdbcType="INTEGER" />
+    <result column="tmonth_new_sign_count" property="tmonthNewSignCount" jdbcType="INTEGER" />
+    <result column="today_renew_count" property="todayRenewCount" jdbcType="INTEGER" />
+    <result column="tmonth_renew_count" property="tmonthRenewCount" jdbcType="INTEGER" />
+    <result column="today_surrender_count" property="todaySurrenderCount" jdbcType="INTEGER" />
+    <result column="tmonth_surrender_count" property="tmonthSurrenderCount" jdbcType="INTEGER" />
+    <result column="today_renew_rate" property="todayRenewRate" jdbcType="DECIMAL" />
+    <result column="tmonth_renew_rate" property="tmonthRenewRate" jdbcType="DECIMAL" />
+    <result column="expiring_contract_month" property="expiringContractMonth" jdbcType="INTEGER" />
+    <result column="today_vacant_night" property="todayVacantNight" jdbcType="INTEGER" />
+    <result column="tmonth_vacant_night" property="tmonthVacantNight" jdbcType="INTEGER" />
+    <result column="in_date" property="inDate" jdbcType="DATE" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ziroom.zrp.sojourn.entity.ZyuDailyReportEntity" >
+    insert into t_zyu_daily_report (service_line, project_fid, project_name, 
+      city_code, organ_uid, house_count, 
+      today_night_count, tmonth_night_count, today_occupancy_rate, 
+      tmonth_occupancy_rate, today_trenting_house_price, 
+      tmonth_trenting_house_price, today_act_income, 
+      tmonth_act_income, today_forecast_GOP, tmonth_forecast_GOP, 
+      today_book_count, tmonth_book_count, today_new_sign_count, 
+      tmonth_new_sign_count, today_renew_count, tmonth_renew_count, 
+      today_surrender_count, tmonth_surrender_count, 
+      today_renew_rate, tmonth_renew_rate, expiring_contract_month, 
+      today_vacant_night, tmonth_vacant_night, in_date, 
+      is_del, create_time)
+    values (#{serviceLine,jdbcType=INTEGER}, #{projectFid,jdbcType=VARCHAR}, #{projectName,jdbcType=VARCHAR}, 
+      #{cityCode,jdbcType=VARCHAR}, #{organUid,jdbcType=VARCHAR}, #{houseCount,jdbcType=VARCHAR}, 
+      #{todayNightCount,jdbcType=INTEGER}, #{tmonthNightCount,jdbcType=INTEGER}, #{todayOccupancyRate,jdbcType=DECIMAL}, 
+      #{tmonthOccupancyRate,jdbcType=DECIMAL}, #{todayTrentingHousePrice,jdbcType=DECIMAL}, 
+      #{tmonthTrentingHousePrice,jdbcType=DECIMAL}, #{todayActIncome,jdbcType=DECIMAL}, 
+      #{tmonthActIncome,jdbcType=DECIMAL}, #{todayForecastGop,jdbcType=DECIMAL}, #{tmonthForecastGop,jdbcType=DECIMAL}, 
+      #{todayBookCount,jdbcType=INTEGER}, #{tmonthBookCount,jdbcType=INTEGER}, #{todayNewSignCount,jdbcType=INTEGER}, 
+      #{tmonthNewSignCount,jdbcType=INTEGER}, #{todayRenewCount,jdbcType=INTEGER}, #{tmonthRenewCount,jdbcType=INTEGER}, 
+      #{todaySurrenderCount,jdbcType=INTEGER}, #{tmonthSurrenderCount,jdbcType=INTEGER}, 
+      #{todayRenewRate,jdbcType=DECIMAL}, #{tmonthRenewRate,jdbcType=DECIMAL}, #{expiringContractMonth,jdbcType=INTEGER}, 
+      #{todayVacantNight,jdbcType=INTEGER}, #{tmonthVacantNight,jdbcType=INTEGER}, #{inDate,jdbcType=DATE}, 
+      #{isDel,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zrp.sojourn.entity.ZyuDailyReportEntity" >
+    insert into t_zyu_daily_report
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="serviceLine != null" >
+        service_line,
+      </if>
+      <if test="projectFid != null" >
+        project_fid,
+      </if>
+      <if test="projectName != null" >
+        project_name,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="organUid != null" >
+        organ_uid,
+      </if>
+      <if test="houseCount != null" >
+        house_count,
+      </if>
+      <if test="todayNightCount != null" >
+        today_night_count,
+      </if>
+      <if test="tmonthNightCount != null" >
+        tmonth_night_count,
+      </if>
+      <if test="todayOccupancyRate != null" >
+        today_occupancy_rate,
+      </if>
+      <if test="tmonthOccupancyRate != null" >
+        tmonth_occupancy_rate,
+      </if>
+      <if test="todayTrentingHousePrice != null" >
+        today_trenting_house_price,
+      </if>
+      <if test="tmonthTrentingHousePrice != null" >
+        tmonth_trenting_house_price,
+      </if>
+      <if test="todayActIncome != null" >
+        today_act_income,
+      </if>
+      <if test="tmonthActIncome != null" >
+        tmonth_act_income,
+      </if>
+      <if test="todayForecastGop != null" >
+        today_forecast_GOP,
+      </if>
+      <if test="tmonthForecastGop != null" >
+        tmonth_forecast_GOP,
+      </if>
+      <if test="todayBookCount != null" >
+        today_book_count,
+      </if>
+      <if test="tmonthBookCount != null" >
+        tmonth_book_count,
+      </if>
+      <if test="todayNewSignCount != null" >
+        today_new_sign_count,
+      </if>
+      <if test="tmonthNewSignCount != null" >
+        tmonth_new_sign_count,
+      </if>
+      <if test="todayRenewCount != null" >
+        today_renew_count,
+      </if>
+      <if test="tmonthRenewCount != null" >
+        tmonth_renew_count,
+      </if>
+      <if test="todaySurrenderCount != null" >
+        today_surrender_count,
+      </if>
+      <if test="tmonthSurrenderCount != null" >
+        tmonth_surrender_count,
+      </if>
+      <if test="todayRenewRate != null" >
+        today_renew_rate,
+      </if>
+      <if test="tmonthRenewRate != null" >
+        tmonth_renew_rate,
+      </if>
+      <if test="expiringContractMonth != null" >
+        expiring_contract_month,
+      </if>
+      <if test="todayVacantNight != null" >
+        today_vacant_night,
+      </if>
+      <if test="tmonthVacantNight != null" >
+        tmonth_vacant_night,
+      </if>
+      <if test="inDate != null" >
+        in_date,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="serviceLine != null" >
+        #{serviceLine,jdbcType=INTEGER},
+      </if>
+      <if test="projectFid != null" >
+        #{projectFid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null" >
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="organUid != null" >
+        #{organUid,jdbcType=VARCHAR},
+      </if>
+      <if test="houseCount != null" >
+        #{houseCount,jdbcType=VARCHAR},
+      </if>
+      <if test="todayNightCount != null" >
+        #{todayNightCount,jdbcType=INTEGER},
+      </if>
+      <if test="tmonthNightCount != null" >
+        #{tmonthNightCount,jdbcType=INTEGER},
+      </if>
+      <if test="todayOccupancyRate != null" >
+        #{todayOccupancyRate,jdbcType=DECIMAL},
+      </if>
+      <if test="tmonthOccupancyRate != null" >
+        #{tmonthOccupancyRate,jdbcType=DECIMAL},
+      </if>
+      <if test="todayTrentingHousePrice != null" >
+        #{todayTrentingHousePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="tmonthTrentingHousePrice != null" >
+        #{tmonthTrentingHousePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="todayActIncome != null" >
+        #{todayActIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="tmonthActIncome != null" >
+        #{tmonthActIncome,jdbcType=DECIMAL},
+      </if>
+      <if test="todayForecastGop != null" >
+        #{todayForecastGop,jdbcType=DECIMAL},
+      </if>
+      <if test="tmonthForecastGop != null" >
+        #{tmonthForecastGop,jdbcType=DECIMAL},
+      </if>
+      <if test="todayBookCount != null" >
+        #{todayBookCount,jdbcType=INTEGER},
+      </if>
+      <if test="tmonthBookCount != null" >
+        #{tmonthBookCount,jdbcType=INTEGER},
+      </if>
+      <if test="todayNewSignCount != null" >
+        #{todayNewSignCount,jdbcType=INTEGER},
+      </if>
+      <if test="tmonthNewSignCount != null" >
+        #{tmonthNewSignCount,jdbcType=INTEGER},
+      </if>
+      <if test="todayRenewCount != null" >
+        #{todayRenewCount,jdbcType=INTEGER},
+      </if>
+      <if test="tmonthRenewCount != null" >
+        #{tmonthRenewCount,jdbcType=INTEGER},
+      </if>
+      <if test="todaySurrenderCount != null" >
+        #{todaySurrenderCount,jdbcType=INTEGER},
+      </if>
+      <if test="tmonthSurrenderCount != null" >
+        #{tmonthSurrenderCount,jdbcType=INTEGER},
+      </if>
+      <if test="todayRenewRate != null" >
+        #{todayRenewRate,jdbcType=DECIMAL},
+      </if>
+      <if test="tmonthRenewRate != null" >
+        #{tmonthRenewRate,jdbcType=DECIMAL},
+      </if>
+      <if test="expiringContractMonth != null" >
+        #{expiringContractMonth,jdbcType=INTEGER},
+      </if>
+      <if test="todayVacantNight != null" >
+        #{todayVacantNight,jdbcType=INTEGER},
+      </if>
+      <if test="tmonthVacantNight != null" >
+        #{tmonthVacantNight,jdbcType=INTEGER},
+      </if>
+      <if test="inDate != null" >
+        #{inDate,jdbcType=DATE},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

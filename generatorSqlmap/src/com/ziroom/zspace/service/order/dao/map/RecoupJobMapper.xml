@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.RecoupJobMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.RecoupJobEntity" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="job_class" property="jobClass" jdbcType="VARCHAR" />
+    <result column="job_name" property="jobName" jdbcType="VARCHAR" />
+    <result column="job_desc" property="jobDesc" jdbcType="VARCHAR" />
+    <result column="job_json_param" property="jobJsonParam" jdbcType="VARCHAR" />
+    <result column="job_status" property="jobStatus" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="BIGINT" />
+    <result column="complete_time" property="completeTime" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
+    <result column="effect_time" property="effectTime" jdbcType="BIGINT" />
+    <result column="retry_cur_times" property="retryCurTimes" jdbcType="INTEGER" />
+    <result column="retry_total_times" property="retryTotalTimes" jdbcType="INTEGER" />
+    <result column="fail_reason" property="failReason" jdbcType="VARCHAR" />
+    <result column="async" property="async" jdbcType="INTEGER" />
+    <result column="bus_code" property="busCode" jdbcType="VARCHAR" />
+    <result column="fail_alarm_flag" property="failAlarmFlag" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, job_class, job_name, job_desc, job_json_param, job_status, start_time, complete_time, 
+    create_time, effect_time, retry_cur_times, retry_total_times, fail_reason, async, 
+    bus_code, fail_alarm_flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_recoup_job
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_recoup_job
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.RecoupJobEntity" >
+    insert into t_recoup_job (id, job_class, job_name, 
+      job_desc, job_json_param, job_status, 
+      start_time, complete_time, create_time, 
+      effect_time, retry_cur_times, retry_total_times, 
+      fail_reason, async, bus_code, 
+      fail_alarm_flag)
+    values (#{id,jdbcType=BIGINT}, #{jobClass,jdbcType=VARCHAR}, #{jobName,jdbcType=VARCHAR}, 
+      #{jobDesc,jdbcType=VARCHAR}, #{jobJsonParam,jdbcType=VARCHAR}, #{jobStatus,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=BIGINT}, #{completeTime,jdbcType=BIGINT}, #{createTime,jdbcType=BIGINT}, 
+      #{effectTime,jdbcType=BIGINT}, #{retryCurTimes,jdbcType=INTEGER}, #{retryTotalTimes,jdbcType=INTEGER}, 
+      #{failReason,jdbcType=VARCHAR}, #{async,jdbcType=INTEGER}, #{busCode,jdbcType=VARCHAR}, 
+      #{failAlarmFlag,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.RecoupJobEntity" >
+    insert into t_recoup_job
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="jobClass != null" >
+        job_class,
+      </if>
+      <if test="jobName != null" >
+        job_name,
+      </if>
+      <if test="jobDesc != null" >
+        job_desc,
+      </if>
+      <if test="jobJsonParam != null" >
+        job_json_param,
+      </if>
+      <if test="jobStatus != null" >
+        job_status,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="completeTime != null" >
+        complete_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="effectTime != null" >
+        effect_time,
+      </if>
+      <if test="retryCurTimes != null" >
+        retry_cur_times,
+      </if>
+      <if test="retryTotalTimes != null" >
+        retry_total_times,
+      </if>
+      <if test="failReason != null" >
+        fail_reason,
+      </if>
+      <if test="async != null" >
+        async,
+      </if>
+      <if test="busCode != null" >
+        bus_code,
+      </if>
+      <if test="failAlarmFlag != null" >
+        fail_alarm_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="jobClass != null" >
+        #{jobClass,jdbcType=VARCHAR},
+      </if>
+      <if test="jobName != null" >
+        #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobDesc != null" >
+        #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="jobJsonParam != null" >
+        #{jobJsonParam,jdbcType=VARCHAR},
+      </if>
+      <if test="jobStatus != null" >
+        #{jobStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=BIGINT},
+      </if>
+      <if test="completeTime != null" >
+        #{completeTime,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="effectTime != null" >
+        #{effectTime,jdbcType=BIGINT},
+      </if>
+      <if test="retryCurTimes != null" >
+        #{retryCurTimes,jdbcType=INTEGER},
+      </if>
+      <if test="retryTotalTimes != null" >
+        #{retryTotalTimes,jdbcType=INTEGER},
+      </if>
+      <if test="failReason != null" >
+        #{failReason,jdbcType=VARCHAR},
+      </if>
+      <if test="async != null" >
+        #{async,jdbcType=INTEGER},
+      </if>
+      <if test="busCode != null" >
+        #{busCode,jdbcType=VARCHAR},
+      </if>
+      <if test="failAlarmFlag != null" >
+        #{failAlarmFlag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.RecoupJobEntity" >
+    update t_recoup_job
+    <set >
+      <if test="jobClass != null" >
+        job_class = #{jobClass,jdbcType=VARCHAR},
+      </if>
+      <if test="jobName != null" >
+        job_name = #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="jobDesc != null" >
+        job_desc = #{jobDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="jobJsonParam != null" >
+        job_json_param = #{jobJsonParam,jdbcType=VARCHAR},
+      </if>
+      <if test="jobStatus != null" >
+        job_status = #{jobStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=BIGINT},
+      </if>
+      <if test="completeTime != null" >
+        complete_time = #{completeTime,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="effectTime != null" >
+        effect_time = #{effectTime,jdbcType=BIGINT},
+      </if>
+      <if test="retryCurTimes != null" >
+        retry_cur_times = #{retryCurTimes,jdbcType=INTEGER},
+      </if>
+      <if test="retryTotalTimes != null" >
+        retry_total_times = #{retryTotalTimes,jdbcType=INTEGER},
+      </if>
+      <if test="failReason != null" >
+        fail_reason = #{failReason,jdbcType=VARCHAR},
+      </if>
+      <if test="async != null" >
+        async = #{async,jdbcType=INTEGER},
+      </if>
+      <if test="busCode != null" >
+        bus_code = #{busCode,jdbcType=VARCHAR},
+      </if>
+      <if test="failAlarmFlag != null" >
+        fail_alarm_flag = #{failAlarmFlag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.RecoupJobEntity" >
+    update t_recoup_job
+    set job_class = #{jobClass,jdbcType=VARCHAR},
+      job_name = #{jobName,jdbcType=VARCHAR},
+      job_desc = #{jobDesc,jdbcType=VARCHAR},
+      job_json_param = #{jobJsonParam,jdbcType=VARCHAR},
+      job_status = #{jobStatus,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=BIGINT},
+      complete_time = #{completeTime,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=BIGINT},
+      effect_time = #{effectTime,jdbcType=BIGINT},
+      retry_cur_times = #{retryCurTimes,jdbcType=INTEGER},
+      retry_total_times = #{retryTotalTimes,jdbcType=INTEGER},
+      fail_reason = #{failReason,jdbcType=VARCHAR},
+      async = #{async,jdbcType=INTEGER},
+      bus_code = #{busCode,jdbcType=VARCHAR},
+      fail_alarm_flag = #{failAlarmFlag,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

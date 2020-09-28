@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.1, maximum-scale=.1, user-scalable=yes">
+
+    <title>消息服务</title>
+
+    <!--Bootstrap.min css-->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+    <!--DataTables css-->
+    <link rel="stylesheet" href="static/css/dataTables.bootstrap4.css">
+
+    <!--Style css-->
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body class="app ">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">消息服务</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">主页</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">链接列表</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="app">
+    <div class="main-wrapper" >
+
+        <div class="app-content">
+            <section class="section">
+
+                <div class="row m-0 mt-6">
+                    <div class="col-12">
+                        <div class="card mt-3">
+                            <div class=" mb-0">
+                                <div class="row card-body">
+                                    <div class="col-md-12 row">
+
+                                        <div class="col-md-11 m-t-5 m-b-5" id="main_info_body">
+                                            <p class="mb-1 row"><span class="col-3 font-weight-bold text-muted text-right">消息服务器ID：</span> <span class="col-9" id="server_id" style="font-size: 13px;"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 font-weight-bold text-muted text-right">当前时刻：</span> <span class="col-9" id="now"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 font-weight-bold text-muted text-right">当前连接数：</span> <span class="col-9" id="num_connections"></span></p>
+                                        </div>
+                                        <div class="col-md-1 text-right">
+                                            <p>每5s自动刷新</p>
+                                           <button id="refresh" type="button" class="btn btn-sm btn-danger">暂停刷新</button>
+                                        </div>
+
+                                    </div><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="clients_table" class="table table-striped table-bordered border-t0 text-nowrap w-100" >
+                                        <thead>
+                                        <tr>
+                                            <th class="wd-5p text-center">连接ID</th>
+                                            <th class="wd-10p text-center">连接机器IP</th>
+                                            <th class="wd-15p text-center">连接名</th>
+                                            <th class="wd-10p text-center">客户端版本</th>
+                                            <th class="wd-15p text-center">最后活动时间</th>
+                                            <th class="wd-15p text-center">消息生产</th>
+                                            <th class="wd-15p text-center">消息消费</th>
+                                            <th class="wd-10p text-center">往返时延</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody id="clients_list">
+                                        <!--<tr id="37147">
+                                            <td>37147</td>
+                                            <td>192.168.10.13:65501</td>
+                                            <td style="font-size: 12px;">192_168_10_135d8238ff07dd46be82291681cb061dd7</td>
+                                            <td>2.6.5</td>
+                                            <td>2020-09-17T01:15:35.65492368+08:00</td>
+                                            <td>159 / 3.3KB</td>
+                                            <td>159 / 220Byte</td>
+                                            <td>31.420697ms</td>
+                                        </tr>-->
+
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <footer class="main-footer">
+            <div class="text-center">
+                Copyright &copy;Kharna-Admin 2018. Design By<a href="https://spruko.com/"> Spruko</a>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog" style="display: none;"  aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document" id="infoModalContent">
+
+    </div>
+</div>
+
+<!--Jquery.min js-->
+<script src="static/js/jquery.min.js"></script>
+
+<!--Bootstrap.min js-->
+<script src="static/js/bootstrap.min.js"></script>
+
+<!--DataTables js-->
+<script src="static/js/jquery.dataTables.js"></script>
+<script src="static/js/dataTables.bootstrap4.js"></script>
+
+<!--Echart-all js-->
+<script src="static/js/echarts.min.js"></script>
+
+<!--Custom index.js-->
+<script src="static/custom/lists.js"></script>
+
+</body>
+</html>

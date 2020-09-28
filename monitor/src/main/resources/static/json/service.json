@@ -1,0 +1,61 @@
+{
+  ///消息服务器ID
+  "server_id": "NC3G3RE2TDXEOBTMINHK2AHDWLXDHOCHRSDZHYPTT4HWRCC5LNUEU524",	
+
+  "server_name": "NC3G3RE2TDXEOBTMINHK2AHDWLXDHOCHRSDZHYPTT4HWRCC5LNUEU524",
+  ///版本
+  "version": "2.1.4",
+  "proto": 1,
+  "host": "0.0.0.0",
+  /// 对外端口
+  "port": 4222,
+  /// 最大连接数
+  "max_connections": 65536,
+  "ping_interval": 120000000000,
+  "ping_max": 2,
+  "http_host": "0.0.0.0",
+  /// 状态信息端口
+  "http_port": 8222,
+  "https_port": 0,
+  "auth_timeout": 1,
+  "max_control_line": 4096,
+  /// （单条）消息最大负载-10M
+  "max_payload": 10485760,
+  "max_pending": 67108864,
+  /// 集群
+  "cluster": {},
+  "gateway": {},
+  "leaf": {},
+  "tls_timeout": 0.5,
+  "write_deadline": 2000000000,
+  /// 启动时刻
+  "start": "2020-09-05T00:06:20.704716567+08:00",
+  /// 当前时刻
+  "now": "2020-09-17T00:08:34.165641096+08:00",
+  /// 运行时间
+  "uptime": "12d0h2m13s",
+  "mem": 470560768,
+  "cores": 32,
+  "cpu": 2,
+  "connections": 419,
+  "total_connections": 36917,
+  "routes": 0,
+  "remotes": 0,
+  "leafnodes": 0,
+  "in_msgs": 585641430,
+  "out_msgs": 853101861,
+  "in_bytes": 302198308157,
+  "out_bytes": 311546376009,1
+  "slow_consumers": 440,
+  "subscriptions": 359,
+  "http_req_stats": {
+    "/": 5,
+    "/connz": 1074,
+    "/gatewayz": 6,
+    "/leafz": 5,
+    "/routez": 6,
+    "/subsz": 75,
+    "/varz": 70301
+  },
+  "config_load_time": "2020-09-05T00:06:20.704716567+08:00"
+}

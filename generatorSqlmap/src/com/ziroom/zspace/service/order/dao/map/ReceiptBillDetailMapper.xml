@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.ReceiptBillDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.ReceiptBillDetail" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="receipt_sn" property="receiptSn" jdbcType="VARCHAR" />
+    <result column="bill_num" property="billNum" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="source_type" property="sourceType" jdbcType="INTEGER" />
+    <result column="receipt_status" property="receiptStatus" jdbcType="INTEGER" />
+    <result column="receipt_method" property="receiptMethod" jdbcType="VARCHAR" />
+    <result column="payment_type" property="paymentType" jdbcType="INTEGER" />
+    <result column="payment_uid" property="paymentUid" jdbcType="VARCHAR" />
+    <result column="amount" property="amount" jdbcType="INTEGER" />
+    <result column="trade_no" property="tradeNo" jdbcType="VARCHAR" />
+    <result column="actual_sync_time" property="actualSyncTime" jdbcType="TIMESTAMP" />
+    <result column="is_send" property="isSend" jdbcType="INTEGER" />
+    <result column="pay_time" property="payTime" jdbcType="TIMESTAMP" />
+    <result column="run_time" property="runTime" jdbcType="TIMESTAMP" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="modify_code" property="modifyCode" jdbcType="VARCHAR" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, receipt_sn, bill_num, city_code, source_type, receipt_status, receipt_method, 
+    payment_type, payment_uid, amount, trade_no, actual_sync_time, is_send, pay_time, 
+    run_time, is_del, remark, create_code, modify_code, last_modify_date, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_space_receipt_bill_detail
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_space_receipt_bill_detail
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.ReceiptBillDetail" >
+    insert into t_space_receipt_bill_detail (id, fid, receipt_sn, 
+      bill_num, city_code, source_type, 
+      receipt_status, receipt_method, payment_type, 
+      payment_uid, amount, trade_no, 
+      actual_sync_time, is_send, pay_time, 
+      run_time, is_del, remark, 
+      create_code, modify_code, last_modify_date, 
+      create_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{receiptSn,jdbcType=VARCHAR}, 
+      #{billNum,jdbcType=VARCHAR}, #{cityCode,jdbcType=VARCHAR}, #{sourceType,jdbcType=INTEGER}, 
+      #{receiptStatus,jdbcType=INTEGER}, #{receiptMethod,jdbcType=VARCHAR}, #{paymentType,jdbcType=INTEGER}, 
+      #{paymentUid,jdbcType=VARCHAR}, #{amount,jdbcType=INTEGER}, #{tradeNo,jdbcType=VARCHAR}, 
+      #{actualSyncTime,jdbcType=TIMESTAMP}, #{isSend,jdbcType=INTEGER}, #{payTime,jdbcType=TIMESTAMP}, 
+      #{runTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
+      #{createCode,jdbcType=VARCHAR}, #{modifyCode,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
+      #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.ReceiptBillDetail" >
+    insert into t_space_receipt_bill_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="receiptSn != null" >
+        receipt_sn,
+      </if>
+      <if test="billNum != null" >
+        bill_num,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="sourceType != null" >
+        source_type,
+      </if>
+      <if test="receiptStatus != null" >
+        receipt_status,
+      </if>
+      <if test="receiptMethod != null" >
+        receipt_method,
+      </if>
+      <if test="paymentType != null" >
+        payment_type,
+      </if>
+      <if test="paymentUid != null" >
+        payment_uid,
+      </if>
+      <if test="amount != null" >
+        amount,
+      </if>
+      <if test="tradeNo != null" >
+        trade_no,
+      </if>
+      <if test="actualSyncTime != null" >
+        actual_sync_time,
+      </if>
+      <if test="isSend != null" >
+        is_send,
+      </if>
+      <if test="payTime != null" >
+        pay_time,
+      </if>
+      <if test="runTime != null" >
+        run_time,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="modifyCode != null" >
+        modify_code,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptSn != null" >
+        #{receiptSn,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceType != null" >
+        #{sourceType,jdbcType=INTEGER},
+      </if>
+      <if test="receiptStatus != null" >
+        #{receiptStatus,jdbcType=INTEGER},
+      </if>
+      <if test="receiptMethod != null" >
+        #{receiptMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentType != null" >
+        #{paymentType,jdbcType=INTEGER},
+      </if>
+      <if test="paymentUid != null" >
+        #{paymentUid,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="tradeNo != null" >
+        #{tradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="actualSyncTime != null" >
+        #{actualSyncTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSend != null" >
+        #{isSend,jdbcType=INTEGER},
+      </if>
+      <if test="payTime != null" >
+        #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="runTime != null" >
+        #{runTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.ReceiptBillDetail" >
+    update t_space_receipt_bill_detail
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptSn != null" >
+        receipt_sn = #{receiptSn,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        bill_num = #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceType != null" >
+        source_type = #{sourceType,jdbcType=INTEGER},
+      </if>
+      <if test="receiptStatus != null" >
+        receipt_status = #{receiptStatus,jdbcType=INTEGER},
+      </if>
+      <if test="receiptMethod != null" >
+        receipt_method = #{receiptMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentType != null" >
+        payment_type = #{paymentType,jdbcType=INTEGER},
+      </if>
+      <if test="paymentUid != null" >
+        payment_uid = #{paymentUid,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="tradeNo != null" >
+        trade_no = #{tradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="actualSyncTime != null" >
+        actual_sync_time = #{actualSyncTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSend != null" >
+        is_send = #{isSend,jdbcType=INTEGER},
+      </if>
+      <if test="payTime != null" >
+        pay_time = #{payTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="runTime != null" >
+        run_time = #{runTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        modify_code = #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.ReceiptBillDetail" >
+    update t_space_receipt_bill_detail
+    set fid = #{fid,jdbcType=VARCHAR},
+      receipt_sn = #{receiptSn,jdbcType=VARCHAR},
+      bill_num = #{billNum,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      source_type = #{sourceType,jdbcType=INTEGER},
+      receipt_status = #{receiptStatus,jdbcType=INTEGER},
+      receipt_method = #{receiptMethod,jdbcType=VARCHAR},
+      payment_type = #{paymentType,jdbcType=INTEGER},
+      payment_uid = #{paymentUid,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=INTEGER},
+      trade_no = #{tradeNo,jdbcType=VARCHAR},
+      actual_sync_time = #{actualSyncTime,jdbcType=TIMESTAMP},
+      is_send = #{isSend,jdbcType=INTEGER},
+      pay_time = #{payTime,jdbcType=TIMESTAMP},
+      run_time = #{runTime,jdbcType=TIMESTAMP},
+      is_del = #{isDel,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      modify_code = #{modifyCode,jdbcType=VARCHAR},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

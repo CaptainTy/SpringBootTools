@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zry.service.chips.dao.map.FavourActivityEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zry.service.chips.entity.FavourActivityEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="bid" property="bid" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_user_id" property="createUserId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_user_id" property="lastModifyUserId" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="is_valid" property="isValid" jdbcType="INTEGER" />
+    <result column="activity_number" property="activityNumber" jdbcType="VARCHAR" />
+    <result column="activity_name" property="activityName" jdbcType="VARCHAR" />
+    <result column="start_date" property="startDate" jdbcType="INTEGER" />
+    <result column="end_date" property="endDate" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="activity_content" property="activityContent" jdbcType="VARCHAR" />
+    <result column="limit_money" property="limitMoney" jdbcType="DOUBLE" />
+    <result column="is_limit_project" property="isLimitProject" jdbcType="INTEGER" />
+    <result column="condition" property="condition" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bid, is_del, create_user_id, create_time, last_modify_user_id, last_modify_time, 
+    is_valid, activity_number, activity_name, start_date, end_date, status, activity_content, 
+    limit_money, is_limit_project, condition
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_favour_activity
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_favour_activity
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityEntity" >
+    insert into t_favour_activity (id, bid, is_del, 
+      create_user_id, create_time, last_modify_user_id, 
+      last_modify_time, is_valid, activity_number, 
+      activity_name, start_date, end_date, 
+      status, activity_content, limit_money, 
+      is_limit_project, condition)
+    values (#{id,jdbcType=INTEGER}, #{bid,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{createUserId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastModifyUserId,jdbcType=VARCHAR}, 
+      #{lastModifyTime,jdbcType=TIMESTAMP}, #{isValid,jdbcType=INTEGER}, #{activityNumber,jdbcType=VARCHAR}, 
+      #{activityName,jdbcType=VARCHAR}, #{startDate,jdbcType=INTEGER}, #{endDate,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{activityContent,jdbcType=VARCHAR}, #{limitMoney,jdbcType=DOUBLE}, 
+      #{isLimitProject,jdbcType=INTEGER}, #{condition,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityEntity" >
+    insert into t_favour_activity
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bid != null" >
+        bid,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createUserId != null" >
+        create_user_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="activityNumber != null" >
+        activity_number,
+      </if>
+      <if test="activityName != null" >
+        activity_name,
+      </if>
+      <if test="startDate != null" >
+        start_date,
+      </if>
+      <if test="endDate != null" >
+        end_date,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="activityContent != null" >
+        activity_content,
+      </if>
+      <if test="limitMoney != null" >
+        limit_money,
+      </if>
+      <if test="isLimitProject != null" >
+        is_limit_project,
+      </if>
+      <if test="condition != null" >
+        condition,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bid != null" >
+        #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="activityNumber != null" >
+        #{activityNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="activityName != null" >
+        #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        #{startDate,jdbcType=INTEGER},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="activityContent != null" >
+        #{activityContent,jdbcType=VARCHAR},
+      </if>
+      <if test="limitMoney != null" >
+        #{limitMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="isLimitProject != null" >
+        #{isLimitProject,jdbcType=INTEGER},
+      </if>
+      <if test="condition != null" >
+        #{condition,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityEntity" >
+    update t_favour_activity
+    <set >
+      <if test="bid != null" >
+        bid = #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null" >
+        is_valid = #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="activityNumber != null" >
+        activity_number = #{activityNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="activityName != null" >
+        activity_name = #{activityName,jdbcType=VARCHAR},
+      </if>
+      <if test="startDate != null" >
+        start_date = #{startDate,jdbcType=INTEGER},
+      </if>
+      <if test="endDate != null" >
+        end_date = #{endDate,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="activityContent != null" >
+        activity_content = #{activityContent,jdbcType=VARCHAR},
+      </if>
+      <if test="limitMoney != null" >
+        limit_money = #{limitMoney,jdbcType=DOUBLE},
+      </if>
+      <if test="isLimitProject != null" >
+        is_limit_project = #{isLimitProject,jdbcType=INTEGER},
+      </if>
+      <if test="condition != null" >
+        condition = #{condition,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityEntity" >
+    update t_favour_activity
+    set bid = #{bid,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_user_id = #{createUserId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      is_valid = #{isValid,jdbcType=INTEGER},
+      activity_number = #{activityNumber,jdbcType=VARCHAR},
+      activity_name = #{activityName,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=INTEGER},
+      end_date = #{endDate,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      activity_content = #{activityContent,jdbcType=VARCHAR},
+      limit_money = #{limitMoney,jdbcType=DOUBLE},
+      is_limit_project = #{isLimitProject,jdbcType=INTEGER},
+      condition = #{condition,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

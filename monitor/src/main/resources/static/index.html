@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.1, maximum-scale=.1, user-scalable=yes">
+
+    <title>消息服务</title>
+
+    <!--Bootstrap.min css-->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+    <!--Style css-->
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+
+<body class="app ">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">消息服务</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">主页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="lists.html">链接列表</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="app">
+    <div class="main-wrapper" >
+        <div class="app-content">
+            <section class="section">
+                <div class="row m-0 mt-6">
+                    <div class="col-12">
+                        <div class="card mt-3">
+                            <div class=" mb-0">
+                                <div class="row card-body">
+                                    <div class="col-md-12 row">
+
+                                        <div class="col-md-6 m-t-5 m-b-5" id="main_info_body">
+                                            <h5>消息服务基础信息:</h5>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">消息服务器ID：</span> <span class="col-9" id="server_id" style="font-size: 13px;"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">服务名：</span> <span class="col-9" id="server_name" style="font-size: 13px;"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">启动时刻：</span> <span class="col-9" id="start"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">版本号：</span> <span class="col-9" id="version"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">对外端口：</span> <span class="col-9" id="port"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">状态信息端口：</span> <span class="col-9" id="http_port"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">最大连接数：</span> <span class="col-9" id="max_connections"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">慢消费者阈值：</span> <span class="col-9" id="max_pending"></span></p>
+                                            <p class="mb-1 row"><span class="col-3 text-muted text-right">消息最大负载：</span> <span class="col-9" id="max_payload"></span></p>
+                                        </div>
+
+                                        <div class="col-md-5 m-t-5 m-b-5" id="main_history_body">
+                                            <h5>消息服务运行信息 :</h5>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息生产数量：</span> <span class="col-8" id="in_msgs"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息消费数量：</span> <span class="col-8" id="out_msgs"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息生产大小：</span> <span class="col-8" id="in_bytes"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息消费大小：</span> <span class="col-8" id="out_bytes"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息生产速度：</span> <span class="col-8" id="in_msgs_speed"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息消费速度：</span> <span class="col-8" id="out_msgs_speed"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息生产速度：</span> <span class="col-8" id="in_bytes_speed"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">消息消费速度：</span> <span class="col-8" id="out_bytes_speed"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">连接数量：</span> <span class="col-8" id="connections"></span></p>
+                                            <p class="mb-1 row"><span class="col-4 text-muted text-right">订阅者数量：</span> <span class="col-8" id="subscriptions"></span></p>
+                                        </div>
+
+                                        <div class="col-md-1 text-right">
+                                            <p>每5s自动刷新</p>
+                                            <button id="refresh" type="button" class="btn btn-sm btn-danger">暂停刷新</button>
+                                        </div>
+
+                                    </div><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class=" mb-0">
+                                <div class="row card-body">
+                                    <div class="col-12" id="drawl_client" style="height: 400px; margin: 0 auto;"></div><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class=" mb-0">
+                                <div class="row card-body">
+                                    <div class="col-12" id="drawl_msg_speed" style="height: 400px; margin: 0 auto;"></div><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class=" mb-0">
+                                <div class="row card-body">
+                                    <div class="col-12" id="drawl_bytes_speed" style="height: 400px; margin: 0 auto;"></div><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <footer class="main-footer">
+            <div class="text-center">
+                Copyright &copy;Kharna-Admin 2018. Design By<a href="https://spruko.com/"> Spruko</a>
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+<!--Jquery.min js-->
+<script src="./js/jquery.min.js"></script>
+
+<!--Bootstrap.min js-->
+<script src="./js/bootstrap.min.js"></script>
+
+<!--Echart-all js-->
+<script src="./js/echarts.min.js"></script>
+
+<!--Custom index.js-->
+<script src="./custom/index.js"></script>
+
+</body>
+</html>

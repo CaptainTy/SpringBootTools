@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zrp.performance.dao.map.IncomeCostItemConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zrp.performance.entity.IncomeCostItemConfig" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="org_fid" property="orgFid" jdbcType="VARCHAR" />
+    <result column="project_fid" property="projectFid" jdbcType="VARCHAR" />
+    <result column="project_name" property="projectName" jdbcType="VARCHAR" />
+    <result column="config_info" property="configInfo" jdbcType="VARCHAR" />
+    <result column="vesting_date" property="vestingDate" jdbcType="DATE" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, org_fid, project_fid, project_name, config_info, vesting_date, is_del
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_income_cost_item_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_income_cost_item_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemConfig" >
+    insert into t_income_cost_item_config (id, org_fid, project_fid, 
+      project_name, config_info, vesting_date, 
+      is_del)
+    values (#{id,jdbcType=INTEGER}, #{orgFid,jdbcType=VARCHAR}, #{projectFid,jdbcType=VARCHAR}, 
+      #{projectName,jdbcType=VARCHAR}, #{configInfo,jdbcType=VARCHAR}, #{vestingDate,jdbcType=DATE}, 
+      #{isDel,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemConfig" >
+    insert into t_income_cost_item_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orgFid != null" >
+        org_fid,
+      </if>
+      <if test="projectFid != null" >
+        project_fid,
+      </if>
+      <if test="projectName != null" >
+        project_name,
+      </if>
+      <if test="configInfo != null" >
+        config_info,
+      </if>
+      <if test="vestingDate != null" >
+        vesting_date,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orgFid != null" >
+        #{orgFid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectFid != null" >
+        #{projectFid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null" >
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="configInfo != null" >
+        #{configInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="vestingDate != null" >
+        #{vestingDate,jdbcType=DATE},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemConfig" >
+    update t_income_cost_item_config
+    <set >
+      <if test="orgFid != null" >
+        org_fid = #{orgFid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectFid != null" >
+        project_fid = #{projectFid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null" >
+        project_name = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="configInfo != null" >
+        config_info = #{configInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="vestingDate != null" >
+        vesting_date = #{vestingDate,jdbcType=DATE},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zrp.performance.entity.IncomeCostItemConfig" >
+    update t_income_cost_item_config
+    set org_fid = #{orgFid,jdbcType=VARCHAR},
+      project_fid = #{projectFid,jdbcType=VARCHAR},
+      project_name = #{projectName,jdbcType=VARCHAR},
+      config_info = #{configInfo,jdbcType=VARCHAR},
+      vesting_date = #{vestingDate,jdbcType=DATE},
+      is_del = #{isDel,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

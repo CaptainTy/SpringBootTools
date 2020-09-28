@@ -1,0 +1,3815 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zhumo.dao.map.AfterAssessmentReportEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zhumo.entity.AfterAssessmentReportEntity" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <id column="period" property="period" jdbcType="VARCHAR" />
+    <result column="hire_contract_code" property="hireContractCode" jdbcType="VARCHAR" />
+    <result column="business_line_code" property="businessLineCode" jdbcType="VARCHAR" />
+    <result column="business_line_name" property="businessLineName" jdbcType="VARCHAR" />
+    <result column="product_code" property="productCode" jdbcType="VARCHAR" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="product_line_id" property="productLineId" jdbcType="VARCHAR" />
+    <result column="product_line" property="productLine" jdbcType="VARCHAR" />
+    <result column="product_version_id" property="productVersionId" jdbcType="VARCHAR" />
+    <result column="product_version" property="productVersion" jdbcType="VARCHAR" />
+    <result column="month" property="month" jdbcType="VARCHAR" />
+    <result column="city_code" property="cityCode" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="war_zone_code" property="warZoneCode" jdbcType="VARCHAR" />
+    <result column="war_zone" property="warZone" jdbcType="VARCHAR" />
+    <result column="region_code" property="regionCode" jdbcType="VARCHAR" />
+    <result column="region" property="region" jdbcType="VARCHAR" />
+    <result column="business_group_code" property="businessGroupCode" jdbcType="VARCHAR" />
+    <result column="business_group" property="businessGroup" jdbcType="VARCHAR" />
+    <result column="resblock_id" property="resblockId" jdbcType="VARCHAR" />
+    <result column="resblock_name" property="resblockName" jdbcType="VARCHAR" />
+    <result column="rent_type" property="rentType" jdbcType="VARCHAR" />
+    <result column="hire_channel" property="hireChannel" jdbcType="VARCHAR" />
+    <result column="finished_level_id" property="finishedLevelId" jdbcType="VARCHAR" />
+    <result column="finished_level" property="finishedLevel" jdbcType="VARCHAR" />
+    <result column="dispose_bedroom_amount" property="disposeBedroomAmount" jdbcType="INTEGER" />
+    <result column="dispose_bedroom_desc" property="disposeBedroomDesc" jdbcType="VARCHAR" />
+    <result column="hold_days" property="holdDays" jdbcType="INTEGER" />
+    <result column="hold_days_segment" property="holdDaysSegment" jdbcType="VARCHAR" />
+    <result column="amount_of_housing_in_this_period" property="amountOfHousingInThisPeriod" jdbcType="DOUBLE" />
+    <result column="amount_of_housing_in_this_issue" property="amountOfHousingInThisIssue" jdbcType="DOUBLE" />
+    <result column="months_in_rent" property="monthsInRent" jdbcType="DOUBLE" />
+    <result column="months_between_listings" property="monthsBetweenListings" jdbcType="DOUBLE" />
+    <result column="single_quantity" property="singleQuantity" jdbcType="DOUBLE" />
+    <result column="gmv" property="gmv" jdbcType="DOUBLE" />
+    <result column="revenue_before_deduction" property="revenueBeforeDeduction" jdbcType="DOUBLE" />
+    <result column="relief" property="relief" jdbcType="DOUBLE" />
+    <result column="revenue_after_deduction" property="revenueAfterDeduction" jdbcType="DOUBLE" />
+    <result column="owner_income" property="ownerIncome" jdbcType="DOUBLE" />
+    <result column="rent_income" property="rentIncome" jdbcType="DOUBLE" />
+    <result column="rent_expenses" property="rentExpenses" jdbcType="DOUBLE" />
+    <result column="service_fee_income" property="serviceFeeIncome" jdbcType="DOUBLE" />
+    <result column="out_of_service_service_fee" property="outOfServiceServiceFee" jdbcType="DOUBLE" />
+    <result column="sublease_service_fee" property="subleaseServiceFee" jdbcType="DOUBLE" />
+    <result column="liquidated_damages" property="liquidatedDamages" jdbcType="DOUBLE" />
+    <result column="owner_cancellation" property="ownerCancellation" jdbcType="DOUBLE" />
+    <result column="liquidated_damages1" property="liquidatedDamages1" jdbcType="DOUBLE" />
+    <result column="other_operating_income" property="otherOperatingIncome" jdbcType="DOUBLE" />
+    <result column="other_business_income_commodity_sales" property="otherBusinessIncomeCommoditySales" jdbcType="DOUBLE" />
+    <result column="other_business_income_direct_rent_decoration" property="otherBusinessIncomeDirectRentDecoration" jdbcType="DOUBLE" />
+    <result column="other_business_income_fee" property="otherBusinessIncomeFee" jdbcType="DOUBLE" />
+    <result column="other_business_income_compensation" property="otherBusinessIncomeCompensation" jdbcType="DOUBLE" />
+    <result column="other_business_income_other" property="otherBusinessIncomeOther" jdbcType="DOUBLE" />
+    <result column="other_business_line_income" property="otherBusinessLineIncome" jdbcType="DOUBLE" />
+    <result column="platform_service_fee_cleaning" property="platformServiceFeeCleaning" jdbcType="DOUBLE" />
+    <result column="platform_service_fee_moving" property="platformServiceFeeMoving" jdbcType="DOUBLE" />
+    <result column="platform_service_fee_home_repair" property="platformServiceFeeHomeRepair" jdbcType="DOUBLE" />
+    <result column="platform_service_fee_excellent_products" property="platformServiceFeeExcellentProducts" jdbcType="DOUBLE" />
+    <result column="platform_service_fee_homestay" property="platformServiceFeeHomestay" jdbcType="DOUBLE" />
+    <result column="excellent_product_self_employed" property="excellentProductSelfEmployed" jdbcType="DOUBLE" />
+    <result column="home_repair" property="homeRepair" jdbcType="DOUBLE" />
+    <result column="home_improvement" property="homeImprovement" jdbcType="DOUBLE" />
+    <result column="financial_service_fee_income" property="financialServiceFeeIncome" jdbcType="DOUBLE" />
+    <result column="variable_costs" property="variableCosts" jdbcType="DOUBLE" />
+    <result column="configuration_cost_engineering_cost" property="configurationCostEngineeringCost" jdbcType="DOUBLE" />
+    <result column="new_housing_allocation_cost" property="newHousingAllocationCost" jdbcType="DOUBLE" />
+    <result column="lease_configuration_cost" property="leaseConfigurationCost" jdbcType="DOUBLE" />
+    <result column="withdrawal_configuration_cost" property="withdrawalConfigurationCost" jdbcType="DOUBLE" />
+    <result column="sublease_configuration_cost" property="subleaseConfigurationCost" jdbcType="DOUBLE" />
+    <result column="release_configuration_cost" property="releaseConfigurationCost" jdbcType="DOUBLE" />
+    <result column="for_rent_lease_configuration_cost" property="forRentLeaseConfigurationCost" jdbcType="DOUBLE" />
+    <result column="renewal_configuration_cost" property="renewalConfigurationCost" jdbcType="DOUBLE" />
+    <result column="nc_direct_rent_renovation_cost" property="ncDirectRentRenovationCost" jdbcType="DOUBLE" />
+    <result column="direct_renting_cost" property="directRentingCost" jdbcType="DOUBLE" />
+    <result column="performance_pay" property="performancePay" jdbcType="DOUBLE" />
+    <result column="housekeeper" property="housekeeper" jdbcType="DOUBLE" />
+    <result column="free_to_offer_housekeeper" property="freeToOfferHousekeeper" jdbcType="DOUBLE" />
+    <result column="bonus_housekeeper" property="bonusHousekeeper" jdbcType="DOUBLE" />
+    <result column="configuration" property="configuration" jdbcType="DOUBLE" />
+    <result column="free_to_commission_configuration" property="freeToCommissionConfiguration" jdbcType="DOUBLE" />
+    <result column="bonus_configuration" property="bonusConfiguration" jdbcType="DOUBLE" />
+    <result column="cleaning_cost" property="cleaningCost" jdbcType="DOUBLE" />
+    <result column="biweekly_monthly_cleaning" property="biweeklyMonthlyCleaning" jdbcType="DOUBLE" />
+    <result column="free_depth_cleaning_costs" property="freeDepthCleaningCosts" jdbcType="DOUBLE" />
+    <result column="withdrawal_and_cleaning" property="withdrawalAndCleaning" jdbcType="DOUBLE" />
+    <result column="wasteland_cleaning" property="wastelandCleaning" jdbcType="DOUBLE" />
+    <result column="killing_and_cleaning" property="killingAndCleaning" jdbcType="DOUBLE" />
+    <result column="return_as_it_is" property="returnAsItIs" jdbcType="DOUBLE" />
+    <result column="emergency_cleaning" property="emergencyCleaning" jdbcType="DOUBLE" />
+    <result column="return_as_it_is1" property="returnAsItIs1" jdbcType="DOUBLE" />
+    <result column="cleaning_after_repair" property="cleaningAfterRepair" jdbcType="DOUBLE" />
+    <result column="daily_cleaning" property="dailyCleaning" jdbcType="DOUBLE" />
+    <result column="maintenance_costs" property="maintenanceCosts" jdbcType="DOUBLE" />
+    <result column="long_term_maintenance_fee" property="longTermMaintenanceFee" jdbcType="DOUBLE" />
+    <result column="maintenance_fund_expenditure" property="maintenanceFundExpenditure" jdbcType="DOUBLE" />
+    <result column="channel_commission" property="channelCommission" jdbcType="DOUBLE" />
+    <result column="channel_cost" property="channelCost" jdbcType="DOUBLE" />
+    <result column="outbound_channel_commission" property="outboundChannelCommission" jdbcType="DOUBLE" />
+    <result column="house_channel_commission" property="houseChannelCommission" jdbcType="DOUBLE" />
+    <result column="quality_cost" property="qualityCost" jdbcType="DOUBLE" />
+    <result column="withholding_service_fee" property="withholdingServiceFee" jdbcType="DOUBLE" />
+    <result column="friends_property_insurance" property="friendsPropertyInsurance" jdbcType="DOUBLE" />
+    <result column="air_treatment_cost" property="airTreatmentCost" jdbcType="DOUBLE" />
+    <result column="air_quality_testing_cost" property="airQualityTestingCost" jdbcType="DOUBLE" />
+    <result column="material_testing_fee" property="materialTestingFee" jdbcType="DOUBLE" />
+    <result column="owner_rent_invoice_tax" property="ownerRentInvoiceTax" jdbcType="DOUBLE" />
+    <result column="other_business_line_variable_costs" property="otherBusinessLineVariableCosts" jdbcType="DOUBLE" />
+    <result column="marginal_revenue" property="marginalRevenue" jdbcType="DOUBLE" />
+    <result column="fixed_cost" property="fixedCost" jdbcType="DOUBLE" />
+    <result column="basic_wage" property="basicWage" jdbcType="DOUBLE" />
+    <result column="basic_salary_housekeeper" property="basicSalaryHousekeeper" jdbcType="DOUBLE" />
+    <result column="social_insurance_housekeeper" property="socialInsuranceHousekeeper" jdbcType="DOUBLE" />
+    <result column="housing_provident_fund_housekeeper" property="housingProvidentFundHousekeeper" jdbcType="DOUBLE" />
+    <result column="basic_salary_configuration" property="basicSalaryConfiguration" jdbcType="DOUBLE" />
+    <result column="social_insurance_configuration" property="socialInsuranceConfiguration" jdbcType="DOUBLE" />
+    <result column="housing_provident_fund_configuration" property="housingProvidentFundConfiguration" jdbcType="DOUBLE" />
+    <result column="workstation_investment_and_operating_costs" property="workstationInvestmentAndOperatingCosts" jdbcType="DOUBLE" />
+    <result column="workstation_investment_cost" property="workstationInvestmentCost" jdbcType="DOUBLE" />
+    <result column="workstation_decoration" property="workstationDecoration" jdbcType="DOUBLE" />
+    <result column="workstation_office_furniture" property="workstationOfficeFurniture" jdbcType="DOUBLE" />
+    <result column="workstation_computer_equipment" property="workstationComputerEquipment" jdbcType="DOUBLE" />
+    <result column="workstation_office_equipment" property="workstationOfficeEquipment" jdbcType="DOUBLE" />
+    <result column="workstation_it_accessories" property="workstationItAccessories" jdbcType="DOUBLE" />
+    <result column="workstation_environment_softcover" property="workstationEnvironmentSoftcover" jdbcType="DOUBLE" />
+    <result column="workstation_firefighting_supplies" property="workstationFirefightingSupplies" jdbcType="DOUBLE" />
+    <result column="workstation_equipment_rental_service_fee" property="workstationEquipmentRentalServiceFee" jdbcType="DOUBLE" />
+    <result column="workstation_channel_commission" property="workstationChannelCommission" jdbcType="DOUBLE" />
+    <result column="workstation_operating_costs" property="workstationOperatingCosts" jdbcType="DOUBLE" />
+    <result column="workstation_rent" property="workstationRent" jdbcType="DOUBLE" />
+    <result column="workstation_phone_fee" property="workstationPhoneFee" jdbcType="DOUBLE" />
+    <result column="workstation_water_fee" property="workstationWaterFee" jdbcType="DOUBLE" />
+    <result column="workstation_electricity_fee" property="workstationElectricityFee" jdbcType="DOUBLE" />
+    <result column="workstation_gas_fee" property="workstationGasFee" jdbcType="DOUBLE" />
+    <result column="workstation_heating_property_fee" property="workstationHeatingPropertyFee" jdbcType="DOUBLE" />
+    <result column="workstation_printing" property="workstationPrinting" jdbcType="DOUBLE" />
+    <result column="workstation_cleaning_cost" property="workstationCleaningCost" jdbcType="DOUBLE" />
+    <result column="workstation_network_fee" property="workstationNetworkFee" jdbcType="DOUBLE" />
+    <result column="workstation_printing_supplies" property="workstationPrintingSupplies" jdbcType="DOUBLE" />
+    <result column="workstation_drinking_water" property="workstationDrinkingWater" jdbcType="DOUBLE" />
+    <result column="workstation_office_supplies" property="workstationOfficeSupplies" jdbcType="DOUBLE" />
+    <result column="workstation_repair_costs" property="workstationRepairCosts" jdbcType="DOUBLE" />
+    <result column="workstation_handling_fee" property="workstationHandlingFee" jdbcType="DOUBLE" />
+    <result column="workstation_channel_commission1" property="workstationChannelCommission1" jdbcType="DOUBLE" />
+    <result column="other_operating_costs" property="otherOperatingCosts" jdbcType="DOUBLE" />
+    <result column="liquidated_damages_cost" property="liquidatedDamagesCost" jdbcType="DOUBLE" />
+    <result column="owner_compensation" property="ownerCompensation" jdbcType="DOUBLE" />
+    <result column="security_incident_handling_fee" property="securityIncidentHandlingFee" jdbcType="DOUBLE" />
+    <result column="administrative_penalties" property="administrativePenalties" jdbcType="DOUBLE" />
+    <result column="other_business_costs_other" property="otherBusinessCostsOther" jdbcType="DOUBLE" />
+    <result column="fixed_cost_of_other_lines_of_business" property="fixedCostOfOtherLinesOfBusiness" jdbcType="DOUBLE" />
+    <result column="operating_gross_profit" property="operatingGrossProfit" jdbcType="DOUBLE" />
+    <result column="marketing_costs" property="marketingCosts" jdbcType="DOUBLE" />
+    <result column="marketing_labor_cost" property="marketingLaborCost" jdbcType="DOUBLE" />
+    <result column="basic_salary_marketer" property="basicSalaryMarketer" jdbcType="DOUBLE" />
+    <result column="performance_paymarketer" property="performancePaymarketer" jdbcType="DOUBLE" />
+    <result column="bonus_marketer" property="bonusMarketer" jdbcType="DOUBLE" />
+    <result column="housing_provident_fund_marketers" property="housingProvidentFundMarketers" jdbcType="DOUBLE" />
+    <result column="social_insurance_marketing_staff" property="socialInsuranceMarketingStaff" jdbcType="DOUBLE" />
+    <result column="precision_marketing_expenses" property="precisionMarketingExpenses" jdbcType="DOUBLE" />
+    <result column="sem_construction" property="semConstruction" jdbcType="DOUBLE" />
+    <result column="app_promotion" property="appPromotion" jdbcType="DOUBLE" />
+    <result column="network_port_fee" property="networkPortFee" jdbcType="DOUBLE" />
+    <result column="brand_marketing_expenses" property="brandMarketingExpenses" jdbcType="DOUBLE" />
+    <result column="client_marketing_expenses" property="clientMarketingExpenses" jdbcType="DOUBLE" />
+    <result column="customer_user_operation" property="customerUserOperation" jdbcType="DOUBLE" />
+    <result column="customer_business_operations" property="customerBusinessOperations" jdbcType="DOUBLE" />
+    <result column="customer_brand_marketing" property="customerBrandMarketing" jdbcType="DOUBLE" />
+    <result column="customer_product_operation" property="customerProductOperation" jdbcType="DOUBLE" />
+    <result column="ownership_marketing_expenses" property="ownershipMarketingExpenses" jdbcType="DOUBLE" />
+    <result column="owner_user_operation" property="ownerUserOperation" jdbcType="DOUBLE" />
+    <result column="owner_business_operations" property="ownerBusinessOperations" jdbcType="DOUBLE" />
+    <result column="owner_brand_marketing" property="ownerBrandMarketing" jdbcType="DOUBLE" />
+    <result column="owner_product_operation" property="ownerProductOperation" jdbcType="DOUBLE" />
+    <result column="discount_reduction" property="discountReduction" jdbcType="DOUBLE" />
+    <result column="marketing_expenses_other" property="marketingExpensesOther" jdbcType="DOUBLE" />
+    <result column="functional_expenses" property="functionalExpenses" jdbcType="DOUBLE" />
+    <result column="functional_labor_cost" property="functionalLaborCost" jdbcType="DOUBLE" />
+    <result column="basic_salary_functional_staff" property="basicSalaryFunctionalStaff" jdbcType="DOUBLE" />
+    <result column="performance_payroll_functional_staff" property="performancePayrollFunctionalStaff" jdbcType="DOUBLE" />
+    <result column="bonus_functional_staff" property="bonusFunctionalStaff" jdbcType="DOUBLE" />
+    <result column="housing_provident_fund_functional_staff" property="housingProvidentFundFunctionalStaff" jdbcType="DOUBLE" />
+    <result column="social_insurance_functional_staff" property="socialInsuranceFunctionalStaff" jdbcType="DOUBLE" />
+    <result column="monetary_compensation" property="monetaryCompensation" jdbcType="DOUBLE" />
+    <result column="functional_temporary_labor_costs" property="functionalTemporaryLaborCosts" jdbcType="DOUBLE" />
+    <result column="administrative_costs" property="administrativeCosts" jdbcType="DOUBLE" />
+    <result column="functional_rent" property="functionalRent" jdbcType="DOUBLE" />
+    <result column="functional_heating_property_fee" property="functionalHeatingPropertyFee" jdbcType="DOUBLE" />
+    <result column="functional_office_furniture" property="functionalOfficeFurniture" jdbcType="DOUBLE" />
+    <result column="main_decoration" property="mainDecoration" jdbcType="DOUBLE" />
+    <result column="equipment_maintenance_fee" property="equipmentMaintenanceFee" jdbcType="DOUBLE" />
+    <result column="repair_material_fee" property="repairMaterialFee" jdbcType="DOUBLE" />
+    <result column="repair_labor_costs" property="repairLaborCosts" jdbcType="DOUBLE" />
+    <result column="equipment_property_insurance" property="equipmentPropertyInsurance" jdbcType="DOUBLE" />
+    <result column="functional_environment" property="functionalEnvironment" jdbcType="DOUBLE" />
+    <result column="functional_equipment_rental_service_fee" property="functionalEquipmentRentalServiceFee" jdbcType="DOUBLE" />
+    <result column="function_washing_carpet_fee" property="functionWashingCarpetFee" jdbcType="DOUBLE" />
+    <result column="network_fee" property="networkFee" jdbcType="DOUBLE" />
+    <result column="functional_water_fee" property="functionalWaterFee" jdbcType="DOUBLE" />
+    <result column="functional_electricity_fee" property="functionalElectricityFee" jdbcType="DOUBLE" />
+    <result column="functional_cleaning_fee" property="functionalCleaningFee" jdbcType="DOUBLE" />
+    <result column="functional_drinking_water" property="functionalDrinkingWater" jdbcType="DOUBLE" />
+    <result column="office_expenses" property="officeExpenses" jdbcType="DOUBLE" />
+    <result column="functional_office_supplies" property="functionalOfficeSupplies" jdbcType="DOUBLE" />
+    <result column="courier_fee" property="courierFee" jdbcType="DOUBLE" />
+    <result column="functional_office_miscellaneous_fees" property="functionalOfficeMiscellaneousFees" jdbcType="DOUBLE" />
+    <result column="functional_it_accessories" property="functionalItAccessories" jdbcType="DOUBLE" />
+    <result column="functional_telephone_fee" property="functionalTelephoneFee" jdbcType="DOUBLE" />
+    <result column="transportation" property="transportation" jdbcType="DOUBLE" />
+    <result column="functional_printing" property="functionalPrinting" jdbcType="DOUBLE" />
+    <result column="company_license_processing_and_annual_inspection" property="companyLicenseProcessingAndAnnualInspection" jdbcType="DOUBLE" />
+    <result column="warehousing_fee" property="warehousingFee" jdbcType="DOUBLE" />
+    <result column="computer_equipment" property="computerEquipment" jdbcType="DOUBLE" />
+    <result column="other_functions_depreciation_and_amortization" property="otherFunctionsDepreciationAndAmortization" jdbcType="DOUBLE" />
+    <result column="training_fee" property="trainingFee" jdbcType="DOUBLE" />
+    <result column="training_fees" property="trainingFees" jdbcType="DOUBLE" />
+    <result column="erudition" property="erudition" jdbcType="DOUBLE" />
+    <result column="lecturer_team_building" property="lecturerTeamBuilding" jdbcType="DOUBLE" />
+    <result column="training_implementation_fee" property="trainingImplementationFee" jdbcType="DOUBLE" />
+    <result column="course_development_fee" property="courseDevelopmentFee" jdbcType="DOUBLE" />
+    <result column="departmental_training_fee" property="departmentalTrainingFee" jdbcType="DOUBLE" />
+    <result column="recruitment_fee" property="recruitmentFee" jdbcType="DOUBLE" />
+    <result column="online_recruitment_fee" property="onlineRecruitmentFee" jdbcType="DOUBLE" />
+    <result column="campus_recruitment_offline" property="campusRecruitmentOffline" jdbcType="DOUBLE" />
+    <result column="recruitment_fee_headhunting_fee" property="recruitmentFeeHeadhuntingFee" jdbcType="DOUBLE" />
+    <result column="recruitment_fee_internal_recommendation" property="recruitmentFeeInternalRecommendation" jdbcType="DOUBLE" />
+    <result column="cultural_construction_and_welfare_costs" property="culturalConstructionAndWelfareCosts" jdbcType="DOUBLE" />
+    <result column="humanities_culture_construction_fee" property="humanitiesCultureConstructionFee" jdbcType="DOUBLE" />
+    <result column="employee_education_expenses" property="employeeEducationExpenses" jdbcType="DOUBLE" />
+    <result column="book_data_fee" property="bookDataFee" jdbcType="DOUBLE" />
+    <result column="executive_welfare_fee" property="executiveWelfareFee" jdbcType="DOUBLE" />
+    <result column="company_welfare_expenses" property="companyWelfareExpenses" jdbcType="DOUBLE" />
+    <result column="supplementary_medical_insurance" property="supplementaryMedicalInsurance" jdbcType="DOUBLE" />
+    <result column="medical_examination_fee" property="medicalExaminationFee" jdbcType="DOUBLE" />
+    <result column="expand_team_building_fees" property="expandTeamBuildingFees" jdbcType="DOUBLE" />
+    <result column="company_team_building_fee" property="companyTeamBuildingFee" jdbcType="DOUBLE" />
+    <result column="daily_expenses" property="dailyExpenses" jdbcType="DOUBLE" />
+    <result column="overtime_meal_pay" property="overtimeMealPay" jdbcType="DOUBLE" />
+    <result column="transportation_fee" property="transportationFee" jdbcType="DOUBLE" />
+    <result column="business_handling_transportation_fee" property="businessHandlingTransportationFee" jdbcType="DOUBLE" />
+    <result column="travel_expenses" property="travelExpenses" jdbcType="DOUBLE" />
+    <result column="communication_fee" property="communicationFee" jdbcType="DOUBLE" />
+    <result column="internal_meeting_fee" property="internalMeetingFee" jdbcType="DOUBLE" />
+    <result column="external_conference_fee" property="externalConferenceFee" jdbcType="DOUBLE" />
+    <result column="social_interaction_fee" property="socialInteractionFee" jdbcType="DOUBLE" />
+    <result column="function_center_team_construction_fee" property="functionCenterTeamConstructionFee" jdbcType="DOUBLE" />
+    <result column="business_center_team_building_fee" property="businessCenterTeamBuildingFee" jdbcType="DOUBLE" />
+    <result column="functional_tooling_fee" property="functionalToolingFee" jdbcType="DOUBLE" />
+    <result column="business_tooling_fee" property="businessToolingFee" jdbcType="DOUBLE" />
+    <result column="consulting_service_fee" property="consultingServiceFee" jdbcType="DOUBLE" />
+    <result column="consulting_service_fee1" property="consultingServiceFee1" jdbcType="DOUBLE" />
+    <result column="trademark_registration_fee" property="trademarkRegistrationFee" jdbcType="DOUBLE" />
+    <result column="litigation_case_fee" property="litigationCaseFee" jdbcType="DOUBLE" />
+    <result column="lawyer_service_fee" property="lawyerServiceFee" jdbcType="DOUBLE" />
+    <result column="product_development_fee" property="productDevelopmentFee" jdbcType="DOUBLE" />
+    <result column="incentive_fee" property="incentiveFee" jdbcType="DOUBLE" />
+    <result column="quality_incentive" property="qualityIncentive" jdbcType="DOUBLE" />
+    <result column="supplier_incentive" property="supplierIncentive" jdbcType="DOUBLE" />
+    <result column="hpc_activity_fee" property="hpcActivityFee" jdbcType="DOUBLE" />
+    <result column="team_incentive_fee" property="teamIncentiveFee" jdbcType="DOUBLE" />
+    <result column="functional_expenses_other" property="functionalExpensesOther" jdbcType="DOUBLE" />
+    <result column="research_and_development_expenses" property="researchAndDevelopmentExpenses" jdbcType="DOUBLE" />
+    <result column="rd_labor_costs" property="rdLaborCosts" jdbcType="DOUBLE" />
+    <result column="basic_salary_rd_personnel" property="basicSalaryRdPersonnel" jdbcType="DOUBLE" />
+    <result column="performance_salary_rd_personnel" property="performanceSalaryRdPersonnel" jdbcType="DOUBLE" />
+    <result column="bonus_rd_staff" property="bonusRdStaff" jdbcType="DOUBLE" />
+    <result column="housing_provident_fund_rd_personnel" property="housingProvidentFundRdPersonnel" jdbcType="DOUBLE" />
+    <result column="social_insurance_rd_personnel" property="socialInsuranceRdPersonnel" jdbcType="DOUBLE" />
+    <result column="system_implementation_service_fee" property="systemImplementationServiceFee" jdbcType="DOUBLE" />
+    <result column="system_service_fee" property="systemServiceFee" jdbcType="DOUBLE" />
+    <result column="system_implementation_fee" property="systemImplementationFee" jdbcType="DOUBLE" />
+    <result column="sms_platform_information_fee" property="smsPlatformInformationFee" jdbcType="DOUBLE" />
+    <result column="machine_room_and_equipment_costs" property="machineRoomAndEquipmentCosts" jdbcType="DOUBLE" />
+    <result column="idc_hosting_fee" property="idcHostingFee" jdbcType="DOUBLE" />
+    <result column="communication_equipment" property="communicationEquipment" jdbcType="DOUBLE" />
+    <result column="safety_equipment" property="safetyEquipment" jdbcType="DOUBLE" />
+    <result column="storage_device" property="storageDevice" jdbcType="DOUBLE" />
+    <result column="server" property="server" jdbcType="DOUBLE" />
+    <result column="network_equipment" property="networkEquipment" jdbcType="DOUBLE" />
+    <result column="software" property="software" jdbcType="DOUBLE" />
+    <result column="other_depreciation_and_amortization" property="otherDepreciationAndAmortization" jdbcType="DOUBLE" />
+    <result column="financial_expenses" property="financialExpenses" jdbcType="DOUBLE" />
+    <result column="business_tax_and_surcharges" property="businessTaxAndSurcharges" jdbcType="DOUBLE" />
+    <result column="asset_impairment_loss" property="assetImpairmentLoss" jdbcType="DOUBLE" />
+    <result column="investment_gains_and_losses" property="investmentGainsAndLosses" jdbcType="DOUBLE" />
+    <result column="operating_profit" property="operatingProfit" jdbcType="DOUBLE" />
+    <result column="net_nonoperating_income_and_expenses" property="netNonoperatingIncomeAndExpenses" jdbcType="DOUBLE" />
+    <result column="nonoperating_income" property="nonoperatingIncome" jdbcType="DOUBLE" />
+    <result column="operating_expenses" property="operatingExpenses" jdbcType="DOUBLE" />
+    <result column="total_profit" property="totalProfit" jdbcType="DOUBLE" />
+    <result column="income_tax_expense" property="incomeTaxExpense" jdbcType="DOUBLE" />
+    <result column="net_profit_before_apportionment" property="netProfitBeforeApportionment" jdbcType="DOUBLE" />
+    <result column="total_apportionment" property="totalApportionment" jdbcType="DOUBLE" />
+    <result column="business_line_allocation" property="businessLineAllocation" jdbcType="DOUBLE" />
+    <result column="business_line_allocation_rd_allocation" property="businessLineAllocationRdAllocation" jdbcType="DOUBLE" />
+    <result column="business_line_allocation_marketing_allocation" property="businessLineAllocationMarketingAllocation" jdbcType="DOUBLE" />
+    <result column="business_line_allocation_function_allocation" property="businessLineAllocationFunctionAllocation" jdbcType="DOUBLE" />
+    <result column="group_sharing" property="groupSharing" jdbcType="DOUBLE" />
+    <result column="group_apportionment_rd_allocation" property="groupApportionmentRdAllocation" jdbcType="DOUBLE" />
+    <result column="group_allocation_marketing_allocation" property="groupAllocationMarketingAllocation" jdbcType="DOUBLE" />
+    <result column="group_apportionment_function_allocation" property="groupApportionmentFunctionAllocation" jdbcType="DOUBLE" />
+    <result column="net_profit_after_apportionment" property="netProfitAfterApportionment" jdbcType="DOUBLE" />
+    <result column="assessed_amount" property="assessedAmount" jdbcType="DOUBLE" />
+    <result column="repair_service_fee" property="repairServiceFee" jdbcType="DOUBLE" />
+    <result column="operating_cost" property="operatingCost" jdbcType="DOUBLE" />
+    <result column="direct_labor_cost" property="directLaborCost" jdbcType="DOUBLE" />
+    <result column="hold_num" property="holdNum" jdbcType="DOUBLE" />
+    <result column="hold_num_days" property="holdNumDays" jdbcType="DOUBLE" />
+    <result column="calculated_hold_num" property="calculatedHoldNum" jdbcType="DOUBLE" />
+    <result column="calculated_hold_num_days" property="calculatedHoldNumDays" jdbcType="DOUBLE" />
+    <result column="commendation_cost" property="commendationCost" jdbcType="DOUBLE" />
+    <result column="construction_cost" property="constructionCost" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, period, hire_contract_code, business_line_code, business_line_name, product_code, 
+    product_name, product_line_id, product_line, product_version_id, product_version, 
+    month, city_code, city, war_zone_code, war_zone, region_code, region, business_group_code, 
+    business_group, resblock_id, resblock_name, rent_type, hire_channel, finished_level_id, 
+    finished_level, dispose_bedroom_amount, dispose_bedroom_desc, hold_days, hold_days_segment, 
+    amount_of_housing_in_this_period, amount_of_housing_in_this_issue, months_in_rent, 
+    months_between_listings, single_quantity, gmv, revenue_before_deduction, relief, 
+    revenue_after_deduction, owner_income, rent_income, rent_expenses, service_fee_income, 
+    out_of_service_service_fee, sublease_service_fee, liquidated_damages, owner_cancellation, 
+    liquidated_damages1, other_operating_income, other_business_income_commodity_sales, 
+    other_business_income_direct_rent_decoration, other_business_income_fee, other_business_income_compensation, 
+    other_business_income_other, other_business_line_income, platform_service_fee_cleaning, 
+    platform_service_fee_moving, platform_service_fee_home_repair, platform_service_fee_excellent_products, 
+    platform_service_fee_homestay, excellent_product_self_employed, home_repair, home_improvement, 
+    financial_service_fee_income, variable_costs, configuration_cost_engineering_cost, 
+    new_housing_allocation_cost, lease_configuration_cost, withdrawal_configuration_cost, 
+    sublease_configuration_cost, release_configuration_cost, for_rent_lease_configuration_cost, 
+    renewal_configuration_cost, nc_direct_rent_renovation_cost, direct_renting_cost, 
+    performance_pay, housekeeper, free_to_offer_housekeeper, bonus_housekeeper, configuration, 
+    free_to_commission_configuration, bonus_configuration, cleaning_cost, biweekly_monthly_cleaning, 
+    free_depth_cleaning_costs, withdrawal_and_cleaning, wasteland_cleaning, killing_and_cleaning, 
+    return_as_it_is, emergency_cleaning, return_as_it_is1, cleaning_after_repair, daily_cleaning, 
+    maintenance_costs, long_term_maintenance_fee, maintenance_fund_expenditure, channel_commission, 
+    channel_cost, outbound_channel_commission, house_channel_commission, quality_cost, 
+    withholding_service_fee, friends_property_insurance, air_treatment_cost, air_quality_testing_cost, 
+    material_testing_fee, owner_rent_invoice_tax, other_business_line_variable_costs, 
+    marginal_revenue, fixed_cost, basic_wage, basic_salary_housekeeper, social_insurance_housekeeper, 
+    housing_provident_fund_housekeeper, basic_salary_configuration, social_insurance_configuration, 
+    housing_provident_fund_configuration, workstation_investment_and_operating_costs, 
+    workstation_investment_cost, workstation_decoration, workstation_office_furniture, 
+    workstation_computer_equipment, workstation_office_equipment, workstation_it_accessories, 
+    workstation_environment_softcover, workstation_firefighting_supplies, workstation_equipment_rental_service_fee, 
+    workstation_channel_commission, workstation_operating_costs, workstation_rent, workstation_phone_fee, 
+    workstation_water_fee, workstation_electricity_fee, workstation_gas_fee, workstation_heating_property_fee, 
+    workstation_printing, workstation_cleaning_cost, workstation_network_fee, workstation_printing_supplies, 
+    workstation_drinking_water, workstation_office_supplies, workstation_repair_costs, 
+    workstation_handling_fee, workstation_channel_commission1, other_operating_costs, 
+    liquidated_damages_cost, owner_compensation, security_incident_handling_fee, administrative_penalties, 
+    other_business_costs_other, fixed_cost_of_other_lines_of_business, operating_gross_profit, 
+    marketing_costs, marketing_labor_cost, basic_salary_marketer, performance_paymarketer, 
+    bonus_marketer, housing_provident_fund_marketers, social_insurance_marketing_staff, 
+    precision_marketing_expenses, sem_construction, app_promotion, network_port_fee, 
+    brand_marketing_expenses, client_marketing_expenses, customer_user_operation, customer_business_operations, 
+    customer_brand_marketing, customer_product_operation, ownership_marketing_expenses, 
+    owner_user_operation, owner_business_operations, owner_brand_marketing, owner_product_operation, 
+    discount_reduction, marketing_expenses_other, functional_expenses, functional_labor_cost, 
+    basic_salary_functional_staff, performance_payroll_functional_staff, bonus_functional_staff, 
+    housing_provident_fund_functional_staff, social_insurance_functional_staff, monetary_compensation, 
+    functional_temporary_labor_costs, administrative_costs, functional_rent, functional_heating_property_fee, 
+    functional_office_furniture, main_decoration, equipment_maintenance_fee, repair_material_fee, 
+    repair_labor_costs, equipment_property_insurance, functional_environment, functional_equipment_rental_service_fee, 
+    function_washing_carpet_fee, network_fee, functional_water_fee, functional_electricity_fee, 
+    functional_cleaning_fee, functional_drinking_water, office_expenses, functional_office_supplies, 
+    courier_fee, functional_office_miscellaneous_fees, functional_it_accessories, functional_telephone_fee, 
+    transportation, functional_printing, company_license_processing_and_annual_inspection, 
+    warehousing_fee, computer_equipment, other_functions_depreciation_and_amortization, 
+    training_fee, training_fees, erudition, lecturer_team_building, training_implementation_fee, 
+    course_development_fee, departmental_training_fee, recruitment_fee, online_recruitment_fee, 
+    campus_recruitment_offline, recruitment_fee_headhunting_fee, recruitment_fee_internal_recommendation, 
+    cultural_construction_and_welfare_costs, humanities_culture_construction_fee, employee_education_expenses, 
+    book_data_fee, executive_welfare_fee, company_welfare_expenses, supplementary_medical_insurance, 
+    medical_examination_fee, expand_team_building_fees, company_team_building_fee, daily_expenses, 
+    overtime_meal_pay, transportation_fee, business_handling_transportation_fee, travel_expenses, 
+    communication_fee, internal_meeting_fee, external_conference_fee, social_interaction_fee, 
+    function_center_team_construction_fee, business_center_team_building_fee, functional_tooling_fee, 
+    business_tooling_fee, consulting_service_fee, consulting_service_fee1, trademark_registration_fee, 
+    litigation_case_fee, lawyer_service_fee, product_development_fee, incentive_fee, 
+    quality_incentive, supplier_incentive, hpc_activity_fee, team_incentive_fee, functional_expenses_other, 
+    research_and_development_expenses, rd_labor_costs, basic_salary_rd_personnel, performance_salary_rd_personnel, 
+    bonus_rd_staff, housing_provident_fund_rd_personnel, social_insurance_rd_personnel, 
+    system_implementation_service_fee, system_service_fee, system_implementation_fee, 
+    sms_platform_information_fee, machine_room_and_equipment_costs, idc_hosting_fee, 
+    communication_equipment, safety_equipment, storage_device, server, network_equipment, 
+    software, other_depreciation_and_amortization, financial_expenses, business_tax_and_surcharges, 
+    asset_impairment_loss, investment_gains_and_losses, operating_profit, net_nonoperating_income_and_expenses, 
+    nonoperating_income, operating_expenses, total_profit, income_tax_expense, net_profit_before_apportionment, 
+    total_apportionment, business_line_allocation, business_line_allocation_rd_allocation, 
+    business_line_allocation_marketing_allocation, business_line_allocation_function_allocation, 
+    group_sharing, group_apportionment_rd_allocation, group_allocation_marketing_allocation, 
+    group_apportionment_function_allocation, net_profit_after_apportionment, assessed_amount, 
+    repair_service_fee, operating_cost, direct_labor_cost, hold_num, hold_num_days, calculated_hold_num, 
+    calculated_hold_num_days, commendation_cost, construction_cost
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.ziroom.zhumo.entity.AfterAssessmentReportEntityKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from bz_after_assessment_report
+    where id = #{id,jdbcType=BIGINT}
+      and period = #{period,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.ziroom.zhumo.entity.AfterAssessmentReportEntityKey" >
+    delete from bz_after_assessment_report
+    where id = #{id,jdbcType=BIGINT}
+      and period = #{period,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zhumo.entity.AfterAssessmentReportEntity" >
+    insert into bz_after_assessment_report (id, period, hire_contract_code, 
+      business_line_code, business_line_name, product_code, 
+      product_name, product_line_id, product_line, 
+      product_version_id, product_version, month, 
+      city_code, city, war_zone_code, 
+      war_zone, region_code, region, 
+      business_group_code, business_group, resblock_id, 
+      resblock_name, rent_type, hire_channel, 
+      finished_level_id, finished_level, dispose_bedroom_amount, 
+      dispose_bedroom_desc, hold_days, hold_days_segment, 
+      amount_of_housing_in_this_period, amount_of_housing_in_this_issue, 
+      months_in_rent, months_between_listings, single_quantity, 
+      gmv, revenue_before_deduction, relief, 
+      revenue_after_deduction, owner_income, rent_income, 
+      rent_expenses, service_fee_income, out_of_service_service_fee, 
+      sublease_service_fee, liquidated_damages, owner_cancellation, 
+      liquidated_damages1, other_operating_income, 
+      other_business_income_commodity_sales, other_business_income_direct_rent_decoration, 
+      other_business_income_fee, other_business_income_compensation, 
+      other_business_income_other, other_business_line_income, 
+      platform_service_fee_cleaning, platform_service_fee_moving, 
+      platform_service_fee_home_repair, platform_service_fee_excellent_products, 
+      platform_service_fee_homestay, excellent_product_self_employed, 
+      home_repair, home_improvement, financial_service_fee_income, 
+      variable_costs, configuration_cost_engineering_cost, 
+      new_housing_allocation_cost, lease_configuration_cost, 
+      withdrawal_configuration_cost, sublease_configuration_cost, 
+      release_configuration_cost, for_rent_lease_configuration_cost, 
+      renewal_configuration_cost, nc_direct_rent_renovation_cost, 
+      direct_renting_cost, performance_pay, housekeeper, 
+      free_to_offer_housekeeper, bonus_housekeeper, 
+      configuration, free_to_commission_configuration, 
+      bonus_configuration, cleaning_cost, biweekly_monthly_cleaning, 
+      free_depth_cleaning_costs, withdrawal_and_cleaning, 
+      wasteland_cleaning, killing_and_cleaning, return_as_it_is, 
+      emergency_cleaning, return_as_it_is1, cleaning_after_repair, 
+      daily_cleaning, maintenance_costs, long_term_maintenance_fee, 
+      maintenance_fund_expenditure, channel_commission, 
+      channel_cost, outbound_channel_commission, house_channel_commission, 
+      quality_cost, withholding_service_fee, friends_property_insurance, 
+      air_treatment_cost, air_quality_testing_cost, 
+      material_testing_fee, owner_rent_invoice_tax, 
+      other_business_line_variable_costs, marginal_revenue, 
+      fixed_cost, basic_wage, basic_salary_housekeeper, 
+      social_insurance_housekeeper, housing_provident_fund_housekeeper, 
+      basic_salary_configuration, social_insurance_configuration, 
+      housing_provident_fund_configuration, workstation_investment_and_operating_costs, 
+      workstation_investment_cost, workstation_decoration, 
+      workstation_office_furniture, workstation_computer_equipment, 
+      workstation_office_equipment, workstation_it_accessories, 
+      workstation_environment_softcover, workstation_firefighting_supplies, 
+      workstation_equipment_rental_service_fee, workstation_channel_commission, 
+      workstation_operating_costs, workstation_rent, 
+      workstation_phone_fee, workstation_water_fee, 
+      workstation_electricity_fee, workstation_gas_fee, 
+      workstation_heating_property_fee, workstation_printing, 
+      workstation_cleaning_cost, workstation_network_fee, 
+      workstation_printing_supplies, workstation_drinking_water, 
+      workstation_office_supplies, workstation_repair_costs, 
+      workstation_handling_fee, workstation_channel_commission1, 
+      other_operating_costs, liquidated_damages_cost, 
+      owner_compensation, security_incident_handling_fee, 
+      administrative_penalties, other_business_costs_other, 
+      fixed_cost_of_other_lines_of_business, operating_gross_profit, 
+      marketing_costs, marketing_labor_cost, basic_salary_marketer, 
+      performance_paymarketer, bonus_marketer, housing_provident_fund_marketers, 
+      social_insurance_marketing_staff, precision_marketing_expenses, 
+      sem_construction, app_promotion, network_port_fee, 
+      brand_marketing_expenses, client_marketing_expenses, 
+      customer_user_operation, customer_business_operations, 
+      customer_brand_marketing, customer_product_operation, 
+      ownership_marketing_expenses, owner_user_operation, 
+      owner_business_operations, owner_brand_marketing, 
+      owner_product_operation, discount_reduction, 
+      marketing_expenses_other, functional_expenses, 
+      functional_labor_cost, basic_salary_functional_staff, 
+      performance_payroll_functional_staff, bonus_functional_staff, 
+      housing_provident_fund_functional_staff, social_insurance_functional_staff, 
+      monetary_compensation, functional_temporary_labor_costs, 
+      administrative_costs, functional_rent, functional_heating_property_fee, 
+      functional_office_furniture, main_decoration, 
+      equipment_maintenance_fee, repair_material_fee, 
+      repair_labor_costs, equipment_property_insurance, 
+      functional_environment, functional_equipment_rental_service_fee, 
+      function_washing_carpet_fee, network_fee, functional_water_fee, 
+      functional_electricity_fee, functional_cleaning_fee, 
+      functional_drinking_water, office_expenses, 
+      functional_office_supplies, courier_fee, functional_office_miscellaneous_fees, 
+      functional_it_accessories, functional_telephone_fee, 
+      transportation, functional_printing, company_license_processing_and_annual_inspection, 
+      warehousing_fee, computer_equipment, other_functions_depreciation_and_amortization, 
+      training_fee, training_fees, erudition, 
+      lecturer_team_building, training_implementation_fee, 
+      course_development_fee, departmental_training_fee, 
+      recruitment_fee, online_recruitment_fee, campus_recruitment_offline, 
+      recruitment_fee_headhunting_fee, recruitment_fee_internal_recommendation, 
+      cultural_construction_and_welfare_costs, humanities_culture_construction_fee, 
+      employee_education_expenses, book_data_fee, executive_welfare_fee, 
+      company_welfare_expenses, supplementary_medical_insurance, 
+      medical_examination_fee, expand_team_building_fees, 
+      company_team_building_fee, daily_expenses, overtime_meal_pay, 
+      transportation_fee, business_handling_transportation_fee, 
+      travel_expenses, communication_fee, internal_meeting_fee, 
+      external_conference_fee, social_interaction_fee, 
+      function_center_team_construction_fee, business_center_team_building_fee, 
+      functional_tooling_fee, business_tooling_fee, 
+      consulting_service_fee, consulting_service_fee1, 
+      trademark_registration_fee, litigation_case_fee, 
+      lawyer_service_fee, product_development_fee, 
+      incentive_fee, quality_incentive, supplier_incentive, 
+      hpc_activity_fee, team_incentive_fee, functional_expenses_other, 
+      research_and_development_expenses, rd_labor_costs, 
+      basic_salary_rd_personnel, performance_salary_rd_personnel, 
+      bonus_rd_staff, housing_provident_fund_rd_personnel, 
+      social_insurance_rd_personnel, system_implementation_service_fee, 
+      system_service_fee, system_implementation_fee, 
+      sms_platform_information_fee, machine_room_and_equipment_costs, 
+      idc_hosting_fee, communication_equipment, safety_equipment, 
+      storage_device, server, network_equipment, 
+      software, other_depreciation_and_amortization, 
+      financial_expenses, business_tax_and_surcharges, 
+      asset_impairment_loss, investment_gains_and_losses, 
+      operating_profit, net_nonoperating_income_and_expenses, 
+      nonoperating_income, operating_expenses, total_profit, 
+      income_tax_expense, net_profit_before_apportionment, 
+      total_apportionment, business_line_allocation, 
+      business_line_allocation_rd_allocation, business_line_allocation_marketing_allocation, 
+      business_line_allocation_function_allocation, group_sharing, 
+      group_apportionment_rd_allocation, group_allocation_marketing_allocation, 
+      group_apportionment_function_allocation, net_profit_after_apportionment, 
+      assessed_amount, repair_service_fee, operating_cost, 
+      direct_labor_cost, hold_num, hold_num_days, 
+      calculated_hold_num, calculated_hold_num_days, 
+      commendation_cost, construction_cost)
+    values (#{id,jdbcType=BIGINT}, #{period,jdbcType=VARCHAR}, #{hireContractCode,jdbcType=VARCHAR}, 
+      #{businessLineCode,jdbcType=VARCHAR}, #{businessLineName,jdbcType=VARCHAR}, #{productCode,jdbcType=VARCHAR}, 
+      #{productName,jdbcType=VARCHAR}, #{productLineId,jdbcType=VARCHAR}, #{productLine,jdbcType=VARCHAR}, 
+      #{productVersionId,jdbcType=VARCHAR}, #{productVersion,jdbcType=VARCHAR}, #{month,jdbcType=VARCHAR}, 
+      #{cityCode,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{warZoneCode,jdbcType=VARCHAR}, 
+      #{warZone,jdbcType=VARCHAR}, #{regionCode,jdbcType=VARCHAR}, #{region,jdbcType=VARCHAR}, 
+      #{businessGroupCode,jdbcType=VARCHAR}, #{businessGroup,jdbcType=VARCHAR}, #{resblockId,jdbcType=VARCHAR}, 
+      #{resblockName,jdbcType=VARCHAR}, #{rentType,jdbcType=VARCHAR}, #{hireChannel,jdbcType=VARCHAR}, 
+      #{finishedLevelId,jdbcType=VARCHAR}, #{finishedLevel,jdbcType=VARCHAR}, #{disposeBedroomAmount,jdbcType=INTEGER}, 
+      #{disposeBedroomDesc,jdbcType=VARCHAR}, #{holdDays,jdbcType=INTEGER}, #{holdDaysSegment,jdbcType=VARCHAR}, 
+      #{amountOfHousingInThisPeriod,jdbcType=DOUBLE}, #{amountOfHousingInThisIssue,jdbcType=DOUBLE}, 
+      #{monthsInRent,jdbcType=DOUBLE}, #{monthsBetweenListings,jdbcType=DOUBLE}, #{singleQuantity,jdbcType=DOUBLE}, 
+      #{gmv,jdbcType=DOUBLE}, #{revenueBeforeDeduction,jdbcType=DOUBLE}, #{relief,jdbcType=DOUBLE}, 
+      #{revenueAfterDeduction,jdbcType=DOUBLE}, #{ownerIncome,jdbcType=DOUBLE}, #{rentIncome,jdbcType=DOUBLE}, 
+      #{rentExpenses,jdbcType=DOUBLE}, #{serviceFeeIncome,jdbcType=DOUBLE}, #{outOfServiceServiceFee,jdbcType=DOUBLE}, 
+      #{subleaseServiceFee,jdbcType=DOUBLE}, #{liquidatedDamages,jdbcType=DOUBLE}, #{ownerCancellation,jdbcType=DOUBLE}, 
+      #{liquidatedDamages1,jdbcType=DOUBLE}, #{otherOperatingIncome,jdbcType=DOUBLE}, 
+      #{otherBusinessIncomeCommoditySales,jdbcType=DOUBLE}, #{otherBusinessIncomeDirectRentDecoration,jdbcType=DOUBLE}, 
+      #{otherBusinessIncomeFee,jdbcType=DOUBLE}, #{otherBusinessIncomeCompensation,jdbcType=DOUBLE}, 
+      #{otherBusinessIncomeOther,jdbcType=DOUBLE}, #{otherBusinessLineIncome,jdbcType=DOUBLE}, 
+      #{platformServiceFeeCleaning,jdbcType=DOUBLE}, #{platformServiceFeeMoving,jdbcType=DOUBLE}, 
+      #{platformServiceFeeHomeRepair,jdbcType=DOUBLE}, #{platformServiceFeeExcellentProducts,jdbcType=DOUBLE}, 
+      #{platformServiceFeeHomestay,jdbcType=DOUBLE}, #{excellentProductSelfEmployed,jdbcType=DOUBLE}, 
+      #{homeRepair,jdbcType=DOUBLE}, #{homeImprovement,jdbcType=DOUBLE}, #{financialServiceFeeIncome,jdbcType=DOUBLE}, 
+      #{variableCosts,jdbcType=DOUBLE}, #{configurationCostEngineeringCost,jdbcType=DOUBLE}, 
+      #{newHousingAllocationCost,jdbcType=DOUBLE}, #{leaseConfigurationCost,jdbcType=DOUBLE}, 
+      #{withdrawalConfigurationCost,jdbcType=DOUBLE}, #{subleaseConfigurationCost,jdbcType=DOUBLE}, 
+      #{releaseConfigurationCost,jdbcType=DOUBLE}, #{forRentLeaseConfigurationCost,jdbcType=DOUBLE}, 
+      #{renewalConfigurationCost,jdbcType=DOUBLE}, #{ncDirectRentRenovationCost,jdbcType=DOUBLE}, 
+      #{directRentingCost,jdbcType=DOUBLE}, #{performancePay,jdbcType=DOUBLE}, #{housekeeper,jdbcType=DOUBLE}, 
+      #{freeToOfferHousekeeper,jdbcType=DOUBLE}, #{bonusHousekeeper,jdbcType=DOUBLE}, 
+      #{configuration,jdbcType=DOUBLE}, #{freeToCommissionConfiguration,jdbcType=DOUBLE}, 
+      #{bonusConfiguration,jdbcType=DOUBLE}, #{cleaningCost,jdbcType=DOUBLE}, #{biweeklyMonthlyCleaning,jdbcType=DOUBLE}, 
+      #{freeDepthCleaningCosts,jdbcType=DOUBLE}, #{withdrawalAndCleaning,jdbcType=DOUBLE}, 
+      #{wastelandCleaning,jdbcType=DOUBLE}, #{killingAndCleaning,jdbcType=DOUBLE}, #{returnAsItIs,jdbcType=DOUBLE}, 
+      #{emergencyCleaning,jdbcType=DOUBLE}, #{returnAsItIs1,jdbcType=DOUBLE}, #{cleaningAfterRepair,jdbcType=DOUBLE}, 
+      #{dailyCleaning,jdbcType=DOUBLE}, #{maintenanceCosts,jdbcType=DOUBLE}, #{longTermMaintenanceFee,jdbcType=DOUBLE}, 
+      #{maintenanceFundExpenditure,jdbcType=DOUBLE}, #{channelCommission,jdbcType=DOUBLE}, 
+      #{channelCost,jdbcType=DOUBLE}, #{outboundChannelCommission,jdbcType=DOUBLE}, #{houseChannelCommission,jdbcType=DOUBLE}, 
+      #{qualityCost,jdbcType=DOUBLE}, #{withholdingServiceFee,jdbcType=DOUBLE}, #{friendsPropertyInsurance,jdbcType=DOUBLE}, 
+      #{airTreatmentCost,jdbcType=DOUBLE}, #{airQualityTestingCost,jdbcType=DOUBLE}, 
+      #{materialTestingFee,jdbcType=DOUBLE}, #{ownerRentInvoiceTax,jdbcType=DOUBLE}, 
+      #{otherBusinessLineVariableCosts,jdbcType=DOUBLE}, #{marginalRevenue,jdbcType=DOUBLE}, 
+      #{fixedCost,jdbcType=DOUBLE}, #{basicWage,jdbcType=DOUBLE}, #{basicSalaryHousekeeper,jdbcType=DOUBLE}, 
+      #{socialInsuranceHousekeeper,jdbcType=DOUBLE}, #{housingProvidentFundHousekeeper,jdbcType=DOUBLE}, 
+      #{basicSalaryConfiguration,jdbcType=DOUBLE}, #{socialInsuranceConfiguration,jdbcType=DOUBLE}, 
+      #{housingProvidentFundConfiguration,jdbcType=DOUBLE}, #{workstationInvestmentAndOperatingCosts,jdbcType=DOUBLE}, 
+      #{workstationInvestmentCost,jdbcType=DOUBLE}, #{workstationDecoration,jdbcType=DOUBLE}, 
+      #{workstationOfficeFurniture,jdbcType=DOUBLE}, #{workstationComputerEquipment,jdbcType=DOUBLE}, 
+      #{workstationOfficeEquipment,jdbcType=DOUBLE}, #{workstationItAccessories,jdbcType=DOUBLE}, 
+      #{workstationEnvironmentSoftcover,jdbcType=DOUBLE}, #{workstationFirefightingSupplies,jdbcType=DOUBLE}, 
+      #{workstationEquipmentRentalServiceFee,jdbcType=DOUBLE}, #{workstationChannelCommission,jdbcType=DOUBLE}, 
+      #{workstationOperatingCosts,jdbcType=DOUBLE}, #{workstationRent,jdbcType=DOUBLE}, 
+      #{workstationPhoneFee,jdbcType=DOUBLE}, #{workstationWaterFee,jdbcType=DOUBLE}, 
+      #{workstationElectricityFee,jdbcType=DOUBLE}, #{workstationGasFee,jdbcType=DOUBLE}, 
+      #{workstationHeatingPropertyFee,jdbcType=DOUBLE}, #{workstationPrinting,jdbcType=DOUBLE}, 
+      #{workstationCleaningCost,jdbcType=DOUBLE}, #{workstationNetworkFee,jdbcType=DOUBLE}, 
+      #{workstationPrintingSupplies,jdbcType=DOUBLE}, #{workstationDrinkingWater,jdbcType=DOUBLE}, 
+      #{workstationOfficeSupplies,jdbcType=DOUBLE}, #{workstationRepairCosts,jdbcType=DOUBLE}, 
+      #{workstationHandlingFee,jdbcType=DOUBLE}, #{workstationChannelCommission1,jdbcType=DOUBLE}, 
+      #{otherOperatingCosts,jdbcType=DOUBLE}, #{liquidatedDamagesCost,jdbcType=DOUBLE}, 
+      #{ownerCompensation,jdbcType=DOUBLE}, #{securityIncidentHandlingFee,jdbcType=DOUBLE}, 
+      #{administrativePenalties,jdbcType=DOUBLE}, #{otherBusinessCostsOther,jdbcType=DOUBLE}, 
+      #{fixedCostOfOtherLinesOfBusiness,jdbcType=DOUBLE}, #{operatingGrossProfit,jdbcType=DOUBLE}, 
+      #{marketingCosts,jdbcType=DOUBLE}, #{marketingLaborCost,jdbcType=DOUBLE}, #{basicSalaryMarketer,jdbcType=DOUBLE}, 
+      #{performancePaymarketer,jdbcType=DOUBLE}, #{bonusMarketer,jdbcType=DOUBLE}, #{housingProvidentFundMarketers,jdbcType=DOUBLE}, 
+      #{socialInsuranceMarketingStaff,jdbcType=DOUBLE}, #{precisionMarketingExpenses,jdbcType=DOUBLE}, 
+      #{semConstruction,jdbcType=DOUBLE}, #{appPromotion,jdbcType=DOUBLE}, #{networkPortFee,jdbcType=DOUBLE}, 
+      #{brandMarketingExpenses,jdbcType=DOUBLE}, #{clientMarketingExpenses,jdbcType=DOUBLE}, 
+      #{customerUserOperation,jdbcType=DOUBLE}, #{customerBusinessOperations,jdbcType=DOUBLE}, 
+      #{customerBrandMarketing,jdbcType=DOUBLE}, #{customerProductOperation,jdbcType=DOUBLE}, 
+      #{ownershipMarketingExpenses,jdbcType=DOUBLE}, #{ownerUserOperation,jdbcType=DOUBLE}, 
+      #{ownerBusinessOperations,jdbcType=DOUBLE}, #{ownerBrandMarketing,jdbcType=DOUBLE}, 
+      #{ownerProductOperation,jdbcType=DOUBLE}, #{discountReduction,jdbcType=DOUBLE}, 
+      #{marketingExpensesOther,jdbcType=DOUBLE}, #{functionalExpenses,jdbcType=DOUBLE}, 
+      #{functionalLaborCost,jdbcType=DOUBLE}, #{basicSalaryFunctionalStaff,jdbcType=DOUBLE}, 
+      #{performancePayrollFunctionalStaff,jdbcType=DOUBLE}, #{bonusFunctionalStaff,jdbcType=DOUBLE}, 
+      #{housingProvidentFundFunctionalStaff,jdbcType=DOUBLE}, #{socialInsuranceFunctionalStaff,jdbcType=DOUBLE}, 
+      #{monetaryCompensation,jdbcType=DOUBLE}, #{functionalTemporaryLaborCosts,jdbcType=DOUBLE}, 
+      #{administrativeCosts,jdbcType=DOUBLE}, #{functionalRent,jdbcType=DOUBLE}, #{functionalHeatingPropertyFee,jdbcType=DOUBLE}, 
+      #{functionalOfficeFurniture,jdbcType=DOUBLE}, #{mainDecoration,jdbcType=DOUBLE}, 
+      #{equipmentMaintenanceFee,jdbcType=DOUBLE}, #{repairMaterialFee,jdbcType=DOUBLE}, 
+      #{repairLaborCosts,jdbcType=DOUBLE}, #{equipmentPropertyInsurance,jdbcType=DOUBLE}, 
+      #{functionalEnvironment,jdbcType=DOUBLE}, #{functionalEquipmentRentalServiceFee,jdbcType=DOUBLE}, 
+      #{functionWashingCarpetFee,jdbcType=DOUBLE}, #{networkFee,jdbcType=DOUBLE}, #{functionalWaterFee,jdbcType=DOUBLE}, 
+      #{functionalElectricityFee,jdbcType=DOUBLE}, #{functionalCleaningFee,jdbcType=DOUBLE}, 
+      #{functionalDrinkingWater,jdbcType=DOUBLE}, #{officeExpenses,jdbcType=DOUBLE}, 
+      #{functionalOfficeSupplies,jdbcType=DOUBLE}, #{courierFee,jdbcType=DOUBLE}, #{functionalOfficeMiscellaneousFees,jdbcType=DOUBLE}, 
+      #{functionalItAccessories,jdbcType=DOUBLE}, #{functionalTelephoneFee,jdbcType=DOUBLE}, 
+      #{transportation,jdbcType=DOUBLE}, #{functionalPrinting,jdbcType=DOUBLE}, #{companyLicenseProcessingAndAnnualInspection,jdbcType=DOUBLE}, 
+      #{warehousingFee,jdbcType=DOUBLE}, #{computerEquipment,jdbcType=DOUBLE}, #{otherFunctionsDepreciationAndAmortization,jdbcType=DOUBLE}, 
+      #{trainingFee,jdbcType=DOUBLE}, #{trainingFees,jdbcType=DOUBLE}, #{erudition,jdbcType=DOUBLE}, 
+      #{lecturerTeamBuilding,jdbcType=DOUBLE}, #{trainingImplementationFee,jdbcType=DOUBLE}, 
+      #{courseDevelopmentFee,jdbcType=DOUBLE}, #{departmentalTrainingFee,jdbcType=DOUBLE}, 
+      #{recruitmentFee,jdbcType=DOUBLE}, #{onlineRecruitmentFee,jdbcType=DOUBLE}, #{campusRecruitmentOffline,jdbcType=DOUBLE}, 
+      #{recruitmentFeeHeadhuntingFee,jdbcType=DOUBLE}, #{recruitmentFeeInternalRecommendation,jdbcType=DOUBLE}, 
+      #{culturalConstructionAndWelfareCosts,jdbcType=DOUBLE}, #{humanitiesCultureConstructionFee,jdbcType=DOUBLE}, 
+      #{employeeEducationExpenses,jdbcType=DOUBLE}, #{bookDataFee,jdbcType=DOUBLE}, #{executiveWelfareFee,jdbcType=DOUBLE}, 
+      #{companyWelfareExpenses,jdbcType=DOUBLE}, #{supplementaryMedicalInsurance,jdbcType=DOUBLE}, 
+      #{medicalExaminationFee,jdbcType=DOUBLE}, #{expandTeamBuildingFees,jdbcType=DOUBLE}, 
+      #{companyTeamBuildingFee,jdbcType=DOUBLE}, #{dailyExpenses,jdbcType=DOUBLE}, #{overtimeMealPay,jdbcType=DOUBLE}, 
+      #{transportationFee,jdbcType=DOUBLE}, #{businessHandlingTransportationFee,jdbcType=DOUBLE}, 
+      #{travelExpenses,jdbcType=DOUBLE}, #{communicationFee,jdbcType=DOUBLE}, #{internalMeetingFee,jdbcType=DOUBLE}, 
+      #{externalConferenceFee,jdbcType=DOUBLE}, #{socialInteractionFee,jdbcType=DOUBLE}, 
+      #{functionCenterTeamConstructionFee,jdbcType=DOUBLE}, #{businessCenterTeamBuildingFee,jdbcType=DOUBLE}, 
+      #{functionalToolingFee,jdbcType=DOUBLE}, #{businessToolingFee,jdbcType=DOUBLE}, 
+      #{consultingServiceFee,jdbcType=DOUBLE}, #{consultingServiceFee1,jdbcType=DOUBLE}, 
+      #{trademarkRegistrationFee,jdbcType=DOUBLE}, #{litigationCaseFee,jdbcType=DOUBLE}, 
+      #{lawyerServiceFee,jdbcType=DOUBLE}, #{productDevelopmentFee,jdbcType=DOUBLE}, 
+      #{incentiveFee,jdbcType=DOUBLE}, #{qualityIncentive,jdbcType=DOUBLE}, #{supplierIncentive,jdbcType=DOUBLE}, 
+      #{hpcActivityFee,jdbcType=DOUBLE}, #{teamIncentiveFee,jdbcType=DOUBLE}, #{functionalExpensesOther,jdbcType=DOUBLE}, 
+      #{researchAndDevelopmentExpenses,jdbcType=DOUBLE}, #{rdLaborCosts,jdbcType=DOUBLE}, 
+      #{basicSalaryRdPersonnel,jdbcType=DOUBLE}, #{performanceSalaryRdPersonnel,jdbcType=DOUBLE}, 
+      #{bonusRdStaff,jdbcType=DOUBLE}, #{housingProvidentFundRdPersonnel,jdbcType=DOUBLE}, 
+      #{socialInsuranceRdPersonnel,jdbcType=DOUBLE}, #{systemImplementationServiceFee,jdbcType=DOUBLE}, 
+      #{systemServiceFee,jdbcType=DOUBLE}, #{systemImplementationFee,jdbcType=DOUBLE}, 
+      #{smsPlatformInformationFee,jdbcType=DOUBLE}, #{machineRoomAndEquipmentCosts,jdbcType=DOUBLE}, 
+      #{idcHostingFee,jdbcType=DOUBLE}, #{communicationEquipment,jdbcType=DOUBLE}, #{safetyEquipment,jdbcType=DOUBLE}, 
+      #{storageDevice,jdbcType=DOUBLE}, #{server,jdbcType=DOUBLE}, #{networkEquipment,jdbcType=DOUBLE}, 
+      #{software,jdbcType=DOUBLE}, #{otherDepreciationAndAmortization,jdbcType=DOUBLE}, 
+      #{financialExpenses,jdbcType=DOUBLE}, #{businessTaxAndSurcharges,jdbcType=DOUBLE}, 
+      #{assetImpairmentLoss,jdbcType=DOUBLE}, #{investmentGainsAndLosses,jdbcType=DOUBLE}, 
+      #{operatingProfit,jdbcType=DOUBLE}, #{netNonoperatingIncomeAndExpenses,jdbcType=DOUBLE}, 
+      #{nonoperatingIncome,jdbcType=DOUBLE}, #{operatingExpenses,jdbcType=DOUBLE}, #{totalProfit,jdbcType=DOUBLE}, 
+      #{incomeTaxExpense,jdbcType=DOUBLE}, #{netProfitBeforeApportionment,jdbcType=DOUBLE}, 
+      #{totalApportionment,jdbcType=DOUBLE}, #{businessLineAllocation,jdbcType=DOUBLE}, 
+      #{businessLineAllocationRdAllocation,jdbcType=DOUBLE}, #{businessLineAllocationMarketingAllocation,jdbcType=DOUBLE}, 
+      #{businessLineAllocationFunctionAllocation,jdbcType=DOUBLE}, #{groupSharing,jdbcType=DOUBLE}, 
+      #{groupApportionmentRdAllocation,jdbcType=DOUBLE}, #{groupAllocationMarketingAllocation,jdbcType=DOUBLE}, 
+      #{groupApportionmentFunctionAllocation,jdbcType=DOUBLE}, #{netProfitAfterApportionment,jdbcType=DOUBLE}, 
+      #{assessedAmount,jdbcType=DOUBLE}, #{repairServiceFee,jdbcType=DOUBLE}, #{operatingCost,jdbcType=DOUBLE}, 
+      #{directLaborCost,jdbcType=DOUBLE}, #{holdNum,jdbcType=DOUBLE}, #{holdNumDays,jdbcType=DOUBLE}, 
+      #{calculatedHoldNum,jdbcType=DOUBLE}, #{calculatedHoldNumDays,jdbcType=DOUBLE}, 
+      #{commendationCost,jdbcType=DOUBLE}, #{constructionCost,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zhumo.entity.AfterAssessmentReportEntity" >
+    insert into bz_after_assessment_report
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="period != null" >
+        period,
+      </if>
+      <if test="hireContractCode != null" >
+        hire_contract_code,
+      </if>
+      <if test="businessLineCode != null" >
+        business_line_code,
+      </if>
+      <if test="businessLineName != null" >
+        business_line_name,
+      </if>
+      <if test="productCode != null" >
+        product_code,
+      </if>
+      <if test="productName != null" >
+        product_name,
+      </if>
+      <if test="productLineId != null" >
+        product_line_id,
+      </if>
+      <if test="productLine != null" >
+        product_line,
+      </if>
+      <if test="productVersionId != null" >
+        product_version_id,
+      </if>
+      <if test="productVersion != null" >
+        product_version,
+      </if>
+      <if test="month != null" >
+        month,
+      </if>
+      <if test="cityCode != null" >
+        city_code,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="warZoneCode != null" >
+        war_zone_code,
+      </if>
+      <if test="warZone != null" >
+        war_zone,
+      </if>
+      <if test="regionCode != null" >
+        region_code,
+      </if>
+      <if test="region != null" >
+        region,
+      </if>
+      <if test="businessGroupCode != null" >
+        business_group_code,
+      </if>
+      <if test="businessGroup != null" >
+        business_group,
+      </if>
+      <if test="resblockId != null" >
+        resblock_id,
+      </if>
+      <if test="resblockName != null" >
+        resblock_name,
+      </if>
+      <if test="rentType != null" >
+        rent_type,
+      </if>
+      <if test="hireChannel != null" >
+        hire_channel,
+      </if>
+      <if test="finishedLevelId != null" >
+        finished_level_id,
+      </if>
+      <if test="finishedLevel != null" >
+        finished_level,
+      </if>
+      <if test="disposeBedroomAmount != null" >
+        dispose_bedroom_amount,
+      </if>
+      <if test="disposeBedroomDesc != null" >
+        dispose_bedroom_desc,
+      </if>
+      <if test="holdDays != null" >
+        hold_days,
+      </if>
+      <if test="holdDaysSegment != null" >
+        hold_days_segment,
+      </if>
+      <if test="amountOfHousingInThisPeriod != null" >
+        amount_of_housing_in_this_period,
+      </if>
+      <if test="amountOfHousingInThisIssue != null" >
+        amount_of_housing_in_this_issue,
+      </if>
+      <if test="monthsInRent != null" >
+        months_in_rent,
+      </if>
+      <if test="monthsBetweenListings != null" >
+        months_between_listings,
+      </if>
+      <if test="singleQuantity != null" >
+        single_quantity,
+      </if>
+      <if test="gmv != null" >
+        gmv,
+      </if>
+      <if test="revenueBeforeDeduction != null" >
+        revenue_before_deduction,
+      </if>
+      <if test="relief != null" >
+        relief,
+      </if>
+      <if test="revenueAfterDeduction != null" >
+        revenue_after_deduction,
+      </if>
+      <if test="ownerIncome != null" >
+        owner_income,
+      </if>
+      <if test="rentIncome != null" >
+        rent_income,
+      </if>
+      <if test="rentExpenses != null" >
+        rent_expenses,
+      </if>
+      <if test="serviceFeeIncome != null" >
+        service_fee_income,
+      </if>
+      <if test="outOfServiceServiceFee != null" >
+        out_of_service_service_fee,
+      </if>
+      <if test="subleaseServiceFee != null" >
+        sublease_service_fee,
+      </if>
+      <if test="liquidatedDamages != null" >
+        liquidated_damages,
+      </if>
+      <if test="ownerCancellation != null" >
+        owner_cancellation,
+      </if>
+      <if test="liquidatedDamages1 != null" >
+        liquidated_damages1,
+      </if>
+      <if test="otherOperatingIncome != null" >
+        other_operating_income,
+      </if>
+      <if test="otherBusinessIncomeCommoditySales != null" >
+        other_business_income_commodity_sales,
+      </if>
+      <if test="otherBusinessIncomeDirectRentDecoration != null" >
+        other_business_income_direct_rent_decoration,
+      </if>
+      <if test="otherBusinessIncomeFee != null" >
+        other_business_income_fee,
+      </if>
+      <if test="otherBusinessIncomeCompensation != null" >
+        other_business_income_compensation,
+      </if>
+      <if test="otherBusinessIncomeOther != null" >
+        other_business_income_other,
+      </if>
+      <if test="otherBusinessLineIncome != null" >
+        other_business_line_income,
+      </if>
+      <if test="platformServiceFeeCleaning != null" >
+        platform_service_fee_cleaning,
+      </if>
+      <if test="platformServiceFeeMoving != null" >
+        platform_service_fee_moving,
+      </if>
+      <if test="platformServiceFeeHomeRepair != null" >
+        platform_service_fee_home_repair,
+      </if>
+      <if test="platformServiceFeeExcellentProducts != null" >
+        platform_service_fee_excellent_products,
+      </if>
+      <if test="platformServiceFeeHomestay != null" >
+        platform_service_fee_homestay,
+      </if>
+      <if test="excellentProductSelfEmployed != null" >
+        excellent_product_self_employed,
+      </if>
+      <if test="homeRepair != null" >
+        home_repair,
+      </if>
+      <if test="homeImprovement != null" >
+        home_improvement,
+      </if>
+      <if test="financialServiceFeeIncome != null" >
+        financial_service_fee_income,
+      </if>
+      <if test="variableCosts != null" >
+        variable_costs,
+      </if>
+      <if test="configurationCostEngineeringCost != null" >
+        configuration_cost_engineering_cost,
+      </if>
+      <if test="newHousingAllocationCost != null" >
+        new_housing_allocation_cost,
+      </if>
+      <if test="leaseConfigurationCost != null" >
+        lease_configuration_cost,
+      </if>
+      <if test="withdrawalConfigurationCost != null" >
+        withdrawal_configuration_cost,
+      </if>
+      <if test="subleaseConfigurationCost != null" >
+        sublease_configuration_cost,
+      </if>
+      <if test="releaseConfigurationCost != null" >
+        release_configuration_cost,
+      </if>
+      <if test="forRentLeaseConfigurationCost != null" >
+        for_rent_lease_configuration_cost,
+      </if>
+      <if test="renewalConfigurationCost != null" >
+        renewal_configuration_cost,
+      </if>
+      <if test="ncDirectRentRenovationCost != null" >
+        nc_direct_rent_renovation_cost,
+      </if>
+      <if test="directRentingCost != null" >
+        direct_renting_cost,
+      </if>
+      <if test="performancePay != null" >
+        performance_pay,
+      </if>
+      <if test="housekeeper != null" >
+        housekeeper,
+      </if>
+      <if test="freeToOfferHousekeeper != null" >
+        free_to_offer_housekeeper,
+      </if>
+      <if test="bonusHousekeeper != null" >
+        bonus_housekeeper,
+      </if>
+      <if test="configuration != null" >
+        configuration,
+      </if>
+      <if test="freeToCommissionConfiguration != null" >
+        free_to_commission_configuration,
+      </if>
+      <if test="bonusConfiguration != null" >
+        bonus_configuration,
+      </if>
+      <if test="cleaningCost != null" >
+        cleaning_cost,
+      </if>
+      <if test="biweeklyMonthlyCleaning != null" >
+        biweekly_monthly_cleaning,
+      </if>
+      <if test="freeDepthCleaningCosts != null" >
+        free_depth_cleaning_costs,
+      </if>
+      <if test="withdrawalAndCleaning != null" >
+        withdrawal_and_cleaning,
+      </if>
+      <if test="wastelandCleaning != null" >
+        wasteland_cleaning,
+      </if>
+      <if test="killingAndCleaning != null" >
+        killing_and_cleaning,
+      </if>
+      <if test="returnAsItIs != null" >
+        return_as_it_is,
+      </if>
+      <if test="emergencyCleaning != null" >
+        emergency_cleaning,
+      </if>
+      <if test="returnAsItIs1 != null" >
+        return_as_it_is1,
+      </if>
+      <if test="cleaningAfterRepair != null" >
+        cleaning_after_repair,
+      </if>
+      <if test="dailyCleaning != null" >
+        daily_cleaning,
+      </if>
+      <if test="maintenanceCosts != null" >
+        maintenance_costs,
+      </if>
+      <if test="longTermMaintenanceFee != null" >
+        long_term_maintenance_fee,
+      </if>
+      <if test="maintenanceFundExpenditure != null" >
+        maintenance_fund_expenditure,
+      </if>
+      <if test="channelCommission != null" >
+        channel_commission,
+      </if>
+      <if test="channelCost != null" >
+        channel_cost,
+      </if>
+      <if test="outboundChannelCommission != null" >
+        outbound_channel_commission,
+      </if>
+      <if test="houseChannelCommission != null" >
+        house_channel_commission,
+      </if>
+      <if test="qualityCost != null" >
+        quality_cost,
+      </if>
+      <if test="withholdingServiceFee != null" >
+        withholding_service_fee,
+      </if>
+      <if test="friendsPropertyInsurance != null" >
+        friends_property_insurance,
+      </if>
+      <if test="airTreatmentCost != null" >
+        air_treatment_cost,
+      </if>
+      <if test="airQualityTestingCost != null" >
+        air_quality_testing_cost,
+      </if>
+      <if test="materialTestingFee != null" >
+        material_testing_fee,
+      </if>
+      <if test="ownerRentInvoiceTax != null" >
+        owner_rent_invoice_tax,
+      </if>
+      <if test="otherBusinessLineVariableCosts != null" >
+        other_business_line_variable_costs,
+      </if>
+      <if test="marginalRevenue != null" >
+        marginal_revenue,
+      </if>
+      <if test="fixedCost != null" >
+        fixed_cost,
+      </if>
+      <if test="basicWage != null" >
+        basic_wage,
+      </if>
+      <if test="basicSalaryHousekeeper != null" >
+        basic_salary_housekeeper,
+      </if>
+      <if test="socialInsuranceHousekeeper != null" >
+        social_insurance_housekeeper,
+      </if>
+      <if test="housingProvidentFundHousekeeper != null" >
+        housing_provident_fund_housekeeper,
+      </if>
+      <if test="basicSalaryConfiguration != null" >
+        basic_salary_configuration,
+      </if>
+      <if test="socialInsuranceConfiguration != null" >
+        social_insurance_configuration,
+      </if>
+      <if test="housingProvidentFundConfiguration != null" >
+        housing_provident_fund_configuration,
+      </if>
+      <if test="workstationInvestmentAndOperatingCosts != null" >
+        workstation_investment_and_operating_costs,
+      </if>
+      <if test="workstationInvestmentCost != null" >
+        workstation_investment_cost,
+      </if>
+      <if test="workstationDecoration != null" >
+        workstation_decoration,
+      </if>
+      <if test="workstationOfficeFurniture != null" >
+        workstation_office_furniture,
+      </if>
+      <if test="workstationComputerEquipment != null" >
+        workstation_computer_equipment,
+      </if>
+      <if test="workstationOfficeEquipment != null" >
+        workstation_office_equipment,
+      </if>
+      <if test="workstationItAccessories != null" >
+        workstation_it_accessories,
+      </if>
+      <if test="workstationEnvironmentSoftcover != null" >
+        workstation_environment_softcover,
+      </if>
+      <if test="workstationFirefightingSupplies != null" >
+        workstation_firefighting_supplies,
+      </if>
+      <if test="workstationEquipmentRentalServiceFee != null" >
+        workstation_equipment_rental_service_fee,
+      </if>
+      <if test="workstationChannelCommission != null" >
+        workstation_channel_commission,
+      </if>
+      <if test="workstationOperatingCosts != null" >
+        workstation_operating_costs,
+      </if>
+      <if test="workstationRent != null" >
+        workstation_rent,
+      </if>
+      <if test="workstationPhoneFee != null" >
+        workstation_phone_fee,
+      </if>
+      <if test="workstationWaterFee != null" >
+        workstation_water_fee,
+      </if>
+      <if test="workstationElectricityFee != null" >
+        workstation_electricity_fee,
+      </if>
+      <if test="workstationGasFee != null" >
+        workstation_gas_fee,
+      </if>
+      <if test="workstationHeatingPropertyFee != null" >
+        workstation_heating_property_fee,
+      </if>
+      <if test="workstationPrinting != null" >
+        workstation_printing,
+      </if>
+      <if test="workstationCleaningCost != null" >
+        workstation_cleaning_cost,
+      </if>
+      <if test="workstationNetworkFee != null" >
+        workstation_network_fee,
+      </if>
+      <if test="workstationPrintingSupplies != null" >
+        workstation_printing_supplies,
+      </if>
+      <if test="workstationDrinkingWater != null" >
+        workstation_drinking_water,
+      </if>
+      <if test="workstationOfficeSupplies != null" >
+        workstation_office_supplies,
+      </if>
+      <if test="workstationRepairCosts != null" >
+        workstation_repair_costs,
+      </if>
+      <if test="workstationHandlingFee != null" >
+        workstation_handling_fee,
+      </if>
+      <if test="workstationChannelCommission1 != null" >
+        workstation_channel_commission1,
+      </if>
+      <if test="otherOperatingCosts != null" >
+        other_operating_costs,
+      </if>
+      <if test="liquidatedDamagesCost != null" >
+        liquidated_damages_cost,
+      </if>
+      <if test="ownerCompensation != null" >
+        owner_compensation,
+      </if>
+      <if test="securityIncidentHandlingFee != null" >
+        security_incident_handling_fee,
+      </if>
+      <if test="administrativePenalties != null" >
+        administrative_penalties,
+      </if>
+      <if test="otherBusinessCostsOther != null" >
+        other_business_costs_other,
+      </if>
+      <if test="fixedCostOfOtherLinesOfBusiness != null" >
+        fixed_cost_of_other_lines_of_business,
+      </if>
+      <if test="operatingGrossProfit != null" >
+        operating_gross_profit,
+      </if>
+      <if test="marketingCosts != null" >
+        marketing_costs,
+      </if>
+      <if test="marketingLaborCost != null" >
+        marketing_labor_cost,
+      </if>
+      <if test="basicSalaryMarketer != null" >
+        basic_salary_marketer,
+      </if>
+      <if test="performancePaymarketer != null" >
+        performance_paymarketer,
+      </if>
+      <if test="bonusMarketer != null" >
+        bonus_marketer,
+      </if>
+      <if test="housingProvidentFundMarketers != null" >
+        housing_provident_fund_marketers,
+      </if>
+      <if test="socialInsuranceMarketingStaff != null" >
+        social_insurance_marketing_staff,
+      </if>
+      <if test="precisionMarketingExpenses != null" >
+        precision_marketing_expenses,
+      </if>
+      <if test="semConstruction != null" >
+        sem_construction,
+      </if>
+      <if test="appPromotion != null" >
+        app_promotion,
+      </if>
+      <if test="networkPortFee != null" >
+        network_port_fee,
+      </if>
+      <if test="brandMarketingExpenses != null" >
+        brand_marketing_expenses,
+      </if>
+      <if test="clientMarketingExpenses != null" >
+        client_marketing_expenses,
+      </if>
+      <if test="customerUserOperation != null" >
+        customer_user_operation,
+      </if>
+      <if test="customerBusinessOperations != null" >
+        customer_business_operations,
+      </if>
+      <if test="customerBrandMarketing != null" >
+        customer_brand_marketing,
+      </if>
+      <if test="customerProductOperation != null" >
+        customer_product_operation,
+      </if>
+      <if test="ownershipMarketingExpenses != null" >
+        ownership_marketing_expenses,
+      </if>
+      <if test="ownerUserOperation != null" >
+        owner_user_operation,
+      </if>
+      <if test="ownerBusinessOperations != null" >
+        owner_business_operations,
+      </if>
+      <if test="ownerBrandMarketing != null" >
+        owner_brand_marketing,
+      </if>
+      <if test="ownerProductOperation != null" >
+        owner_product_operation,
+      </if>
+      <if test="discountReduction != null" >
+        discount_reduction,
+      </if>
+      <if test="marketingExpensesOther != null" >
+        marketing_expenses_other,
+      </if>
+      <if test="functionalExpenses != null" >
+        functional_expenses,
+      </if>
+      <if test="functionalLaborCost != null" >
+        functional_labor_cost,
+      </if>
+      <if test="basicSalaryFunctionalStaff != null" >
+        basic_salary_functional_staff,
+      </if>
+      <if test="performancePayrollFunctionalStaff != null" >
+        performance_payroll_functional_staff,
+      </if>
+      <if test="bonusFunctionalStaff != null" >
+        bonus_functional_staff,
+      </if>
+      <if test="housingProvidentFundFunctionalStaff != null" >
+        housing_provident_fund_functional_staff,
+      </if>
+      <if test="socialInsuranceFunctionalStaff != null" >
+        social_insurance_functional_staff,
+      </if>
+      <if test="monetaryCompensation != null" >
+        monetary_compensation,
+      </if>
+      <if test="functionalTemporaryLaborCosts != null" >
+        functional_temporary_labor_costs,
+      </if>
+      <if test="administrativeCosts != null" >
+        administrative_costs,
+      </if>
+      <if test="functionalRent != null" >
+        functional_rent,
+      </if>
+      <if test="functionalHeatingPropertyFee != null" >
+        functional_heating_property_fee,
+      </if>
+      <if test="functionalOfficeFurniture != null" >
+        functional_office_furniture,
+      </if>
+      <if test="mainDecoration != null" >
+        main_decoration,
+      </if>
+      <if test="equipmentMaintenanceFee != null" >
+        equipment_maintenance_fee,
+      </if>
+      <if test="repairMaterialFee != null" >
+        repair_material_fee,
+      </if>
+      <if test="repairLaborCosts != null" >
+        repair_labor_costs,
+      </if>
+      <if test="equipmentPropertyInsurance != null" >
+        equipment_property_insurance,
+      </if>
+      <if test="functionalEnvironment != null" >
+        functional_environment,
+      </if>
+      <if test="functionalEquipmentRentalServiceFee != null" >
+        functional_equipment_rental_service_fee,
+      </if>
+      <if test="functionWashingCarpetFee != null" >
+        function_washing_carpet_fee,
+      </if>
+      <if test="networkFee != null" >
+        network_fee,
+      </if>
+      <if test="functionalWaterFee != null" >
+        functional_water_fee,
+      </if>
+      <if test="functionalElectricityFee != null" >
+        functional_electricity_fee,
+      </if>
+      <if test="functionalCleaningFee != null" >
+        functional_cleaning_fee,
+      </if>
+      <if test="functionalDrinkingWater != null" >
+        functional_drinking_water,
+      </if>
+      <if test="officeExpenses != null" >
+        office_expenses,
+      </if>
+      <if test="functionalOfficeSupplies != null" >
+        functional_office_supplies,
+      </if>
+      <if test="courierFee != null" >
+        courier_fee,
+      </if>
+      <if test="functionalOfficeMiscellaneousFees != null" >
+        functional_office_miscellaneous_fees,
+      </if>
+      <if test="functionalItAccessories != null" >
+        functional_it_accessories,
+      </if>
+      <if test="functionalTelephoneFee != null" >
+        functional_telephone_fee,
+      </if>
+      <if test="transportation != null" >
+        transportation,
+      </if>
+      <if test="functionalPrinting != null" >
+        functional_printing,
+      </if>
+      <if test="companyLicenseProcessingAndAnnualInspection != null" >
+        company_license_processing_and_annual_inspection,
+      </if>
+      <if test="warehousingFee != null" >
+        warehousing_fee,
+      </if>
+      <if test="computerEquipment != null" >
+        computer_equipment,
+      </if>
+      <if test="otherFunctionsDepreciationAndAmortization != null" >
+        other_functions_depreciation_and_amortization,
+      </if>
+      <if test="trainingFee != null" >
+        training_fee,
+      </if>
+      <if test="trainingFees != null" >
+        training_fees,
+      </if>
+      <if test="erudition != null" >
+        erudition,
+      </if>
+      <if test="lecturerTeamBuilding != null" >
+        lecturer_team_building,
+      </if>
+      <if test="trainingImplementationFee != null" >
+        training_implementation_fee,
+      </if>
+      <if test="courseDevelopmentFee != null" >
+        course_development_fee,
+      </if>
+      <if test="departmentalTrainingFee != null" >
+        departmental_training_fee,
+      </if>
+      <if test="recruitmentFee != null" >
+        recruitment_fee,
+      </if>
+      <if test="onlineRecruitmentFee != null" >
+        online_recruitment_fee,
+      </if>
+      <if test="campusRecruitmentOffline != null" >
+        campus_recruitment_offline,
+      </if>
+      <if test="recruitmentFeeHeadhuntingFee != null" >
+        recruitment_fee_headhunting_fee,
+      </if>
+      <if test="recruitmentFeeInternalRecommendation != null" >
+        recruitment_fee_internal_recommendation,
+      </if>
+      <if test="culturalConstructionAndWelfareCosts != null" >
+        cultural_construction_and_welfare_costs,
+      </if>
+      <if test="humanitiesCultureConstructionFee != null" >
+        humanities_culture_construction_fee,
+      </if>
+      <if test="employeeEducationExpenses != null" >
+        employee_education_expenses,
+      </if>
+      <if test="bookDataFee != null" >
+        book_data_fee,
+      </if>
+      <if test="executiveWelfareFee != null" >
+        executive_welfare_fee,
+      </if>
+      <if test="companyWelfareExpenses != null" >
+        company_welfare_expenses,
+      </if>
+      <if test="supplementaryMedicalInsurance != null" >
+        supplementary_medical_insurance,
+      </if>
+      <if test="medicalExaminationFee != null" >
+        medical_examination_fee,
+      </if>
+      <if test="expandTeamBuildingFees != null" >
+        expand_team_building_fees,
+      </if>
+      <if test="companyTeamBuildingFee != null" >
+        company_team_building_fee,
+      </if>
+      <if test="dailyExpenses != null" >
+        daily_expenses,
+      </if>
+      <if test="overtimeMealPay != null" >
+        overtime_meal_pay,
+      </if>
+      <if test="transportationFee != null" >
+        transportation_fee,
+      </if>
+      <if test="businessHandlingTransportationFee != null" >
+        business_handling_transportation_fee,
+      </if>
+      <if test="travelExpenses != null" >
+        travel_expenses,
+      </if>
+      <if test="communicationFee != null" >
+        communication_fee,
+      </if>
+      <if test="internalMeetingFee != null" >
+        internal_meeting_fee,
+      </if>
+      <if test="externalConferenceFee != null" >
+        external_conference_fee,
+      </if>
+      <if test="socialInteractionFee != null" >
+        social_interaction_fee,
+      </if>
+      <if test="functionCenterTeamConstructionFee != null" >
+        function_center_team_construction_fee,
+      </if>
+      <if test="businessCenterTeamBuildingFee != null" >
+        business_center_team_building_fee,
+      </if>
+      <if test="functionalToolingFee != null" >
+        functional_tooling_fee,
+      </if>
+      <if test="businessToolingFee != null" >
+        business_tooling_fee,
+      </if>
+      <if test="consultingServiceFee != null" >
+        consulting_service_fee,
+      </if>
+      <if test="consultingServiceFee1 != null" >
+        consulting_service_fee1,
+      </if>
+      <if test="trademarkRegistrationFee != null" >
+        trademark_registration_fee,
+      </if>
+      <if test="litigationCaseFee != null" >
+        litigation_case_fee,
+      </if>
+      <if test="lawyerServiceFee != null" >
+        lawyer_service_fee,
+      </if>
+      <if test="productDevelopmentFee != null" >
+        product_development_fee,
+      </if>
+      <if test="incentiveFee != null" >
+        incentive_fee,
+      </if>
+      <if test="qualityIncentive != null" >
+        quality_incentive,
+      </if>
+      <if test="supplierIncentive != null" >
+        supplier_incentive,
+      </if>
+      <if test="hpcActivityFee != null" >
+        hpc_activity_fee,
+      </if>
+      <if test="teamIncentiveFee != null" >
+        team_incentive_fee,
+      </if>
+      <if test="functionalExpensesOther != null" >
+        functional_expenses_other,
+      </if>
+      <if test="researchAndDevelopmentExpenses != null" >
+        research_and_development_expenses,
+      </if>
+      <if test="rdLaborCosts != null" >
+        rd_labor_costs,
+      </if>
+      <if test="basicSalaryRdPersonnel != null" >
+        basic_salary_rd_personnel,
+      </if>
+      <if test="performanceSalaryRdPersonnel != null" >
+        performance_salary_rd_personnel,
+      </if>
+      <if test="bonusRdStaff != null" >
+        bonus_rd_staff,
+      </if>
+      <if test="housingProvidentFundRdPersonnel != null" >
+        housing_provident_fund_rd_personnel,
+      </if>
+      <if test="socialInsuranceRdPersonnel != null" >
+        social_insurance_rd_personnel,
+      </if>
+      <if test="systemImplementationServiceFee != null" >
+        system_implementation_service_fee,
+      </if>
+      <if test="systemServiceFee != null" >
+        system_service_fee,
+      </if>
+      <if test="systemImplementationFee != null" >
+        system_implementation_fee,
+      </if>
+      <if test="smsPlatformInformationFee != null" >
+        sms_platform_information_fee,
+      </if>
+      <if test="machineRoomAndEquipmentCosts != null" >
+        machine_room_and_equipment_costs,
+      </if>
+      <if test="idcHostingFee != null" >
+        idc_hosting_fee,
+      </if>
+      <if test="communicationEquipment != null" >
+        communication_equipment,
+      </if>
+      <if test="safetyEquipment != null" >
+        safety_equipment,
+      </if>
+      <if test="storageDevice != null" >
+        storage_device,
+      </if>
+      <if test="server != null" >
+        server,
+      </if>
+      <if test="networkEquipment != null" >
+        network_equipment,
+      </if>
+      <if test="software != null" >
+        software,
+      </if>
+      <if test="otherDepreciationAndAmortization != null" >
+        other_depreciation_and_amortization,
+      </if>
+      <if test="financialExpenses != null" >
+        financial_expenses,
+      </if>
+      <if test="businessTaxAndSurcharges != null" >
+        business_tax_and_surcharges,
+      </if>
+      <if test="assetImpairmentLoss != null" >
+        asset_impairment_loss,
+      </if>
+      <if test="investmentGainsAndLosses != null" >
+        investment_gains_and_losses,
+      </if>
+      <if test="operatingProfit != null" >
+        operating_profit,
+      </if>
+      <if test="netNonoperatingIncomeAndExpenses != null" >
+        net_nonoperating_income_and_expenses,
+      </if>
+      <if test="nonoperatingIncome != null" >
+        nonoperating_income,
+      </if>
+      <if test="operatingExpenses != null" >
+        operating_expenses,
+      </if>
+      <if test="totalProfit != null" >
+        total_profit,
+      </if>
+      <if test="incomeTaxExpense != null" >
+        income_tax_expense,
+      </if>
+      <if test="netProfitBeforeApportionment != null" >
+        net_profit_before_apportionment,
+      </if>
+      <if test="totalApportionment != null" >
+        total_apportionment,
+      </if>
+      <if test="businessLineAllocation != null" >
+        business_line_allocation,
+      </if>
+      <if test="businessLineAllocationRdAllocation != null" >
+        business_line_allocation_rd_allocation,
+      </if>
+      <if test="businessLineAllocationMarketingAllocation != null" >
+        business_line_allocation_marketing_allocation,
+      </if>
+      <if test="businessLineAllocationFunctionAllocation != null" >
+        business_line_allocation_function_allocation,
+      </if>
+      <if test="groupSharing != null" >
+        group_sharing,
+      </if>
+      <if test="groupApportionmentRdAllocation != null" >
+        group_apportionment_rd_allocation,
+      </if>
+      <if test="groupAllocationMarketingAllocation != null" >
+        group_allocation_marketing_allocation,
+      </if>
+      <if test="groupApportionmentFunctionAllocation != null" >
+        group_apportionment_function_allocation,
+      </if>
+      <if test="netProfitAfterApportionment != null" >
+        net_profit_after_apportionment,
+      </if>
+      <if test="assessedAmount != null" >
+        assessed_amount,
+      </if>
+      <if test="repairServiceFee != null" >
+        repair_service_fee,
+      </if>
+      <if test="operatingCost != null" >
+        operating_cost,
+      </if>
+      <if test="directLaborCost != null" >
+        direct_labor_cost,
+      </if>
+      <if test="holdNum != null" >
+        hold_num,
+      </if>
+      <if test="holdNumDays != null" >
+        hold_num_days,
+      </if>
+      <if test="calculatedHoldNum != null" >
+        calculated_hold_num,
+      </if>
+      <if test="calculatedHoldNumDays != null" >
+        calculated_hold_num_days,
+      </if>
+      <if test="commendationCost != null" >
+        commendation_cost,
+      </if>
+      <if test="constructionCost != null" >
+        construction_cost,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="period != null" >
+        #{period,jdbcType=VARCHAR},
+      </if>
+      <if test="hireContractCode != null" >
+        #{hireContractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLineCode != null" >
+        #{businessLineCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLineName != null" >
+        #{businessLineName,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode != null" >
+        #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productLineId != null" >
+        #{productLineId,jdbcType=VARCHAR},
+      </if>
+      <if test="productLine != null" >
+        #{productLine,jdbcType=VARCHAR},
+      </if>
+      <if test="productVersionId != null" >
+        #{productVersionId,jdbcType=VARCHAR},
+      </if>
+      <if test="productVersion != null" >
+        #{productVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="month != null" >
+        #{month,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="warZoneCode != null" >
+        #{warZoneCode,jdbcType=VARCHAR},
+      </if>
+      <if test="warZone != null" >
+        #{warZone,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null" >
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="businessGroupCode != null" >
+        #{businessGroupCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessGroup != null" >
+        #{businessGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="resblockId != null" >
+        #{resblockId,jdbcType=VARCHAR},
+      </if>
+      <if test="resblockName != null" >
+        #{resblockName,jdbcType=VARCHAR},
+      </if>
+      <if test="rentType != null" >
+        #{rentType,jdbcType=VARCHAR},
+      </if>
+      <if test="hireChannel != null" >
+        #{hireChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedLevelId != null" >
+        #{finishedLevelId,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedLevel != null" >
+        #{finishedLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="disposeBedroomAmount != null" >
+        #{disposeBedroomAmount,jdbcType=INTEGER},
+      </if>
+      <if test="disposeBedroomDesc != null" >
+        #{disposeBedroomDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="holdDays != null" >
+        #{holdDays,jdbcType=INTEGER},
+      </if>
+      <if test="holdDaysSegment != null" >
+        #{holdDaysSegment,jdbcType=VARCHAR},
+      </if>
+      <if test="amountOfHousingInThisPeriod != null" >
+        #{amountOfHousingInThisPeriod,jdbcType=DOUBLE},
+      </if>
+      <if test="amountOfHousingInThisIssue != null" >
+        #{amountOfHousingInThisIssue,jdbcType=DOUBLE},
+      </if>
+      <if test="monthsInRent != null" >
+        #{monthsInRent,jdbcType=DOUBLE},
+      </if>
+      <if test="monthsBetweenListings != null" >
+        #{monthsBetweenListings,jdbcType=DOUBLE},
+      </if>
+      <if test="singleQuantity != null" >
+        #{singleQuantity,jdbcType=DOUBLE},
+      </if>
+      <if test="gmv != null" >
+        #{gmv,jdbcType=DOUBLE},
+      </if>
+      <if test="revenueBeforeDeduction != null" >
+        #{revenueBeforeDeduction,jdbcType=DOUBLE},
+      </if>
+      <if test="relief != null" >
+        #{relief,jdbcType=DOUBLE},
+      </if>
+      <if test="revenueAfterDeduction != null" >
+        #{revenueAfterDeduction,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerIncome != null" >
+        #{ownerIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="rentIncome != null" >
+        #{rentIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="rentExpenses != null" >
+        #{rentExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="serviceFeeIncome != null" >
+        #{serviceFeeIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="outOfServiceServiceFee != null" >
+        #{outOfServiceServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="subleaseServiceFee != null" >
+        #{subleaseServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="liquidatedDamages != null" >
+        #{liquidatedDamages,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerCancellation != null" >
+        #{ownerCancellation,jdbcType=DOUBLE},
+      </if>
+      <if test="liquidatedDamages1 != null" >
+        #{liquidatedDamages1,jdbcType=DOUBLE},
+      </if>
+      <if test="otherOperatingIncome != null" >
+        #{otherOperatingIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeCommoditySales != null" >
+        #{otherBusinessIncomeCommoditySales,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeDirectRentDecoration != null" >
+        #{otherBusinessIncomeDirectRentDecoration,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeFee != null" >
+        #{otherBusinessIncomeFee,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeCompensation != null" >
+        #{otherBusinessIncomeCompensation,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeOther != null" >
+        #{otherBusinessIncomeOther,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessLineIncome != null" >
+        #{otherBusinessLineIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeCleaning != null" >
+        #{platformServiceFeeCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeMoving != null" >
+        #{platformServiceFeeMoving,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeHomeRepair != null" >
+        #{platformServiceFeeHomeRepair,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeExcellentProducts != null" >
+        #{platformServiceFeeExcellentProducts,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeHomestay != null" >
+        #{platformServiceFeeHomestay,jdbcType=DOUBLE},
+      </if>
+      <if test="excellentProductSelfEmployed != null" >
+        #{excellentProductSelfEmployed,jdbcType=DOUBLE},
+      </if>
+      <if test="homeRepair != null" >
+        #{homeRepair,jdbcType=DOUBLE},
+      </if>
+      <if test="homeImprovement != null" >
+        #{homeImprovement,jdbcType=DOUBLE},
+      </if>
+      <if test="financialServiceFeeIncome != null" >
+        #{financialServiceFeeIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="variableCosts != null" >
+        #{variableCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="configurationCostEngineeringCost != null" >
+        #{configurationCostEngineeringCost,jdbcType=DOUBLE},
+      </if>
+      <if test="newHousingAllocationCost != null" >
+        #{newHousingAllocationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="leaseConfigurationCost != null" >
+        #{leaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="withdrawalConfigurationCost != null" >
+        #{withdrawalConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="subleaseConfigurationCost != null" >
+        #{subleaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="releaseConfigurationCost != null" >
+        #{releaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="forRentLeaseConfigurationCost != null" >
+        #{forRentLeaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="renewalConfigurationCost != null" >
+        #{renewalConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="ncDirectRentRenovationCost != null" >
+        #{ncDirectRentRenovationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="directRentingCost != null" >
+        #{directRentingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="performancePay != null" >
+        #{performancePay,jdbcType=DOUBLE},
+      </if>
+      <if test="housekeeper != null" >
+        #{housekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="freeToOfferHousekeeper != null" >
+        #{freeToOfferHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusHousekeeper != null" >
+        #{bonusHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="configuration != null" >
+        #{configuration,jdbcType=DOUBLE},
+      </if>
+      <if test="freeToCommissionConfiguration != null" >
+        #{freeToCommissionConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusConfiguration != null" >
+        #{bonusConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="cleaningCost != null" >
+        #{cleaningCost,jdbcType=DOUBLE},
+      </if>
+      <if test="biweeklyMonthlyCleaning != null" >
+        #{biweeklyMonthlyCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="freeDepthCleaningCosts != null" >
+        #{freeDepthCleaningCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="withdrawalAndCleaning != null" >
+        #{withdrawalAndCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="wastelandCleaning != null" >
+        #{wastelandCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="killingAndCleaning != null" >
+        #{killingAndCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="returnAsItIs != null" >
+        #{returnAsItIs,jdbcType=DOUBLE},
+      </if>
+      <if test="emergencyCleaning != null" >
+        #{emergencyCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="returnAsItIs1 != null" >
+        #{returnAsItIs1,jdbcType=DOUBLE},
+      </if>
+      <if test="cleaningAfterRepair != null" >
+        #{cleaningAfterRepair,jdbcType=DOUBLE},
+      </if>
+      <if test="dailyCleaning != null" >
+        #{dailyCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="maintenanceCosts != null" >
+        #{maintenanceCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="longTermMaintenanceFee != null" >
+        #{longTermMaintenanceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="maintenanceFundExpenditure != null" >
+        #{maintenanceFundExpenditure,jdbcType=DOUBLE},
+      </if>
+      <if test="channelCommission != null" >
+        #{channelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="channelCost != null" >
+        #{channelCost,jdbcType=DOUBLE},
+      </if>
+      <if test="outboundChannelCommission != null" >
+        #{outboundChannelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="houseChannelCommission != null" >
+        #{houseChannelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="qualityCost != null" >
+        #{qualityCost,jdbcType=DOUBLE},
+      </if>
+      <if test="withholdingServiceFee != null" >
+        #{withholdingServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="friendsPropertyInsurance != null" >
+        #{friendsPropertyInsurance,jdbcType=DOUBLE},
+      </if>
+      <if test="airTreatmentCost != null" >
+        #{airTreatmentCost,jdbcType=DOUBLE},
+      </if>
+      <if test="airQualityTestingCost != null" >
+        #{airQualityTestingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="materialTestingFee != null" >
+        #{materialTestingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerRentInvoiceTax != null" >
+        #{ownerRentInvoiceTax,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessLineVariableCosts != null" >
+        #{otherBusinessLineVariableCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="marginalRevenue != null" >
+        #{marginalRevenue,jdbcType=DOUBLE},
+      </if>
+      <if test="fixedCost != null" >
+        #{fixedCost,jdbcType=DOUBLE},
+      </if>
+      <if test="basicWage != null" >
+        #{basicWage,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryHousekeeper != null" >
+        #{basicSalaryHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceHousekeeper != null" >
+        #{socialInsuranceHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundHousekeeper != null" >
+        #{housingProvidentFundHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryConfiguration != null" >
+        #{basicSalaryConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceConfiguration != null" >
+        #{socialInsuranceConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundConfiguration != null" >
+        #{housingProvidentFundConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationInvestmentAndOperatingCosts != null" >
+        #{workstationInvestmentAndOperatingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationInvestmentCost != null" >
+        #{workstationInvestmentCost,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationDecoration != null" >
+        #{workstationDecoration,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOfficeFurniture != null" >
+        #{workstationOfficeFurniture,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationComputerEquipment != null" >
+        #{workstationComputerEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOfficeEquipment != null" >
+        #{workstationOfficeEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationItAccessories != null" >
+        #{workstationItAccessories,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationEnvironmentSoftcover != null" >
+        #{workstationEnvironmentSoftcover,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationFirefightingSupplies != null" >
+        #{workstationFirefightingSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationEquipmentRentalServiceFee != null" >
+        #{workstationEquipmentRentalServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationChannelCommission != null" >
+        #{workstationChannelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOperatingCosts != null" >
+        #{workstationOperatingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationRent != null" >
+        #{workstationRent,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationPhoneFee != null" >
+        #{workstationPhoneFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationWaterFee != null" >
+        #{workstationWaterFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationElectricityFee != null" >
+        #{workstationElectricityFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationGasFee != null" >
+        #{workstationGasFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationHeatingPropertyFee != null" >
+        #{workstationHeatingPropertyFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationPrinting != null" >
+        #{workstationPrinting,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationCleaningCost != null" >
+        #{workstationCleaningCost,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationNetworkFee != null" >
+        #{workstationNetworkFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationPrintingSupplies != null" >
+        #{workstationPrintingSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationDrinkingWater != null" >
+        #{workstationDrinkingWater,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOfficeSupplies != null" >
+        #{workstationOfficeSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationRepairCosts != null" >
+        #{workstationRepairCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationHandlingFee != null" >
+        #{workstationHandlingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationChannelCommission1 != null" >
+        #{workstationChannelCommission1,jdbcType=DOUBLE},
+      </if>
+      <if test="otherOperatingCosts != null" >
+        #{otherOperatingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="liquidatedDamagesCost != null" >
+        #{liquidatedDamagesCost,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerCompensation != null" >
+        #{ownerCompensation,jdbcType=DOUBLE},
+      </if>
+      <if test="securityIncidentHandlingFee != null" >
+        #{securityIncidentHandlingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="administrativePenalties != null" >
+        #{administrativePenalties,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessCostsOther != null" >
+        #{otherBusinessCostsOther,jdbcType=DOUBLE},
+      </if>
+      <if test="fixedCostOfOtherLinesOfBusiness != null" >
+        #{fixedCostOfOtherLinesOfBusiness,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingGrossProfit != null" >
+        #{operatingGrossProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingCosts != null" >
+        #{marketingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingLaborCost != null" >
+        #{marketingLaborCost,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryMarketer != null" >
+        #{basicSalaryMarketer,jdbcType=DOUBLE},
+      </if>
+      <if test="performancePaymarketer != null" >
+        #{performancePaymarketer,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusMarketer != null" >
+        #{bonusMarketer,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundMarketers != null" >
+        #{housingProvidentFundMarketers,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceMarketingStaff != null" >
+        #{socialInsuranceMarketingStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="precisionMarketingExpenses != null" >
+        #{precisionMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="semConstruction != null" >
+        #{semConstruction,jdbcType=DOUBLE},
+      </if>
+      <if test="appPromotion != null" >
+        #{appPromotion,jdbcType=DOUBLE},
+      </if>
+      <if test="networkPortFee != null" >
+        #{networkPortFee,jdbcType=DOUBLE},
+      </if>
+      <if test="brandMarketingExpenses != null" >
+        #{brandMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="clientMarketingExpenses != null" >
+        #{clientMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="customerUserOperation != null" >
+        #{customerUserOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="customerBusinessOperations != null" >
+        #{customerBusinessOperations,jdbcType=DOUBLE},
+      </if>
+      <if test="customerBrandMarketing != null" >
+        #{customerBrandMarketing,jdbcType=DOUBLE},
+      </if>
+      <if test="customerProductOperation != null" >
+        #{customerProductOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="ownershipMarketingExpenses != null" >
+        #{ownershipMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerUserOperation != null" >
+        #{ownerUserOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerBusinessOperations != null" >
+        #{ownerBusinessOperations,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerBrandMarketing != null" >
+        #{ownerBrandMarketing,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerProductOperation != null" >
+        #{ownerProductOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="discountReduction != null" >
+        #{discountReduction,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingExpensesOther != null" >
+        #{marketingExpensesOther,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalExpenses != null" >
+        #{functionalExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalLaborCost != null" >
+        #{functionalLaborCost,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryFunctionalStaff != null" >
+        #{basicSalaryFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="performancePayrollFunctionalStaff != null" >
+        #{performancePayrollFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusFunctionalStaff != null" >
+        #{bonusFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundFunctionalStaff != null" >
+        #{housingProvidentFundFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceFunctionalStaff != null" >
+        #{socialInsuranceFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="monetaryCompensation != null" >
+        #{monetaryCompensation,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalTemporaryLaborCosts != null" >
+        #{functionalTemporaryLaborCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="administrativeCosts != null" >
+        #{administrativeCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalRent != null" >
+        #{functionalRent,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalHeatingPropertyFee != null" >
+        #{functionalHeatingPropertyFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalOfficeFurniture != null" >
+        #{functionalOfficeFurniture,jdbcType=DOUBLE},
+      </if>
+      <if test="mainDecoration != null" >
+        #{mainDecoration,jdbcType=DOUBLE},
+      </if>
+      <if test="equipmentMaintenanceFee != null" >
+        #{equipmentMaintenanceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="repairMaterialFee != null" >
+        #{repairMaterialFee,jdbcType=DOUBLE},
+      </if>
+      <if test="repairLaborCosts != null" >
+        #{repairLaborCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="equipmentPropertyInsurance != null" >
+        #{equipmentPropertyInsurance,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalEnvironment != null" >
+        #{functionalEnvironment,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalEquipmentRentalServiceFee != null" >
+        #{functionalEquipmentRentalServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionWashingCarpetFee != null" >
+        #{functionWashingCarpetFee,jdbcType=DOUBLE},
+      </if>
+      <if test="networkFee != null" >
+        #{networkFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalWaterFee != null" >
+        #{functionalWaterFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalElectricityFee != null" >
+        #{functionalElectricityFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalCleaningFee != null" >
+        #{functionalCleaningFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalDrinkingWater != null" >
+        #{functionalDrinkingWater,jdbcType=DOUBLE},
+      </if>
+      <if test="officeExpenses != null" >
+        #{officeExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalOfficeSupplies != null" >
+        #{functionalOfficeSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="courierFee != null" >
+        #{courierFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalOfficeMiscellaneousFees != null" >
+        #{functionalOfficeMiscellaneousFees,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalItAccessories != null" >
+        #{functionalItAccessories,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalTelephoneFee != null" >
+        #{functionalTelephoneFee,jdbcType=DOUBLE},
+      </if>
+      <if test="transportation != null" >
+        #{transportation,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalPrinting != null" >
+        #{functionalPrinting,jdbcType=DOUBLE},
+      </if>
+      <if test="companyLicenseProcessingAndAnnualInspection != null" >
+        #{companyLicenseProcessingAndAnnualInspection,jdbcType=DOUBLE},
+      </if>
+      <if test="warehousingFee != null" >
+        #{warehousingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="computerEquipment != null" >
+        #{computerEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="otherFunctionsDepreciationAndAmortization != null" >
+        #{otherFunctionsDepreciationAndAmortization,jdbcType=DOUBLE},
+      </if>
+      <if test="trainingFee != null" >
+        #{trainingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="trainingFees != null" >
+        #{trainingFees,jdbcType=DOUBLE},
+      </if>
+      <if test="erudition != null" >
+        #{erudition,jdbcType=DOUBLE},
+      </if>
+      <if test="lecturerTeamBuilding != null" >
+        #{lecturerTeamBuilding,jdbcType=DOUBLE},
+      </if>
+      <if test="trainingImplementationFee != null" >
+        #{trainingImplementationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="courseDevelopmentFee != null" >
+        #{courseDevelopmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="departmentalTrainingFee != null" >
+        #{departmentalTrainingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="recruitmentFee != null" >
+        #{recruitmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineRecruitmentFee != null" >
+        #{onlineRecruitmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="campusRecruitmentOffline != null" >
+        #{campusRecruitmentOffline,jdbcType=DOUBLE},
+      </if>
+      <if test="recruitmentFeeHeadhuntingFee != null" >
+        #{recruitmentFeeHeadhuntingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="recruitmentFeeInternalRecommendation != null" >
+        #{recruitmentFeeInternalRecommendation,jdbcType=DOUBLE},
+      </if>
+      <if test="culturalConstructionAndWelfareCosts != null" >
+        #{culturalConstructionAndWelfareCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="humanitiesCultureConstructionFee != null" >
+        #{humanitiesCultureConstructionFee,jdbcType=DOUBLE},
+      </if>
+      <if test="employeeEducationExpenses != null" >
+        #{employeeEducationExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="bookDataFee != null" >
+        #{bookDataFee,jdbcType=DOUBLE},
+      </if>
+      <if test="executiveWelfareFee != null" >
+        #{executiveWelfareFee,jdbcType=DOUBLE},
+      </if>
+      <if test="companyWelfareExpenses != null" >
+        #{companyWelfareExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="supplementaryMedicalInsurance != null" >
+        #{supplementaryMedicalInsurance,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalExaminationFee != null" >
+        #{medicalExaminationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="expandTeamBuildingFees != null" >
+        #{expandTeamBuildingFees,jdbcType=DOUBLE},
+      </if>
+      <if test="companyTeamBuildingFee != null" >
+        #{companyTeamBuildingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="dailyExpenses != null" >
+        #{dailyExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="overtimeMealPay != null" >
+        #{overtimeMealPay,jdbcType=DOUBLE},
+      </if>
+      <if test="transportationFee != null" >
+        #{transportationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="businessHandlingTransportationFee != null" >
+        #{businessHandlingTransportationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="travelExpenses != null" >
+        #{travelExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="communicationFee != null" >
+        #{communicationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="internalMeetingFee != null" >
+        #{internalMeetingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="externalConferenceFee != null" >
+        #{externalConferenceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInteractionFee != null" >
+        #{socialInteractionFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionCenterTeamConstructionFee != null" >
+        #{functionCenterTeamConstructionFee,jdbcType=DOUBLE},
+      </if>
+      <if test="businessCenterTeamBuildingFee != null" >
+        #{businessCenterTeamBuildingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalToolingFee != null" >
+        #{functionalToolingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="businessToolingFee != null" >
+        #{businessToolingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="consultingServiceFee != null" >
+        #{consultingServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="consultingServiceFee1 != null" >
+        #{consultingServiceFee1,jdbcType=DOUBLE},
+      </if>
+      <if test="trademarkRegistrationFee != null" >
+        #{trademarkRegistrationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="litigationCaseFee != null" >
+        #{litigationCaseFee,jdbcType=DOUBLE},
+      </if>
+      <if test="lawyerServiceFee != null" >
+        #{lawyerServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="productDevelopmentFee != null" >
+        #{productDevelopmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="incentiveFee != null" >
+        #{incentiveFee,jdbcType=DOUBLE},
+      </if>
+      <if test="qualityIncentive != null" >
+        #{qualityIncentive,jdbcType=DOUBLE},
+      </if>
+      <if test="supplierIncentive != null" >
+        #{supplierIncentive,jdbcType=DOUBLE},
+      </if>
+      <if test="hpcActivityFee != null" >
+        #{hpcActivityFee,jdbcType=DOUBLE},
+      </if>
+      <if test="teamIncentiveFee != null" >
+        #{teamIncentiveFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalExpensesOther != null" >
+        #{functionalExpensesOther,jdbcType=DOUBLE},
+      </if>
+      <if test="researchAndDevelopmentExpenses != null" >
+        #{researchAndDevelopmentExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="rdLaborCosts != null" >
+        #{rdLaborCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryRdPersonnel != null" >
+        #{basicSalaryRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="performanceSalaryRdPersonnel != null" >
+        #{performanceSalaryRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusRdStaff != null" >
+        #{bonusRdStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundRdPersonnel != null" >
+        #{housingProvidentFundRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceRdPersonnel != null" >
+        #{socialInsuranceRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="systemImplementationServiceFee != null" >
+        #{systemImplementationServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="systemServiceFee != null" >
+        #{systemServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="systemImplementationFee != null" >
+        #{systemImplementationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="smsPlatformInformationFee != null" >
+        #{smsPlatformInformationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="machineRoomAndEquipmentCosts != null" >
+        #{machineRoomAndEquipmentCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="idcHostingFee != null" >
+        #{idcHostingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="communicationEquipment != null" >
+        #{communicationEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="safetyEquipment != null" >
+        #{safetyEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="storageDevice != null" >
+        #{storageDevice,jdbcType=DOUBLE},
+      </if>
+      <if test="server != null" >
+        #{server,jdbcType=DOUBLE},
+      </if>
+      <if test="networkEquipment != null" >
+        #{networkEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="software != null" >
+        #{software,jdbcType=DOUBLE},
+      </if>
+      <if test="otherDepreciationAndAmortization != null" >
+        #{otherDepreciationAndAmortization,jdbcType=DOUBLE},
+      </if>
+      <if test="financialExpenses != null" >
+        #{financialExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="businessTaxAndSurcharges != null" >
+        #{businessTaxAndSurcharges,jdbcType=DOUBLE},
+      </if>
+      <if test="assetImpairmentLoss != null" >
+        #{assetImpairmentLoss,jdbcType=DOUBLE},
+      </if>
+      <if test="investmentGainsAndLosses != null" >
+        #{investmentGainsAndLosses,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingProfit != null" >
+        #{operatingProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="netNonoperatingIncomeAndExpenses != null" >
+        #{netNonoperatingIncomeAndExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="nonoperatingIncome != null" >
+        #{nonoperatingIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingExpenses != null" >
+        #{operatingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="totalProfit != null" >
+        #{totalProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="incomeTaxExpense != null" >
+        #{incomeTaxExpense,jdbcType=DOUBLE},
+      </if>
+      <if test="netProfitBeforeApportionment != null" >
+        #{netProfitBeforeApportionment,jdbcType=DOUBLE},
+      </if>
+      <if test="totalApportionment != null" >
+        #{totalApportionment,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocation != null" >
+        #{businessLineAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocationRdAllocation != null" >
+        #{businessLineAllocationRdAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocationMarketingAllocation != null" >
+        #{businessLineAllocationMarketingAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocationFunctionAllocation != null" >
+        #{businessLineAllocationFunctionAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="groupSharing != null" >
+        #{groupSharing,jdbcType=DOUBLE},
+      </if>
+      <if test="groupApportionmentRdAllocation != null" >
+        #{groupApportionmentRdAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="groupAllocationMarketingAllocation != null" >
+        #{groupAllocationMarketingAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="groupApportionmentFunctionAllocation != null" >
+        #{groupApportionmentFunctionAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="netProfitAfterApportionment != null" >
+        #{netProfitAfterApportionment,jdbcType=DOUBLE},
+      </if>
+      <if test="assessedAmount != null" >
+        #{assessedAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="repairServiceFee != null" >
+        #{repairServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingCost != null" >
+        #{operatingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="directLaborCost != null" >
+        #{directLaborCost,jdbcType=DOUBLE},
+      </if>
+      <if test="holdNum != null" >
+        #{holdNum,jdbcType=DOUBLE},
+      </if>
+      <if test="holdNumDays != null" >
+        #{holdNumDays,jdbcType=DOUBLE},
+      </if>
+      <if test="calculatedHoldNum != null" >
+        #{calculatedHoldNum,jdbcType=DOUBLE},
+      </if>
+      <if test="calculatedHoldNumDays != null" >
+        #{calculatedHoldNumDays,jdbcType=DOUBLE},
+      </if>
+      <if test="commendationCost != null" >
+        #{commendationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="constructionCost != null" >
+        #{constructionCost,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zhumo.entity.AfterAssessmentReportEntity" >
+    update bz_after_assessment_report
+    <set >
+      <if test="hireContractCode != null" >
+        hire_contract_code = #{hireContractCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLineCode != null" >
+        business_line_code = #{businessLineCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLineName != null" >
+        business_line_name = #{businessLineName,jdbcType=VARCHAR},
+      </if>
+      <if test="productCode != null" >
+        product_code = #{productCode,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="productLineId != null" >
+        product_line_id = #{productLineId,jdbcType=VARCHAR},
+      </if>
+      <if test="productLine != null" >
+        product_line = #{productLine,jdbcType=VARCHAR},
+      </if>
+      <if test="productVersionId != null" >
+        product_version_id = #{productVersionId,jdbcType=VARCHAR},
+      </if>
+      <if test="productVersion != null" >
+        product_version = #{productVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="month != null" >
+        month = #{month,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="warZoneCode != null" >
+        war_zone_code = #{warZoneCode,jdbcType=VARCHAR},
+      </if>
+      <if test="warZone != null" >
+        war_zone = #{warZone,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        region_code = #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="region != null" >
+        region = #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="businessGroupCode != null" >
+        business_group_code = #{businessGroupCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessGroup != null" >
+        business_group = #{businessGroup,jdbcType=VARCHAR},
+      </if>
+      <if test="resblockId != null" >
+        resblock_id = #{resblockId,jdbcType=VARCHAR},
+      </if>
+      <if test="resblockName != null" >
+        resblock_name = #{resblockName,jdbcType=VARCHAR},
+      </if>
+      <if test="rentType != null" >
+        rent_type = #{rentType,jdbcType=VARCHAR},
+      </if>
+      <if test="hireChannel != null" >
+        hire_channel = #{hireChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedLevelId != null" >
+        finished_level_id = #{finishedLevelId,jdbcType=VARCHAR},
+      </if>
+      <if test="finishedLevel != null" >
+        finished_level = #{finishedLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="disposeBedroomAmount != null" >
+        dispose_bedroom_amount = #{disposeBedroomAmount,jdbcType=INTEGER},
+      </if>
+      <if test="disposeBedroomDesc != null" >
+        dispose_bedroom_desc = #{disposeBedroomDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="holdDays != null" >
+        hold_days = #{holdDays,jdbcType=INTEGER},
+      </if>
+      <if test="holdDaysSegment != null" >
+        hold_days_segment = #{holdDaysSegment,jdbcType=VARCHAR},
+      </if>
+      <if test="amountOfHousingInThisPeriod != null" >
+        amount_of_housing_in_this_period = #{amountOfHousingInThisPeriod,jdbcType=DOUBLE},
+      </if>
+      <if test="amountOfHousingInThisIssue != null" >
+        amount_of_housing_in_this_issue = #{amountOfHousingInThisIssue,jdbcType=DOUBLE},
+      </if>
+      <if test="monthsInRent != null" >
+        months_in_rent = #{monthsInRent,jdbcType=DOUBLE},
+      </if>
+      <if test="monthsBetweenListings != null" >
+        months_between_listings = #{monthsBetweenListings,jdbcType=DOUBLE},
+      </if>
+      <if test="singleQuantity != null" >
+        single_quantity = #{singleQuantity,jdbcType=DOUBLE},
+      </if>
+      <if test="gmv != null" >
+        gmv = #{gmv,jdbcType=DOUBLE},
+      </if>
+      <if test="revenueBeforeDeduction != null" >
+        revenue_before_deduction = #{revenueBeforeDeduction,jdbcType=DOUBLE},
+      </if>
+      <if test="relief != null" >
+        relief = #{relief,jdbcType=DOUBLE},
+      </if>
+      <if test="revenueAfterDeduction != null" >
+        revenue_after_deduction = #{revenueAfterDeduction,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerIncome != null" >
+        owner_income = #{ownerIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="rentIncome != null" >
+        rent_income = #{rentIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="rentExpenses != null" >
+        rent_expenses = #{rentExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="serviceFeeIncome != null" >
+        service_fee_income = #{serviceFeeIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="outOfServiceServiceFee != null" >
+        out_of_service_service_fee = #{outOfServiceServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="subleaseServiceFee != null" >
+        sublease_service_fee = #{subleaseServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="liquidatedDamages != null" >
+        liquidated_damages = #{liquidatedDamages,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerCancellation != null" >
+        owner_cancellation = #{ownerCancellation,jdbcType=DOUBLE},
+      </if>
+      <if test="liquidatedDamages1 != null" >
+        liquidated_damages1 = #{liquidatedDamages1,jdbcType=DOUBLE},
+      </if>
+      <if test="otherOperatingIncome != null" >
+        other_operating_income = #{otherOperatingIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeCommoditySales != null" >
+        other_business_income_commodity_sales = #{otherBusinessIncomeCommoditySales,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeDirectRentDecoration != null" >
+        other_business_income_direct_rent_decoration = #{otherBusinessIncomeDirectRentDecoration,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeFee != null" >
+        other_business_income_fee = #{otherBusinessIncomeFee,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeCompensation != null" >
+        other_business_income_compensation = #{otherBusinessIncomeCompensation,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessIncomeOther != null" >
+        other_business_income_other = #{otherBusinessIncomeOther,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessLineIncome != null" >
+        other_business_line_income = #{otherBusinessLineIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeCleaning != null" >
+        platform_service_fee_cleaning = #{platformServiceFeeCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeMoving != null" >
+        platform_service_fee_moving = #{platformServiceFeeMoving,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeHomeRepair != null" >
+        platform_service_fee_home_repair = #{platformServiceFeeHomeRepair,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeExcellentProducts != null" >
+        platform_service_fee_excellent_products = #{platformServiceFeeExcellentProducts,jdbcType=DOUBLE},
+      </if>
+      <if test="platformServiceFeeHomestay != null" >
+        platform_service_fee_homestay = #{platformServiceFeeHomestay,jdbcType=DOUBLE},
+      </if>
+      <if test="excellentProductSelfEmployed != null" >
+        excellent_product_self_employed = #{excellentProductSelfEmployed,jdbcType=DOUBLE},
+      </if>
+      <if test="homeRepair != null" >
+        home_repair = #{homeRepair,jdbcType=DOUBLE},
+      </if>
+      <if test="homeImprovement != null" >
+        home_improvement = #{homeImprovement,jdbcType=DOUBLE},
+      </if>
+      <if test="financialServiceFeeIncome != null" >
+        financial_service_fee_income = #{financialServiceFeeIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="variableCosts != null" >
+        variable_costs = #{variableCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="configurationCostEngineeringCost != null" >
+        configuration_cost_engineering_cost = #{configurationCostEngineeringCost,jdbcType=DOUBLE},
+      </if>
+      <if test="newHousingAllocationCost != null" >
+        new_housing_allocation_cost = #{newHousingAllocationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="leaseConfigurationCost != null" >
+        lease_configuration_cost = #{leaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="withdrawalConfigurationCost != null" >
+        withdrawal_configuration_cost = #{withdrawalConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="subleaseConfigurationCost != null" >
+        sublease_configuration_cost = #{subleaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="releaseConfigurationCost != null" >
+        release_configuration_cost = #{releaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="forRentLeaseConfigurationCost != null" >
+        for_rent_lease_configuration_cost = #{forRentLeaseConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="renewalConfigurationCost != null" >
+        renewal_configuration_cost = #{renewalConfigurationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="ncDirectRentRenovationCost != null" >
+        nc_direct_rent_renovation_cost = #{ncDirectRentRenovationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="directRentingCost != null" >
+        direct_renting_cost = #{directRentingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="performancePay != null" >
+        performance_pay = #{performancePay,jdbcType=DOUBLE},
+      </if>
+      <if test="housekeeper != null" >
+        housekeeper = #{housekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="freeToOfferHousekeeper != null" >
+        free_to_offer_housekeeper = #{freeToOfferHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusHousekeeper != null" >
+        bonus_housekeeper = #{bonusHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="configuration != null" >
+        configuration = #{configuration,jdbcType=DOUBLE},
+      </if>
+      <if test="freeToCommissionConfiguration != null" >
+        free_to_commission_configuration = #{freeToCommissionConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusConfiguration != null" >
+        bonus_configuration = #{bonusConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="cleaningCost != null" >
+        cleaning_cost = #{cleaningCost,jdbcType=DOUBLE},
+      </if>
+      <if test="biweeklyMonthlyCleaning != null" >
+        biweekly_monthly_cleaning = #{biweeklyMonthlyCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="freeDepthCleaningCosts != null" >
+        free_depth_cleaning_costs = #{freeDepthCleaningCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="withdrawalAndCleaning != null" >
+        withdrawal_and_cleaning = #{withdrawalAndCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="wastelandCleaning != null" >
+        wasteland_cleaning = #{wastelandCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="killingAndCleaning != null" >
+        killing_and_cleaning = #{killingAndCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="returnAsItIs != null" >
+        return_as_it_is = #{returnAsItIs,jdbcType=DOUBLE},
+      </if>
+      <if test="emergencyCleaning != null" >
+        emergency_cleaning = #{emergencyCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="returnAsItIs1 != null" >
+        return_as_it_is1 = #{returnAsItIs1,jdbcType=DOUBLE},
+      </if>
+      <if test="cleaningAfterRepair != null" >
+        cleaning_after_repair = #{cleaningAfterRepair,jdbcType=DOUBLE},
+      </if>
+      <if test="dailyCleaning != null" >
+        daily_cleaning = #{dailyCleaning,jdbcType=DOUBLE},
+      </if>
+      <if test="maintenanceCosts != null" >
+        maintenance_costs = #{maintenanceCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="longTermMaintenanceFee != null" >
+        long_term_maintenance_fee = #{longTermMaintenanceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="maintenanceFundExpenditure != null" >
+        maintenance_fund_expenditure = #{maintenanceFundExpenditure,jdbcType=DOUBLE},
+      </if>
+      <if test="channelCommission != null" >
+        channel_commission = #{channelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="channelCost != null" >
+        channel_cost = #{channelCost,jdbcType=DOUBLE},
+      </if>
+      <if test="outboundChannelCommission != null" >
+        outbound_channel_commission = #{outboundChannelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="houseChannelCommission != null" >
+        house_channel_commission = #{houseChannelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="qualityCost != null" >
+        quality_cost = #{qualityCost,jdbcType=DOUBLE},
+      </if>
+      <if test="withholdingServiceFee != null" >
+        withholding_service_fee = #{withholdingServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="friendsPropertyInsurance != null" >
+        friends_property_insurance = #{friendsPropertyInsurance,jdbcType=DOUBLE},
+      </if>
+      <if test="airTreatmentCost != null" >
+        air_treatment_cost = #{airTreatmentCost,jdbcType=DOUBLE},
+      </if>
+      <if test="airQualityTestingCost != null" >
+        air_quality_testing_cost = #{airQualityTestingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="materialTestingFee != null" >
+        material_testing_fee = #{materialTestingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerRentInvoiceTax != null" >
+        owner_rent_invoice_tax = #{ownerRentInvoiceTax,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessLineVariableCosts != null" >
+        other_business_line_variable_costs = #{otherBusinessLineVariableCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="marginalRevenue != null" >
+        marginal_revenue = #{marginalRevenue,jdbcType=DOUBLE},
+      </if>
+      <if test="fixedCost != null" >
+        fixed_cost = #{fixedCost,jdbcType=DOUBLE},
+      </if>
+      <if test="basicWage != null" >
+        basic_wage = #{basicWage,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryHousekeeper != null" >
+        basic_salary_housekeeper = #{basicSalaryHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceHousekeeper != null" >
+        social_insurance_housekeeper = #{socialInsuranceHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundHousekeeper != null" >
+        housing_provident_fund_housekeeper = #{housingProvidentFundHousekeeper,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryConfiguration != null" >
+        basic_salary_configuration = #{basicSalaryConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceConfiguration != null" >
+        social_insurance_configuration = #{socialInsuranceConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundConfiguration != null" >
+        housing_provident_fund_configuration = #{housingProvidentFundConfiguration,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationInvestmentAndOperatingCosts != null" >
+        workstation_investment_and_operating_costs = #{workstationInvestmentAndOperatingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationInvestmentCost != null" >
+        workstation_investment_cost = #{workstationInvestmentCost,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationDecoration != null" >
+        workstation_decoration = #{workstationDecoration,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOfficeFurniture != null" >
+        workstation_office_furniture = #{workstationOfficeFurniture,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationComputerEquipment != null" >
+        workstation_computer_equipment = #{workstationComputerEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOfficeEquipment != null" >
+        workstation_office_equipment = #{workstationOfficeEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationItAccessories != null" >
+        workstation_it_accessories = #{workstationItAccessories,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationEnvironmentSoftcover != null" >
+        workstation_environment_softcover = #{workstationEnvironmentSoftcover,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationFirefightingSupplies != null" >
+        workstation_firefighting_supplies = #{workstationFirefightingSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationEquipmentRentalServiceFee != null" >
+        workstation_equipment_rental_service_fee = #{workstationEquipmentRentalServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationChannelCommission != null" >
+        workstation_channel_commission = #{workstationChannelCommission,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOperatingCosts != null" >
+        workstation_operating_costs = #{workstationOperatingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationRent != null" >
+        workstation_rent = #{workstationRent,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationPhoneFee != null" >
+        workstation_phone_fee = #{workstationPhoneFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationWaterFee != null" >
+        workstation_water_fee = #{workstationWaterFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationElectricityFee != null" >
+        workstation_electricity_fee = #{workstationElectricityFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationGasFee != null" >
+        workstation_gas_fee = #{workstationGasFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationHeatingPropertyFee != null" >
+        workstation_heating_property_fee = #{workstationHeatingPropertyFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationPrinting != null" >
+        workstation_printing = #{workstationPrinting,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationCleaningCost != null" >
+        workstation_cleaning_cost = #{workstationCleaningCost,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationNetworkFee != null" >
+        workstation_network_fee = #{workstationNetworkFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationPrintingSupplies != null" >
+        workstation_printing_supplies = #{workstationPrintingSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationDrinkingWater != null" >
+        workstation_drinking_water = #{workstationDrinkingWater,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationOfficeSupplies != null" >
+        workstation_office_supplies = #{workstationOfficeSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationRepairCosts != null" >
+        workstation_repair_costs = #{workstationRepairCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationHandlingFee != null" >
+        workstation_handling_fee = #{workstationHandlingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="workstationChannelCommission1 != null" >
+        workstation_channel_commission1 = #{workstationChannelCommission1,jdbcType=DOUBLE},
+      </if>
+      <if test="otherOperatingCosts != null" >
+        other_operating_costs = #{otherOperatingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="liquidatedDamagesCost != null" >
+        liquidated_damages_cost = #{liquidatedDamagesCost,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerCompensation != null" >
+        owner_compensation = #{ownerCompensation,jdbcType=DOUBLE},
+      </if>
+      <if test="securityIncidentHandlingFee != null" >
+        security_incident_handling_fee = #{securityIncidentHandlingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="administrativePenalties != null" >
+        administrative_penalties = #{administrativePenalties,jdbcType=DOUBLE},
+      </if>
+      <if test="otherBusinessCostsOther != null" >
+        other_business_costs_other = #{otherBusinessCostsOther,jdbcType=DOUBLE},
+      </if>
+      <if test="fixedCostOfOtherLinesOfBusiness != null" >
+        fixed_cost_of_other_lines_of_business = #{fixedCostOfOtherLinesOfBusiness,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingGrossProfit != null" >
+        operating_gross_profit = #{operatingGrossProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingCosts != null" >
+        marketing_costs = #{marketingCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingLaborCost != null" >
+        marketing_labor_cost = #{marketingLaborCost,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryMarketer != null" >
+        basic_salary_marketer = #{basicSalaryMarketer,jdbcType=DOUBLE},
+      </if>
+      <if test="performancePaymarketer != null" >
+        performance_paymarketer = #{performancePaymarketer,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusMarketer != null" >
+        bonus_marketer = #{bonusMarketer,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundMarketers != null" >
+        housing_provident_fund_marketers = #{housingProvidentFundMarketers,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceMarketingStaff != null" >
+        social_insurance_marketing_staff = #{socialInsuranceMarketingStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="precisionMarketingExpenses != null" >
+        precision_marketing_expenses = #{precisionMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="semConstruction != null" >
+        sem_construction = #{semConstruction,jdbcType=DOUBLE},
+      </if>
+      <if test="appPromotion != null" >
+        app_promotion = #{appPromotion,jdbcType=DOUBLE},
+      </if>
+      <if test="networkPortFee != null" >
+        network_port_fee = #{networkPortFee,jdbcType=DOUBLE},
+      </if>
+      <if test="brandMarketingExpenses != null" >
+        brand_marketing_expenses = #{brandMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="clientMarketingExpenses != null" >
+        client_marketing_expenses = #{clientMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="customerUserOperation != null" >
+        customer_user_operation = #{customerUserOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="customerBusinessOperations != null" >
+        customer_business_operations = #{customerBusinessOperations,jdbcType=DOUBLE},
+      </if>
+      <if test="customerBrandMarketing != null" >
+        customer_brand_marketing = #{customerBrandMarketing,jdbcType=DOUBLE},
+      </if>
+      <if test="customerProductOperation != null" >
+        customer_product_operation = #{customerProductOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="ownershipMarketingExpenses != null" >
+        ownership_marketing_expenses = #{ownershipMarketingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerUserOperation != null" >
+        owner_user_operation = #{ownerUserOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerBusinessOperations != null" >
+        owner_business_operations = #{ownerBusinessOperations,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerBrandMarketing != null" >
+        owner_brand_marketing = #{ownerBrandMarketing,jdbcType=DOUBLE},
+      </if>
+      <if test="ownerProductOperation != null" >
+        owner_product_operation = #{ownerProductOperation,jdbcType=DOUBLE},
+      </if>
+      <if test="discountReduction != null" >
+        discount_reduction = #{discountReduction,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingExpensesOther != null" >
+        marketing_expenses_other = #{marketingExpensesOther,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalExpenses != null" >
+        functional_expenses = #{functionalExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalLaborCost != null" >
+        functional_labor_cost = #{functionalLaborCost,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryFunctionalStaff != null" >
+        basic_salary_functional_staff = #{basicSalaryFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="performancePayrollFunctionalStaff != null" >
+        performance_payroll_functional_staff = #{performancePayrollFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusFunctionalStaff != null" >
+        bonus_functional_staff = #{bonusFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundFunctionalStaff != null" >
+        housing_provident_fund_functional_staff = #{housingProvidentFundFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceFunctionalStaff != null" >
+        social_insurance_functional_staff = #{socialInsuranceFunctionalStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="monetaryCompensation != null" >
+        monetary_compensation = #{monetaryCompensation,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalTemporaryLaborCosts != null" >
+        functional_temporary_labor_costs = #{functionalTemporaryLaborCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="administrativeCosts != null" >
+        administrative_costs = #{administrativeCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalRent != null" >
+        functional_rent = #{functionalRent,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalHeatingPropertyFee != null" >
+        functional_heating_property_fee = #{functionalHeatingPropertyFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalOfficeFurniture != null" >
+        functional_office_furniture = #{functionalOfficeFurniture,jdbcType=DOUBLE},
+      </if>
+      <if test="mainDecoration != null" >
+        main_decoration = #{mainDecoration,jdbcType=DOUBLE},
+      </if>
+      <if test="equipmentMaintenanceFee != null" >
+        equipment_maintenance_fee = #{equipmentMaintenanceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="repairMaterialFee != null" >
+        repair_material_fee = #{repairMaterialFee,jdbcType=DOUBLE},
+      </if>
+      <if test="repairLaborCosts != null" >
+        repair_labor_costs = #{repairLaborCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="equipmentPropertyInsurance != null" >
+        equipment_property_insurance = #{equipmentPropertyInsurance,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalEnvironment != null" >
+        functional_environment = #{functionalEnvironment,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalEquipmentRentalServiceFee != null" >
+        functional_equipment_rental_service_fee = #{functionalEquipmentRentalServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionWashingCarpetFee != null" >
+        function_washing_carpet_fee = #{functionWashingCarpetFee,jdbcType=DOUBLE},
+      </if>
+      <if test="networkFee != null" >
+        network_fee = #{networkFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalWaterFee != null" >
+        functional_water_fee = #{functionalWaterFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalElectricityFee != null" >
+        functional_electricity_fee = #{functionalElectricityFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalCleaningFee != null" >
+        functional_cleaning_fee = #{functionalCleaningFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalDrinkingWater != null" >
+        functional_drinking_water = #{functionalDrinkingWater,jdbcType=DOUBLE},
+      </if>
+      <if test="officeExpenses != null" >
+        office_expenses = #{officeExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalOfficeSupplies != null" >
+        functional_office_supplies = #{functionalOfficeSupplies,jdbcType=DOUBLE},
+      </if>
+      <if test="courierFee != null" >
+        courier_fee = #{courierFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalOfficeMiscellaneousFees != null" >
+        functional_office_miscellaneous_fees = #{functionalOfficeMiscellaneousFees,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalItAccessories != null" >
+        functional_it_accessories = #{functionalItAccessories,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalTelephoneFee != null" >
+        functional_telephone_fee = #{functionalTelephoneFee,jdbcType=DOUBLE},
+      </if>
+      <if test="transportation != null" >
+        transportation = #{transportation,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalPrinting != null" >
+        functional_printing = #{functionalPrinting,jdbcType=DOUBLE},
+      </if>
+      <if test="companyLicenseProcessingAndAnnualInspection != null" >
+        company_license_processing_and_annual_inspection = #{companyLicenseProcessingAndAnnualInspection,jdbcType=DOUBLE},
+      </if>
+      <if test="warehousingFee != null" >
+        warehousing_fee = #{warehousingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="computerEquipment != null" >
+        computer_equipment = #{computerEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="otherFunctionsDepreciationAndAmortization != null" >
+        other_functions_depreciation_and_amortization = #{otherFunctionsDepreciationAndAmortization,jdbcType=DOUBLE},
+      </if>
+      <if test="trainingFee != null" >
+        training_fee = #{trainingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="trainingFees != null" >
+        training_fees = #{trainingFees,jdbcType=DOUBLE},
+      </if>
+      <if test="erudition != null" >
+        erudition = #{erudition,jdbcType=DOUBLE},
+      </if>
+      <if test="lecturerTeamBuilding != null" >
+        lecturer_team_building = #{lecturerTeamBuilding,jdbcType=DOUBLE},
+      </if>
+      <if test="trainingImplementationFee != null" >
+        training_implementation_fee = #{trainingImplementationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="courseDevelopmentFee != null" >
+        course_development_fee = #{courseDevelopmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="departmentalTrainingFee != null" >
+        departmental_training_fee = #{departmentalTrainingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="recruitmentFee != null" >
+        recruitment_fee = #{recruitmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineRecruitmentFee != null" >
+        online_recruitment_fee = #{onlineRecruitmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="campusRecruitmentOffline != null" >
+        campus_recruitment_offline = #{campusRecruitmentOffline,jdbcType=DOUBLE},
+      </if>
+      <if test="recruitmentFeeHeadhuntingFee != null" >
+        recruitment_fee_headhunting_fee = #{recruitmentFeeHeadhuntingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="recruitmentFeeInternalRecommendation != null" >
+        recruitment_fee_internal_recommendation = #{recruitmentFeeInternalRecommendation,jdbcType=DOUBLE},
+      </if>
+      <if test="culturalConstructionAndWelfareCosts != null" >
+        cultural_construction_and_welfare_costs = #{culturalConstructionAndWelfareCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="humanitiesCultureConstructionFee != null" >
+        humanities_culture_construction_fee = #{humanitiesCultureConstructionFee,jdbcType=DOUBLE},
+      </if>
+      <if test="employeeEducationExpenses != null" >
+        employee_education_expenses = #{employeeEducationExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="bookDataFee != null" >
+        book_data_fee = #{bookDataFee,jdbcType=DOUBLE},
+      </if>
+      <if test="executiveWelfareFee != null" >
+        executive_welfare_fee = #{executiveWelfareFee,jdbcType=DOUBLE},
+      </if>
+      <if test="companyWelfareExpenses != null" >
+        company_welfare_expenses = #{companyWelfareExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="supplementaryMedicalInsurance != null" >
+        supplementary_medical_insurance = #{supplementaryMedicalInsurance,jdbcType=DOUBLE},
+      </if>
+      <if test="medicalExaminationFee != null" >
+        medical_examination_fee = #{medicalExaminationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="expandTeamBuildingFees != null" >
+        expand_team_building_fees = #{expandTeamBuildingFees,jdbcType=DOUBLE},
+      </if>
+      <if test="companyTeamBuildingFee != null" >
+        company_team_building_fee = #{companyTeamBuildingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="dailyExpenses != null" >
+        daily_expenses = #{dailyExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="overtimeMealPay != null" >
+        overtime_meal_pay = #{overtimeMealPay,jdbcType=DOUBLE},
+      </if>
+      <if test="transportationFee != null" >
+        transportation_fee = #{transportationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="businessHandlingTransportationFee != null" >
+        business_handling_transportation_fee = #{businessHandlingTransportationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="travelExpenses != null" >
+        travel_expenses = #{travelExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="communicationFee != null" >
+        communication_fee = #{communicationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="internalMeetingFee != null" >
+        internal_meeting_fee = #{internalMeetingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="externalConferenceFee != null" >
+        external_conference_fee = #{externalConferenceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInteractionFee != null" >
+        social_interaction_fee = #{socialInteractionFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionCenterTeamConstructionFee != null" >
+        function_center_team_construction_fee = #{functionCenterTeamConstructionFee,jdbcType=DOUBLE},
+      </if>
+      <if test="businessCenterTeamBuildingFee != null" >
+        business_center_team_building_fee = #{businessCenterTeamBuildingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalToolingFee != null" >
+        functional_tooling_fee = #{functionalToolingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="businessToolingFee != null" >
+        business_tooling_fee = #{businessToolingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="consultingServiceFee != null" >
+        consulting_service_fee = #{consultingServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="consultingServiceFee1 != null" >
+        consulting_service_fee1 = #{consultingServiceFee1,jdbcType=DOUBLE},
+      </if>
+      <if test="trademarkRegistrationFee != null" >
+        trademark_registration_fee = #{trademarkRegistrationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="litigationCaseFee != null" >
+        litigation_case_fee = #{litigationCaseFee,jdbcType=DOUBLE},
+      </if>
+      <if test="lawyerServiceFee != null" >
+        lawyer_service_fee = #{lawyerServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="productDevelopmentFee != null" >
+        product_development_fee = #{productDevelopmentFee,jdbcType=DOUBLE},
+      </if>
+      <if test="incentiveFee != null" >
+        incentive_fee = #{incentiveFee,jdbcType=DOUBLE},
+      </if>
+      <if test="qualityIncentive != null" >
+        quality_incentive = #{qualityIncentive,jdbcType=DOUBLE},
+      </if>
+      <if test="supplierIncentive != null" >
+        supplier_incentive = #{supplierIncentive,jdbcType=DOUBLE},
+      </if>
+      <if test="hpcActivityFee != null" >
+        hpc_activity_fee = #{hpcActivityFee,jdbcType=DOUBLE},
+      </if>
+      <if test="teamIncentiveFee != null" >
+        team_incentive_fee = #{teamIncentiveFee,jdbcType=DOUBLE},
+      </if>
+      <if test="functionalExpensesOther != null" >
+        functional_expenses_other = #{functionalExpensesOther,jdbcType=DOUBLE},
+      </if>
+      <if test="researchAndDevelopmentExpenses != null" >
+        research_and_development_expenses = #{researchAndDevelopmentExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="rdLaborCosts != null" >
+        rd_labor_costs = #{rdLaborCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="basicSalaryRdPersonnel != null" >
+        basic_salary_rd_personnel = #{basicSalaryRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="performanceSalaryRdPersonnel != null" >
+        performance_salary_rd_personnel = #{performanceSalaryRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="bonusRdStaff != null" >
+        bonus_rd_staff = #{bonusRdStaff,jdbcType=DOUBLE},
+      </if>
+      <if test="housingProvidentFundRdPersonnel != null" >
+        housing_provident_fund_rd_personnel = #{housingProvidentFundRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="socialInsuranceRdPersonnel != null" >
+        social_insurance_rd_personnel = #{socialInsuranceRdPersonnel,jdbcType=DOUBLE},
+      </if>
+      <if test="systemImplementationServiceFee != null" >
+        system_implementation_service_fee = #{systemImplementationServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="systemServiceFee != null" >
+        system_service_fee = #{systemServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="systemImplementationFee != null" >
+        system_implementation_fee = #{systemImplementationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="smsPlatformInformationFee != null" >
+        sms_platform_information_fee = #{smsPlatformInformationFee,jdbcType=DOUBLE},
+      </if>
+      <if test="machineRoomAndEquipmentCosts != null" >
+        machine_room_and_equipment_costs = #{machineRoomAndEquipmentCosts,jdbcType=DOUBLE},
+      </if>
+      <if test="idcHostingFee != null" >
+        idc_hosting_fee = #{idcHostingFee,jdbcType=DOUBLE},
+      </if>
+      <if test="communicationEquipment != null" >
+        communication_equipment = #{communicationEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="safetyEquipment != null" >
+        safety_equipment = #{safetyEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="storageDevice != null" >
+        storage_device = #{storageDevice,jdbcType=DOUBLE},
+      </if>
+      <if test="server != null" >
+        server = #{server,jdbcType=DOUBLE},
+      </if>
+      <if test="networkEquipment != null" >
+        network_equipment = #{networkEquipment,jdbcType=DOUBLE},
+      </if>
+      <if test="software != null" >
+        software = #{software,jdbcType=DOUBLE},
+      </if>
+      <if test="otherDepreciationAndAmortization != null" >
+        other_depreciation_and_amortization = #{otherDepreciationAndAmortization,jdbcType=DOUBLE},
+      </if>
+      <if test="financialExpenses != null" >
+        financial_expenses = #{financialExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="businessTaxAndSurcharges != null" >
+        business_tax_and_surcharges = #{businessTaxAndSurcharges,jdbcType=DOUBLE},
+      </if>
+      <if test="assetImpairmentLoss != null" >
+        asset_impairment_loss = #{assetImpairmentLoss,jdbcType=DOUBLE},
+      </if>
+      <if test="investmentGainsAndLosses != null" >
+        investment_gains_and_losses = #{investmentGainsAndLosses,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingProfit != null" >
+        operating_profit = #{operatingProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="netNonoperatingIncomeAndExpenses != null" >
+        net_nonoperating_income_and_expenses = #{netNonoperatingIncomeAndExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="nonoperatingIncome != null" >
+        nonoperating_income = #{nonoperatingIncome,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingExpenses != null" >
+        operating_expenses = #{operatingExpenses,jdbcType=DOUBLE},
+      </if>
+      <if test="totalProfit != null" >
+        total_profit = #{totalProfit,jdbcType=DOUBLE},
+      </if>
+      <if test="incomeTaxExpense != null" >
+        income_tax_expense = #{incomeTaxExpense,jdbcType=DOUBLE},
+      </if>
+      <if test="netProfitBeforeApportionment != null" >
+        net_profit_before_apportionment = #{netProfitBeforeApportionment,jdbcType=DOUBLE},
+      </if>
+      <if test="totalApportionment != null" >
+        total_apportionment = #{totalApportionment,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocation != null" >
+        business_line_allocation = #{businessLineAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocationRdAllocation != null" >
+        business_line_allocation_rd_allocation = #{businessLineAllocationRdAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocationMarketingAllocation != null" >
+        business_line_allocation_marketing_allocation = #{businessLineAllocationMarketingAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="businessLineAllocationFunctionAllocation != null" >
+        business_line_allocation_function_allocation = #{businessLineAllocationFunctionAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="groupSharing != null" >
+        group_sharing = #{groupSharing,jdbcType=DOUBLE},
+      </if>
+      <if test="groupApportionmentRdAllocation != null" >
+        group_apportionment_rd_allocation = #{groupApportionmentRdAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="groupAllocationMarketingAllocation != null" >
+        group_allocation_marketing_allocation = #{groupAllocationMarketingAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="groupApportionmentFunctionAllocation != null" >
+        group_apportionment_function_allocation = #{groupApportionmentFunctionAllocation,jdbcType=DOUBLE},
+      </if>
+      <if test="netProfitAfterApportionment != null" >
+        net_profit_after_apportionment = #{netProfitAfterApportionment,jdbcType=DOUBLE},
+      </if>
+      <if test="assessedAmount != null" >
+        assessed_amount = #{assessedAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="repairServiceFee != null" >
+        repair_service_fee = #{repairServiceFee,jdbcType=DOUBLE},
+      </if>
+      <if test="operatingCost != null" >
+        operating_cost = #{operatingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="directLaborCost != null" >
+        direct_labor_cost = #{directLaborCost,jdbcType=DOUBLE},
+      </if>
+      <if test="holdNum != null" >
+        hold_num = #{holdNum,jdbcType=DOUBLE},
+      </if>
+      <if test="holdNumDays != null" >
+        hold_num_days = #{holdNumDays,jdbcType=DOUBLE},
+      </if>
+      <if test="calculatedHoldNum != null" >
+        calculated_hold_num = #{calculatedHoldNum,jdbcType=DOUBLE},
+      </if>
+      <if test="calculatedHoldNumDays != null" >
+        calculated_hold_num_days = #{calculatedHoldNumDays,jdbcType=DOUBLE},
+      </if>
+      <if test="commendationCost != null" >
+        commendation_cost = #{commendationCost,jdbcType=DOUBLE},
+      </if>
+      <if test="constructionCost != null" >
+        construction_cost = #{constructionCost,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+      and period = #{period,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zhumo.entity.AfterAssessmentReportEntity" >
+    update bz_after_assessment_report
+    set hire_contract_code = #{hireContractCode,jdbcType=VARCHAR},
+      business_line_code = #{businessLineCode,jdbcType=VARCHAR},
+      business_line_name = #{businessLineName,jdbcType=VARCHAR},
+      product_code = #{productCode,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      product_line_id = #{productLineId,jdbcType=VARCHAR},
+      product_line = #{productLine,jdbcType=VARCHAR},
+      product_version_id = #{productVersionId,jdbcType=VARCHAR},
+      product_version = #{productVersion,jdbcType=VARCHAR},
+      month = #{month,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      war_zone_code = #{warZoneCode,jdbcType=VARCHAR},
+      war_zone = #{warZone,jdbcType=VARCHAR},
+      region_code = #{regionCode,jdbcType=VARCHAR},
+      region = #{region,jdbcType=VARCHAR},
+      business_group_code = #{businessGroupCode,jdbcType=VARCHAR},
+      business_group = #{businessGroup,jdbcType=VARCHAR},
+      resblock_id = #{resblockId,jdbcType=VARCHAR},
+      resblock_name = #{resblockName,jdbcType=VARCHAR},
+      rent_type = #{rentType,jdbcType=VARCHAR},
+      hire_channel = #{hireChannel,jdbcType=VARCHAR},
+      finished_level_id = #{finishedLevelId,jdbcType=VARCHAR},
+      finished_level = #{finishedLevel,jdbcType=VARCHAR},
+      dispose_bedroom_amount = #{disposeBedroomAmount,jdbcType=INTEGER},
+      dispose_bedroom_desc = #{disposeBedroomDesc,jdbcType=VARCHAR},
+      hold_days = #{holdDays,jdbcType=INTEGER},
+      hold_days_segment = #{holdDaysSegment,jdbcType=VARCHAR},
+      amount_of_housing_in_this_period = #{amountOfHousingInThisPeriod,jdbcType=DOUBLE},
+      amount_of_housing_in_this_issue = #{amountOfHousingInThisIssue,jdbcType=DOUBLE},
+      months_in_rent = #{monthsInRent,jdbcType=DOUBLE},
+      months_between_listings = #{monthsBetweenListings,jdbcType=DOUBLE},
+      single_quantity = #{singleQuantity,jdbcType=DOUBLE},
+      gmv = #{gmv,jdbcType=DOUBLE},
+      revenue_before_deduction = #{revenueBeforeDeduction,jdbcType=DOUBLE},
+      relief = #{relief,jdbcType=DOUBLE},
+      revenue_after_deduction = #{revenueAfterDeduction,jdbcType=DOUBLE},
+      owner_income = #{ownerIncome,jdbcType=DOUBLE},
+      rent_income = #{rentIncome,jdbcType=DOUBLE},
+      rent_expenses = #{rentExpenses,jdbcType=DOUBLE},
+      service_fee_income = #{serviceFeeIncome,jdbcType=DOUBLE},
+      out_of_service_service_fee = #{outOfServiceServiceFee,jdbcType=DOUBLE},
+      sublease_service_fee = #{subleaseServiceFee,jdbcType=DOUBLE},
+      liquidated_damages = #{liquidatedDamages,jdbcType=DOUBLE},
+      owner_cancellation = #{ownerCancellation,jdbcType=DOUBLE},
+      liquidated_damages1 = #{liquidatedDamages1,jdbcType=DOUBLE},
+      other_operating_income = #{otherOperatingIncome,jdbcType=DOUBLE},
+      other_business_income_commodity_sales = #{otherBusinessIncomeCommoditySales,jdbcType=DOUBLE},
+      other_business_income_direct_rent_decoration = #{otherBusinessIncomeDirectRentDecoration,jdbcType=DOUBLE},
+      other_business_income_fee = #{otherBusinessIncomeFee,jdbcType=DOUBLE},
+      other_business_income_compensation = #{otherBusinessIncomeCompensation,jdbcType=DOUBLE},
+      other_business_income_other = #{otherBusinessIncomeOther,jdbcType=DOUBLE},
+      other_business_line_income = #{otherBusinessLineIncome,jdbcType=DOUBLE},
+      platform_service_fee_cleaning = #{platformServiceFeeCleaning,jdbcType=DOUBLE},
+      platform_service_fee_moving = #{platformServiceFeeMoving,jdbcType=DOUBLE},
+      platform_service_fee_home_repair = #{platformServiceFeeHomeRepair,jdbcType=DOUBLE},
+      platform_service_fee_excellent_products = #{platformServiceFeeExcellentProducts,jdbcType=DOUBLE},
+      platform_service_fee_homestay = #{platformServiceFeeHomestay,jdbcType=DOUBLE},
+      excellent_product_self_employed = #{excellentProductSelfEmployed,jdbcType=DOUBLE},
+      home_repair = #{homeRepair,jdbcType=DOUBLE},
+      home_improvement = #{homeImprovement,jdbcType=DOUBLE},
+      financial_service_fee_income = #{financialServiceFeeIncome,jdbcType=DOUBLE},
+      variable_costs = #{variableCosts,jdbcType=DOUBLE},
+      configuration_cost_engineering_cost = #{configurationCostEngineeringCost,jdbcType=DOUBLE},
+      new_housing_allocation_cost = #{newHousingAllocationCost,jdbcType=DOUBLE},
+      lease_configuration_cost = #{leaseConfigurationCost,jdbcType=DOUBLE},
+      withdrawal_configuration_cost = #{withdrawalConfigurationCost,jdbcType=DOUBLE},
+      sublease_configuration_cost = #{subleaseConfigurationCost,jdbcType=DOUBLE},
+      release_configuration_cost = #{releaseConfigurationCost,jdbcType=DOUBLE},
+      for_rent_lease_configuration_cost = #{forRentLeaseConfigurationCost,jdbcType=DOUBLE},
+      renewal_configuration_cost = #{renewalConfigurationCost,jdbcType=DOUBLE},
+      nc_direct_rent_renovation_cost = #{ncDirectRentRenovationCost,jdbcType=DOUBLE},
+      direct_renting_cost = #{directRentingCost,jdbcType=DOUBLE},
+      performance_pay = #{performancePay,jdbcType=DOUBLE},
+      housekeeper = #{housekeeper,jdbcType=DOUBLE},
+      free_to_offer_housekeeper = #{freeToOfferHousekeeper,jdbcType=DOUBLE},
+      bonus_housekeeper = #{bonusHousekeeper,jdbcType=DOUBLE},
+      configuration = #{configuration,jdbcType=DOUBLE},
+      free_to_commission_configuration = #{freeToCommissionConfiguration,jdbcType=DOUBLE},
+      bonus_configuration = #{bonusConfiguration,jdbcType=DOUBLE},
+      cleaning_cost = #{cleaningCost,jdbcType=DOUBLE},
+      biweekly_monthly_cleaning = #{biweeklyMonthlyCleaning,jdbcType=DOUBLE},
+      free_depth_cleaning_costs = #{freeDepthCleaningCosts,jdbcType=DOUBLE},
+      withdrawal_and_cleaning = #{withdrawalAndCleaning,jdbcType=DOUBLE},
+      wasteland_cleaning = #{wastelandCleaning,jdbcType=DOUBLE},
+      killing_and_cleaning = #{killingAndCleaning,jdbcType=DOUBLE},
+      return_as_it_is = #{returnAsItIs,jdbcType=DOUBLE},
+      emergency_cleaning = #{emergencyCleaning,jdbcType=DOUBLE},
+      return_as_it_is1 = #{returnAsItIs1,jdbcType=DOUBLE},
+      cleaning_after_repair = #{cleaningAfterRepair,jdbcType=DOUBLE},
+      daily_cleaning = #{dailyCleaning,jdbcType=DOUBLE},
+      maintenance_costs = #{maintenanceCosts,jdbcType=DOUBLE},
+      long_term_maintenance_fee = #{longTermMaintenanceFee,jdbcType=DOUBLE},
+      maintenance_fund_expenditure = #{maintenanceFundExpenditure,jdbcType=DOUBLE},
+      channel_commission = #{channelCommission,jdbcType=DOUBLE},
+      channel_cost = #{channelCost,jdbcType=DOUBLE},
+      outbound_channel_commission = #{outboundChannelCommission,jdbcType=DOUBLE},
+      house_channel_commission = #{houseChannelCommission,jdbcType=DOUBLE},
+      quality_cost = #{qualityCost,jdbcType=DOUBLE},
+      withholding_service_fee = #{withholdingServiceFee,jdbcType=DOUBLE},
+      friends_property_insurance = #{friendsPropertyInsurance,jdbcType=DOUBLE},
+      air_treatment_cost = #{airTreatmentCost,jdbcType=DOUBLE},
+      air_quality_testing_cost = #{airQualityTestingCost,jdbcType=DOUBLE},
+      material_testing_fee = #{materialTestingFee,jdbcType=DOUBLE},
+      owner_rent_invoice_tax = #{ownerRentInvoiceTax,jdbcType=DOUBLE},
+      other_business_line_variable_costs = #{otherBusinessLineVariableCosts,jdbcType=DOUBLE},
+      marginal_revenue = #{marginalRevenue,jdbcType=DOUBLE},
+      fixed_cost = #{fixedCost,jdbcType=DOUBLE},
+      basic_wage = #{basicWage,jdbcType=DOUBLE},
+      basic_salary_housekeeper = #{basicSalaryHousekeeper,jdbcType=DOUBLE},
+      social_insurance_housekeeper = #{socialInsuranceHousekeeper,jdbcType=DOUBLE},
+      housing_provident_fund_housekeeper = #{housingProvidentFundHousekeeper,jdbcType=DOUBLE},
+      basic_salary_configuration = #{basicSalaryConfiguration,jdbcType=DOUBLE},
+      social_insurance_configuration = #{socialInsuranceConfiguration,jdbcType=DOUBLE},
+      housing_provident_fund_configuration = #{housingProvidentFundConfiguration,jdbcType=DOUBLE},
+      workstation_investment_and_operating_costs = #{workstationInvestmentAndOperatingCosts,jdbcType=DOUBLE},
+      workstation_investment_cost = #{workstationInvestmentCost,jdbcType=DOUBLE},
+      workstation_decoration = #{workstationDecoration,jdbcType=DOUBLE},
+      workstation_office_furniture = #{workstationOfficeFurniture,jdbcType=DOUBLE},
+      workstation_computer_equipment = #{workstationComputerEquipment,jdbcType=DOUBLE},
+      workstation_office_equipment = #{workstationOfficeEquipment,jdbcType=DOUBLE},
+      workstation_it_accessories = #{workstationItAccessories,jdbcType=DOUBLE},
+      workstation_environment_softcover = #{workstationEnvironmentSoftcover,jdbcType=DOUBLE},
+      workstation_firefighting_supplies = #{workstationFirefightingSupplies,jdbcType=DOUBLE},
+      workstation_equipment_rental_service_fee = #{workstationEquipmentRentalServiceFee,jdbcType=DOUBLE},
+      workstation_channel_commission = #{workstationChannelCommission,jdbcType=DOUBLE},
+      workstation_operating_costs = #{workstationOperatingCosts,jdbcType=DOUBLE},
+      workstation_rent = #{workstationRent,jdbcType=DOUBLE},
+      workstation_phone_fee = #{workstationPhoneFee,jdbcType=DOUBLE},
+      workstation_water_fee = #{workstationWaterFee,jdbcType=DOUBLE},
+      workstation_electricity_fee = #{workstationElectricityFee,jdbcType=DOUBLE},
+      workstation_gas_fee = #{workstationGasFee,jdbcType=DOUBLE},
+      workstation_heating_property_fee = #{workstationHeatingPropertyFee,jdbcType=DOUBLE},
+      workstation_printing = #{workstationPrinting,jdbcType=DOUBLE},
+      workstation_cleaning_cost = #{workstationCleaningCost,jdbcType=DOUBLE},
+      workstation_network_fee = #{workstationNetworkFee,jdbcType=DOUBLE},
+      workstation_printing_supplies = #{workstationPrintingSupplies,jdbcType=DOUBLE},
+      workstation_drinking_water = #{workstationDrinkingWater,jdbcType=DOUBLE},
+      workstation_office_supplies = #{workstationOfficeSupplies,jdbcType=DOUBLE},
+      workstation_repair_costs = #{workstationRepairCosts,jdbcType=DOUBLE},
+      workstation_handling_fee = #{workstationHandlingFee,jdbcType=DOUBLE},
+      workstation_channel_commission1 = #{workstationChannelCommission1,jdbcType=DOUBLE},
+      other_operating_costs = #{otherOperatingCosts,jdbcType=DOUBLE},
+      liquidated_damages_cost = #{liquidatedDamagesCost,jdbcType=DOUBLE},
+      owner_compensation = #{ownerCompensation,jdbcType=DOUBLE},
+      security_incident_handling_fee = #{securityIncidentHandlingFee,jdbcType=DOUBLE},
+      administrative_penalties = #{administrativePenalties,jdbcType=DOUBLE},
+      other_business_costs_other = #{otherBusinessCostsOther,jdbcType=DOUBLE},
+      fixed_cost_of_other_lines_of_business = #{fixedCostOfOtherLinesOfBusiness,jdbcType=DOUBLE},
+      operating_gross_profit = #{operatingGrossProfit,jdbcType=DOUBLE},
+      marketing_costs = #{marketingCosts,jdbcType=DOUBLE},
+      marketing_labor_cost = #{marketingLaborCost,jdbcType=DOUBLE},
+      basic_salary_marketer = #{basicSalaryMarketer,jdbcType=DOUBLE},
+      performance_paymarketer = #{performancePaymarketer,jdbcType=DOUBLE},
+      bonus_marketer = #{bonusMarketer,jdbcType=DOUBLE},
+      housing_provident_fund_marketers = #{housingProvidentFundMarketers,jdbcType=DOUBLE},
+      social_insurance_marketing_staff = #{socialInsuranceMarketingStaff,jdbcType=DOUBLE},
+      precision_marketing_expenses = #{precisionMarketingExpenses,jdbcType=DOUBLE},
+      sem_construction = #{semConstruction,jdbcType=DOUBLE},
+      app_promotion = #{appPromotion,jdbcType=DOUBLE},
+      network_port_fee = #{networkPortFee,jdbcType=DOUBLE},
+      brand_marketing_expenses = #{brandMarketingExpenses,jdbcType=DOUBLE},
+      client_marketing_expenses = #{clientMarketingExpenses,jdbcType=DOUBLE},
+      customer_user_operation = #{customerUserOperation,jdbcType=DOUBLE},
+      customer_business_operations = #{customerBusinessOperations,jdbcType=DOUBLE},
+      customer_brand_marketing = #{customerBrandMarketing,jdbcType=DOUBLE},
+      customer_product_operation = #{customerProductOperation,jdbcType=DOUBLE},
+      ownership_marketing_expenses = #{ownershipMarketingExpenses,jdbcType=DOUBLE},
+      owner_user_operation = #{ownerUserOperation,jdbcType=DOUBLE},
+      owner_business_operations = #{ownerBusinessOperations,jdbcType=DOUBLE},
+      owner_brand_marketing = #{ownerBrandMarketing,jdbcType=DOUBLE},
+      owner_product_operation = #{ownerProductOperation,jdbcType=DOUBLE},
+      discount_reduction = #{discountReduction,jdbcType=DOUBLE},
+      marketing_expenses_other = #{marketingExpensesOther,jdbcType=DOUBLE},
+      functional_expenses = #{functionalExpenses,jdbcType=DOUBLE},
+      functional_labor_cost = #{functionalLaborCost,jdbcType=DOUBLE},
+      basic_salary_functional_staff = #{basicSalaryFunctionalStaff,jdbcType=DOUBLE},
+      performance_payroll_functional_staff = #{performancePayrollFunctionalStaff,jdbcType=DOUBLE},
+      bonus_functional_staff = #{bonusFunctionalStaff,jdbcType=DOUBLE},
+      housing_provident_fund_functional_staff = #{housingProvidentFundFunctionalStaff,jdbcType=DOUBLE},
+      social_insurance_functional_staff = #{socialInsuranceFunctionalStaff,jdbcType=DOUBLE},
+      monetary_compensation = #{monetaryCompensation,jdbcType=DOUBLE},
+      functional_temporary_labor_costs = #{functionalTemporaryLaborCosts,jdbcType=DOUBLE},
+      administrative_costs = #{administrativeCosts,jdbcType=DOUBLE},
+      functional_rent = #{functionalRent,jdbcType=DOUBLE},
+      functional_heating_property_fee = #{functionalHeatingPropertyFee,jdbcType=DOUBLE},
+      functional_office_furniture = #{functionalOfficeFurniture,jdbcType=DOUBLE},
+      main_decoration = #{mainDecoration,jdbcType=DOUBLE},
+      equipment_maintenance_fee = #{equipmentMaintenanceFee,jdbcType=DOUBLE},
+      repair_material_fee = #{repairMaterialFee,jdbcType=DOUBLE},
+      repair_labor_costs = #{repairLaborCosts,jdbcType=DOUBLE},
+      equipment_property_insurance = #{equipmentPropertyInsurance,jdbcType=DOUBLE},
+      functional_environment = #{functionalEnvironment,jdbcType=DOUBLE},
+      functional_equipment_rental_service_fee = #{functionalEquipmentRentalServiceFee,jdbcType=DOUBLE},
+      function_washing_carpet_fee = #{functionWashingCarpetFee,jdbcType=DOUBLE},
+      network_fee = #{networkFee,jdbcType=DOUBLE},
+      functional_water_fee = #{functionalWaterFee,jdbcType=DOUBLE},
+      functional_electricity_fee = #{functionalElectricityFee,jdbcType=DOUBLE},
+      functional_cleaning_fee = #{functionalCleaningFee,jdbcType=DOUBLE},
+      functional_drinking_water = #{functionalDrinkingWater,jdbcType=DOUBLE},
+      office_expenses = #{officeExpenses,jdbcType=DOUBLE},
+      functional_office_supplies = #{functionalOfficeSupplies,jdbcType=DOUBLE},
+      courier_fee = #{courierFee,jdbcType=DOUBLE},
+      functional_office_miscellaneous_fees = #{functionalOfficeMiscellaneousFees,jdbcType=DOUBLE},
+      functional_it_accessories = #{functionalItAccessories,jdbcType=DOUBLE},
+      functional_telephone_fee = #{functionalTelephoneFee,jdbcType=DOUBLE},
+      transportation = #{transportation,jdbcType=DOUBLE},
+      functional_printing = #{functionalPrinting,jdbcType=DOUBLE},
+      company_license_processing_and_annual_inspection = #{companyLicenseProcessingAndAnnualInspection,jdbcType=DOUBLE},
+      warehousing_fee = #{warehousingFee,jdbcType=DOUBLE},
+      computer_equipment = #{computerEquipment,jdbcType=DOUBLE},
+      other_functions_depreciation_and_amortization = #{otherFunctionsDepreciationAndAmortization,jdbcType=DOUBLE},
+      training_fee = #{trainingFee,jdbcType=DOUBLE},
+      training_fees = #{trainingFees,jdbcType=DOUBLE},
+      erudition = #{erudition,jdbcType=DOUBLE},
+      lecturer_team_building = #{lecturerTeamBuilding,jdbcType=DOUBLE},
+      training_implementation_fee = #{trainingImplementationFee,jdbcType=DOUBLE},
+      course_development_fee = #{courseDevelopmentFee,jdbcType=DOUBLE},
+      departmental_training_fee = #{departmentalTrainingFee,jdbcType=DOUBLE},
+      recruitment_fee = #{recruitmentFee,jdbcType=DOUBLE},
+      online_recruitment_fee = #{onlineRecruitmentFee,jdbcType=DOUBLE},
+      campus_recruitment_offline = #{campusRecruitmentOffline,jdbcType=DOUBLE},
+      recruitment_fee_headhunting_fee = #{recruitmentFeeHeadhuntingFee,jdbcType=DOUBLE},
+      recruitment_fee_internal_recommendation = #{recruitmentFeeInternalRecommendation,jdbcType=DOUBLE},
+      cultural_construction_and_welfare_costs = #{culturalConstructionAndWelfareCosts,jdbcType=DOUBLE},
+      humanities_culture_construction_fee = #{humanitiesCultureConstructionFee,jdbcType=DOUBLE},
+      employee_education_expenses = #{employeeEducationExpenses,jdbcType=DOUBLE},
+      book_data_fee = #{bookDataFee,jdbcType=DOUBLE},
+      executive_welfare_fee = #{executiveWelfareFee,jdbcType=DOUBLE},
+      company_welfare_expenses = #{companyWelfareExpenses,jdbcType=DOUBLE},
+      supplementary_medical_insurance = #{supplementaryMedicalInsurance,jdbcType=DOUBLE},
+      medical_examination_fee = #{medicalExaminationFee,jdbcType=DOUBLE},
+      expand_team_building_fees = #{expandTeamBuildingFees,jdbcType=DOUBLE},
+      company_team_building_fee = #{companyTeamBuildingFee,jdbcType=DOUBLE},
+      daily_expenses = #{dailyExpenses,jdbcType=DOUBLE},
+      overtime_meal_pay = #{overtimeMealPay,jdbcType=DOUBLE},
+      transportation_fee = #{transportationFee,jdbcType=DOUBLE},
+      business_handling_transportation_fee = #{businessHandlingTransportationFee,jdbcType=DOUBLE},
+      travel_expenses = #{travelExpenses,jdbcType=DOUBLE},
+      communication_fee = #{communicationFee,jdbcType=DOUBLE},
+      internal_meeting_fee = #{internalMeetingFee,jdbcType=DOUBLE},
+      external_conference_fee = #{externalConferenceFee,jdbcType=DOUBLE},
+      social_interaction_fee = #{socialInteractionFee,jdbcType=DOUBLE},
+      function_center_team_construction_fee = #{functionCenterTeamConstructionFee,jdbcType=DOUBLE},
+      business_center_team_building_fee = #{businessCenterTeamBuildingFee,jdbcType=DOUBLE},
+      functional_tooling_fee = #{functionalToolingFee,jdbcType=DOUBLE},
+      business_tooling_fee = #{businessToolingFee,jdbcType=DOUBLE},
+      consulting_service_fee = #{consultingServiceFee,jdbcType=DOUBLE},
+      consulting_service_fee1 = #{consultingServiceFee1,jdbcType=DOUBLE},
+      trademark_registration_fee = #{trademarkRegistrationFee,jdbcType=DOUBLE},
+      litigation_case_fee = #{litigationCaseFee,jdbcType=DOUBLE},
+      lawyer_service_fee = #{lawyerServiceFee,jdbcType=DOUBLE},
+      product_development_fee = #{productDevelopmentFee,jdbcType=DOUBLE},
+      incentive_fee = #{incentiveFee,jdbcType=DOUBLE},
+      quality_incentive = #{qualityIncentive,jdbcType=DOUBLE},
+      supplier_incentive = #{supplierIncentive,jdbcType=DOUBLE},
+      hpc_activity_fee = #{hpcActivityFee,jdbcType=DOUBLE},
+      team_incentive_fee = #{teamIncentiveFee,jdbcType=DOUBLE},
+      functional_expenses_other = #{functionalExpensesOther,jdbcType=DOUBLE},
+      research_and_development_expenses = #{researchAndDevelopmentExpenses,jdbcType=DOUBLE},
+      rd_labor_costs = #{rdLaborCosts,jdbcType=DOUBLE},
+      basic_salary_rd_personnel = #{basicSalaryRdPersonnel,jdbcType=DOUBLE},
+      performance_salary_rd_personnel = #{performanceSalaryRdPersonnel,jdbcType=DOUBLE},
+      bonus_rd_staff = #{bonusRdStaff,jdbcType=DOUBLE},
+      housing_provident_fund_rd_personnel = #{housingProvidentFundRdPersonnel,jdbcType=DOUBLE},
+      social_insurance_rd_personnel = #{socialInsuranceRdPersonnel,jdbcType=DOUBLE},
+      system_implementation_service_fee = #{systemImplementationServiceFee,jdbcType=DOUBLE},
+      system_service_fee = #{systemServiceFee,jdbcType=DOUBLE},
+      system_implementation_fee = #{systemImplementationFee,jdbcType=DOUBLE},
+      sms_platform_information_fee = #{smsPlatformInformationFee,jdbcType=DOUBLE},
+      machine_room_and_equipment_costs = #{machineRoomAndEquipmentCosts,jdbcType=DOUBLE},
+      idc_hosting_fee = #{idcHostingFee,jdbcType=DOUBLE},
+      communication_equipment = #{communicationEquipment,jdbcType=DOUBLE},
+      safety_equipment = #{safetyEquipment,jdbcType=DOUBLE},
+      storage_device = #{storageDevice,jdbcType=DOUBLE},
+      server = #{server,jdbcType=DOUBLE},
+      network_equipment = #{networkEquipment,jdbcType=DOUBLE},
+      software = #{software,jdbcType=DOUBLE},
+      other_depreciation_and_amortization = #{otherDepreciationAndAmortization,jdbcType=DOUBLE},
+      financial_expenses = #{financialExpenses,jdbcType=DOUBLE},
+      business_tax_and_surcharges = #{businessTaxAndSurcharges,jdbcType=DOUBLE},
+      asset_impairment_loss = #{assetImpairmentLoss,jdbcType=DOUBLE},
+      investment_gains_and_losses = #{investmentGainsAndLosses,jdbcType=DOUBLE},
+      operating_profit = #{operatingProfit,jdbcType=DOUBLE},
+      net_nonoperating_income_and_expenses = #{netNonoperatingIncomeAndExpenses,jdbcType=DOUBLE},
+      nonoperating_income = #{nonoperatingIncome,jdbcType=DOUBLE},
+      operating_expenses = #{operatingExpenses,jdbcType=DOUBLE},
+      total_profit = #{totalProfit,jdbcType=DOUBLE},
+      income_tax_expense = #{incomeTaxExpense,jdbcType=DOUBLE},
+      net_profit_before_apportionment = #{netProfitBeforeApportionment,jdbcType=DOUBLE},
+      total_apportionment = #{totalApportionment,jdbcType=DOUBLE},
+      business_line_allocation = #{businessLineAllocation,jdbcType=DOUBLE},
+      business_line_allocation_rd_allocation = #{businessLineAllocationRdAllocation,jdbcType=DOUBLE},
+      business_line_allocation_marketing_allocation = #{businessLineAllocationMarketingAllocation,jdbcType=DOUBLE},
+      business_line_allocation_function_allocation = #{businessLineAllocationFunctionAllocation,jdbcType=DOUBLE},
+      group_sharing = #{groupSharing,jdbcType=DOUBLE},
+      group_apportionment_rd_allocation = #{groupApportionmentRdAllocation,jdbcType=DOUBLE},
+      group_allocation_marketing_allocation = #{groupAllocationMarketingAllocation,jdbcType=DOUBLE},
+      group_apportionment_function_allocation = #{groupApportionmentFunctionAllocation,jdbcType=DOUBLE},
+      net_profit_after_apportionment = #{netProfitAfterApportionment,jdbcType=DOUBLE},
+      assessed_amount = #{assessedAmount,jdbcType=DOUBLE},
+      repair_service_fee = #{repairServiceFee,jdbcType=DOUBLE},
+      operating_cost = #{operatingCost,jdbcType=DOUBLE},
+      direct_labor_cost = #{directLaborCost,jdbcType=DOUBLE},
+      hold_num = #{holdNum,jdbcType=DOUBLE},
+      hold_num_days = #{holdNumDays,jdbcType=DOUBLE},
+      calculated_hold_num = #{calculatedHoldNum,jdbcType=DOUBLE},
+      calculated_hold_num_days = #{calculatedHoldNumDays,jdbcType=DOUBLE},
+      commendation_cost = #{commendationCost,jdbcType=DOUBLE},
+      construction_cost = #{constructionCost,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=BIGINT}
+      and period = #{period,jdbcType=VARCHAR}
+  </update>
+</mapper>

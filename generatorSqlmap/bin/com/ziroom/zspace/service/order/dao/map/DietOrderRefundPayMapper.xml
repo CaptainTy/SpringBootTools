@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.DietOrderRefundPayMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.DietOrderRefundPayEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="refund_fid" property="refundFid" jdbcType="VARCHAR" />
+    <result column="bill_num" property="billNum" jdbcType="VARCHAR" />
+    <result column="payment_code" property="paymentCode" jdbcType="VARCHAR" />
+    <result column="payment_name" property="paymentName" jdbcType="VARCHAR" />
+    <result column="currency_amount" property="currencyAmount" jdbcType="INTEGER" />
+    <result column="count" property="count" jdbcType="DOUBLE" />
+    <result column="number" property="number" jdbcType="VARCHAR" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="modify_code" property="modifyCode" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, refund_fid, bill_num, payment_code, payment_name, currency_amount, count, 
+    number, create_code, modify_code, is_del, last_modify_date, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_space_diet_order_refund_pay
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_space_diet_order_refund_pay
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundPayEntity" >
+    insert into t_space_diet_order_refund_pay (id, fid, refund_fid, 
+      bill_num, payment_code, payment_name, 
+      currency_amount, count, number, 
+      create_code, modify_code, is_del, 
+      last_modify_date, create_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{refundFid,jdbcType=VARCHAR}, 
+      #{billNum,jdbcType=VARCHAR}, #{paymentCode,jdbcType=VARCHAR}, #{paymentName,jdbcType=VARCHAR}, 
+      #{currencyAmount,jdbcType=INTEGER}, #{count,jdbcType=DOUBLE}, #{number,jdbcType=VARCHAR}, 
+      #{createCode,jdbcType=VARCHAR}, #{modifyCode,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{lastModifyDate,jdbcType=TIMESTAMP}, #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundPayEntity" >
+    insert into t_space_diet_order_refund_pay
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="refundFid != null" >
+        refund_fid,
+      </if>
+      <if test="billNum != null" >
+        bill_num,
+      </if>
+      <if test="paymentCode != null" >
+        payment_code,
+      </if>
+      <if test="paymentName != null" >
+        payment_name,
+      </if>
+      <if test="currencyAmount != null" >
+        currency_amount,
+      </if>
+      <if test="count != null" >
+        count,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="modifyCode != null" >
+        modify_code,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="refundFid != null" >
+        #{refundFid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentCode != null" >
+        #{paymentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentName != null" >
+        #{paymentName,jdbcType=VARCHAR},
+      </if>
+      <if test="currencyAmount != null" >
+        #{currencyAmount,jdbcType=INTEGER},
+      </if>
+      <if test="count != null" >
+        #{count,jdbcType=DOUBLE},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundPayEntity" >
+    update t_space_diet_order_refund_pay
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="refundFid != null" >
+        refund_fid = #{refundFid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        bill_num = #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentCode != null" >
+        payment_code = #{paymentCode,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentName != null" >
+        payment_name = #{paymentName,jdbcType=VARCHAR},
+      </if>
+      <if test="currencyAmount != null" >
+        currency_amount = #{currencyAmount,jdbcType=INTEGER},
+      </if>
+      <if test="count != null" >
+        count = #{count,jdbcType=DOUBLE},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        modify_code = #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundPayEntity" >
+    update t_space_diet_order_refund_pay
+    set fid = #{fid,jdbcType=VARCHAR},
+      refund_fid = #{refundFid,jdbcType=VARCHAR},
+      bill_num = #{billNum,jdbcType=VARCHAR},
+      payment_code = #{paymentCode,jdbcType=VARCHAR},
+      payment_name = #{paymentName,jdbcType=VARCHAR},
+      currency_amount = #{currencyAmount,jdbcType=INTEGER},
+      count = #{count,jdbcType=DOUBLE},
+      number = #{number,jdbcType=VARCHAR},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      modify_code = #{modifyCode,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

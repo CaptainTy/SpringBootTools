@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zry.service.chips.dao.map.FavourActivityProjectEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zry.service.chips.entity.FavourActivityProjectEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="bid" property="bid" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_user_id" property="createUserId" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_user_id" property="lastModifyUserId" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+    <result column="is_valid" property="isValid" jdbcType="INTEGER" />
+    <result column="activity_bid" property="activityBid" jdbcType="VARCHAR" />
+    <result column="project_bid" property="projectBid" jdbcType="VARCHAR" />
+    <result column="house_type_bid" property="houseTypeBid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bid, is_del, create_user_id, create_time, last_modify_user_id, last_modify_time, 
+    is_valid, activity_bid, project_bid, house_type_bid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_favour_activity_project
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_favour_activity_project
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityProjectEntity" >
+    insert into t_favour_activity_project (id, bid, is_del, 
+      create_user_id, create_time, last_modify_user_id, 
+      last_modify_time, is_valid, activity_bid, 
+      project_bid, house_type_bid)
+    values (#{id,jdbcType=INTEGER}, #{bid,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{createUserId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{lastModifyUserId,jdbcType=VARCHAR}, 
+      #{lastModifyTime,jdbcType=TIMESTAMP}, #{isValid,jdbcType=INTEGER}, #{activityBid,jdbcType=VARCHAR}, 
+      #{projectBid,jdbcType=VARCHAR}, #{houseTypeBid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityProjectEntity" >
+    insert into t_favour_activity_project
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bid != null" >
+        bid,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createUserId != null" >
+        create_user_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id,
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time,
+      </if>
+      <if test="isValid != null" >
+        is_valid,
+      </if>
+      <if test="activityBid != null" >
+        activity_bid,
+      </if>
+      <if test="projectBid != null" >
+        project_bid,
+      </if>
+      <if test="houseTypeBid != null" >
+        house_type_bid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="bid != null" >
+        #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null" >
+        #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="activityBid != null" >
+        #{activityBid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectBid != null" >
+        #{projectBid,jdbcType=VARCHAR},
+      </if>
+      <if test="houseTypeBid != null" >
+        #{houseTypeBid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityProjectEntity" >
+    update t_favour_activity_project
+    <set >
+      <if test="bid != null" >
+        bid = #{bid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUserId != null" >
+        create_user_id = #{createUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyUserId != null" >
+        last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTime != null" >
+        last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValid != null" >
+        is_valid = #{isValid,jdbcType=INTEGER},
+      </if>
+      <if test="activityBid != null" >
+        activity_bid = #{activityBid,jdbcType=VARCHAR},
+      </if>
+      <if test="projectBid != null" >
+        project_bid = #{projectBid,jdbcType=VARCHAR},
+      </if>
+      <if test="houseTypeBid != null" >
+        house_type_bid = #{houseTypeBid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zry.service.chips.entity.FavourActivityProjectEntity" >
+    update t_favour_activity_project
+    set bid = #{bid,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_user_id = #{createUserId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_modify_user_id = #{lastModifyUserId,jdbcType=VARCHAR},
+      last_modify_time = #{lastModifyTime,jdbcType=TIMESTAMP},
+      is_valid = #{isValid,jdbcType=INTEGER},
+      activity_bid = #{activityBid,jdbcType=VARCHAR},
+      project_bid = #{projectBid,jdbcType=VARCHAR},
+      house_type_bid = #{houseTypeBid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

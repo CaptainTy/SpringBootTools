@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.card.dao.map.CardLotteryMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.card.entity.CardLottery" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="card_sn" property="cardSn" jdbcType="VARCHAR" />
+    <result column="card_category_fid" property="cardCategoryFid" jdbcType="VARCHAR" />
+    <result column="owner_uid" property="ownerUid" jdbcType="VARCHAR" />
+    <result column="is_have" property="isHave" jdbcType="INTEGER" />
+    <result column="owner_phone" property="ownerPhone" jdbcType="VARCHAR" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, card_sn, card_category_fid, owner_uid, is_have, owner_phone, create_code, 
+    is_del, create_date, last_modify_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_card_lottery
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_card_lottery
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.card.entity.CardLottery" >
+    insert into t_card_lottery (id, fid, card_sn, 
+      card_category_fid, owner_uid, is_have, 
+      owner_phone, create_code, is_del, 
+      create_date, last_modify_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{cardSn,jdbcType=VARCHAR}, 
+      #{cardCategoryFid,jdbcType=VARCHAR}, #{ownerUid,jdbcType=VARCHAR}, #{isHave,jdbcType=INTEGER}, 
+      #{ownerPhone,jdbcType=VARCHAR}, #{createCode,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{lastModifyDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.card.entity.CardLottery" >
+    insert into t_card_lottery
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="cardSn != null" >
+        card_sn,
+      </if>
+      <if test="cardCategoryFid != null" >
+        card_category_fid,
+      </if>
+      <if test="ownerUid != null" >
+        owner_uid,
+      </if>
+      <if test="isHave != null" >
+        is_have,
+      </if>
+      <if test="ownerPhone != null" >
+        owner_phone,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="cardSn != null" >
+        #{cardSn,jdbcType=VARCHAR},
+      </if>
+      <if test="cardCategoryFid != null" >
+        #{cardCategoryFid,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerUid != null" >
+        #{ownerUid,jdbcType=VARCHAR},
+      </if>
+      <if test="isHave != null" >
+        #{isHave,jdbcType=INTEGER},
+      </if>
+      <if test="ownerPhone != null" >
+        #{ownerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.card.entity.CardLottery" >
+    update t_card_lottery
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="cardSn != null" >
+        card_sn = #{cardSn,jdbcType=VARCHAR},
+      </if>
+      <if test="cardCategoryFid != null" >
+        card_category_fid = #{cardCategoryFid,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerUid != null" >
+        owner_uid = #{ownerUid,jdbcType=VARCHAR},
+      </if>
+      <if test="isHave != null" >
+        is_have = #{isHave,jdbcType=INTEGER},
+      </if>
+      <if test="ownerPhone != null" >
+        owner_phone = #{ownerPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.card.entity.CardLottery" >
+    update t_card_lottery
+    set fid = #{fid,jdbcType=VARCHAR},
+      card_sn = #{cardSn,jdbcType=VARCHAR},
+      card_category_fid = #{cardCategoryFid,jdbcType=VARCHAR},
+      owner_uid = #{ownerUid,jdbcType=VARCHAR},
+      is_have = #{isHave,jdbcType=INTEGER},
+      owner_phone = #{ownerPhone,jdbcType=VARCHAR},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

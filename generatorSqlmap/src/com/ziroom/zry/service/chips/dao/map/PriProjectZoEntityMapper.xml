@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zry.service.chips.dao.map.PriProjectZoEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zry.service.chips.entity.PriProjectZoEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="project_id" property="projectId" jdbcType="VARCHAR" />
+    <result column="userZOId" property="userzoid" jdbcType="VARCHAR" />
+    <result column="fcreatetime" property="fcreatetime" jdbcType="DATE" />
+    <result column="createrid" property="createrid" jdbcType="VARCHAR" />
+    <result column="fupdatetime" property="fupdatetime" jdbcType="DATE" />
+    <result column="updaterid" property="updaterid" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, project_id, userZOId, fcreatetime, createrid, fupdatetime, updaterid, is_del
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pri_project_zo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_pri_project_zo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zry.service.chips.entity.PriProjectZoEntity" >
+    insert into t_pri_project_zo (id, project_id, userZOId, 
+      fcreatetime, createrid, fupdatetime, 
+      updaterid, is_del)
+    values (#{id,jdbcType=INTEGER}, #{projectId,jdbcType=VARCHAR}, #{userzoid,jdbcType=VARCHAR}, 
+      #{fcreatetime,jdbcType=DATE}, #{createrid,jdbcType=VARCHAR}, #{fupdatetime,jdbcType=DATE}, 
+      #{updaterid,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zry.service.chips.entity.PriProjectZoEntity" >
+    insert into t_pri_project_zo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="projectId != null" >
+        project_id,
+      </if>
+      <if test="userzoid != null" >
+        userZOId,
+      </if>
+      <if test="fcreatetime != null" >
+        fcreatetime,
+      </if>
+      <if test="createrid != null" >
+        createrid,
+      </if>
+      <if test="fupdatetime != null" >
+        fupdatetime,
+      </if>
+      <if test="updaterid != null" >
+        updaterid,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="projectId != null" >
+        #{projectId,jdbcType=VARCHAR},
+      </if>
+      <if test="userzoid != null" >
+        #{userzoid,jdbcType=VARCHAR},
+      </if>
+      <if test="fcreatetime != null" >
+        #{fcreatetime,jdbcType=DATE},
+      </if>
+      <if test="createrid != null" >
+        #{createrid,jdbcType=VARCHAR},
+      </if>
+      <if test="fupdatetime != null" >
+        #{fupdatetime,jdbcType=DATE},
+      </if>
+      <if test="updaterid != null" >
+        #{updaterid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zry.service.chips.entity.PriProjectZoEntity" >
+    update t_pri_project_zo
+    <set >
+      <if test="projectId != null" >
+        project_id = #{projectId,jdbcType=VARCHAR},
+      </if>
+      <if test="userzoid != null" >
+        userZOId = #{userzoid,jdbcType=VARCHAR},
+      </if>
+      <if test="fcreatetime != null" >
+        fcreatetime = #{fcreatetime,jdbcType=DATE},
+      </if>
+      <if test="createrid != null" >
+        createrid = #{createrid,jdbcType=VARCHAR},
+      </if>
+      <if test="fupdatetime != null" >
+        fupdatetime = #{fupdatetime,jdbcType=DATE},
+      </if>
+      <if test="updaterid != null" >
+        updaterid = #{updaterid,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zry.service.chips.entity.PriProjectZoEntity" >
+    update t_pri_project_zo
+    set project_id = #{projectId,jdbcType=VARCHAR},
+      userZOId = #{userzoid,jdbcType=VARCHAR},
+      fcreatetime = #{fcreatetime,jdbcType=DATE},
+      createrid = #{createrid,jdbcType=VARCHAR},
+      fupdatetime = #{fupdatetime,jdbcType=DATE},
+      updaterid = #{updaterid,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

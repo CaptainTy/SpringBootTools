@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.minsu.services.evaluate.dao.map.UgcImpressLogEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.minsu.entity.evaluate.UgcImpressLogEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="impress_fid" property="impressFid" jdbcType="VARCHAR" />
+    <result column="from_status" property="fromStatus" jdbcType="INTEGER" />
+    <result column="to_status" property="toStatus" jdbcType="INTEGER" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, impress_fid, from_status, to_status, is_del, create_user, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_ugc_impress_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_ugc_impress_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressLogEntity" >
+    insert into t_ugc_impress_log (id, fid, impress_fid, 
+      from_status, to_status, is_del, 
+      create_user, create_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{impressFid,jdbcType=VARCHAR}, 
+      #{fromStatus,jdbcType=INTEGER}, #{toStatus,jdbcType=INTEGER}, #{isDel,jdbcType=INTEGER}, 
+      #{createUser,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressLogEntity" >
+    insert into t_ugc_impress_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="impressFid != null" >
+        impress_fid,
+      </if>
+      <if test="fromStatus != null" >
+        from_status,
+      </if>
+      <if test="toStatus != null" >
+        to_status,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressFid != null" >
+        #{impressFid,jdbcType=VARCHAR},
+      </if>
+      <if test="fromStatus != null" >
+        #{fromStatus,jdbcType=INTEGER},
+      </if>
+      <if test="toStatus != null" >
+        #{toStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressLogEntity" >
+    update t_ugc_impress_log
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="impressFid != null" >
+        impress_fid = #{impressFid,jdbcType=VARCHAR},
+      </if>
+      <if test="fromStatus != null" >
+        from_status = #{fromStatus,jdbcType=INTEGER},
+      </if>
+      <if test="toStatus != null" >
+        to_status = #{toStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.minsu.entity.evaluate.UgcImpressLogEntity" >
+    update t_ugc_impress_log
+    set fid = #{fid,jdbcType=VARCHAR},
+      impress_fid = #{impressFid,jdbcType=VARCHAR},
+      from_status = #{fromStatus,jdbcType=INTEGER},
+      to_status = #{toStatus,jdbcType=INTEGER},
+      is_del = #{isDel,jdbcType=INTEGER},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

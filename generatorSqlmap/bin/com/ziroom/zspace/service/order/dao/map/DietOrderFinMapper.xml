@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.DietOrderFinMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.DietOrderFinEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="bill_num" property="billNum" jdbcType="VARCHAR" />
+    <result column="ord_sync_to_fin" property="ordSyncToFin" jdbcType="INTEGER" />
+    <result column="rec_sync_to_fin" property="recSyncToFin" jdbcType="INTEGER" />
+    <result column="pay_sync_to_fin" property="paySyncToFin" jdbcType="INTEGER" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="modify_code" property="modifyCode" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, bill_num, ord_sync_to_fin, rec_sync_to_fin, pay_sync_to_fin, create_code, 
+    modify_code, is_del, last_modify_date, create_date, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_space_diet_order_fin
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_space_diet_order_fin
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.DietOrderFinEntity" >
+    insert into t_space_diet_order_fin (id, fid, bill_num, 
+      ord_sync_to_fin, rec_sync_to_fin, pay_sync_to_fin, 
+      create_code, modify_code, is_del, 
+      last_modify_date, create_date, remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{billNum,jdbcType=VARCHAR}, 
+      #{ordSyncToFin,jdbcType=INTEGER}, #{recSyncToFin,jdbcType=INTEGER}, #{paySyncToFin,jdbcType=INTEGER}, 
+      #{createCode,jdbcType=VARCHAR}, #{modifyCode,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, 
+      #{lastModifyDate,jdbcType=TIMESTAMP}, #{createDate,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderFinEntity" >
+    insert into t_space_diet_order_fin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="billNum != null" >
+        bill_num,
+      </if>
+      <if test="ordSyncToFin != null" >
+        ord_sync_to_fin,
+      </if>
+      <if test="recSyncToFin != null" >
+        rec_sync_to_fin,
+      </if>
+      <if test="paySyncToFin != null" >
+        pay_sync_to_fin,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="modifyCode != null" >
+        modify_code,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="ordSyncToFin != null" >
+        #{ordSyncToFin,jdbcType=INTEGER},
+      </if>
+      <if test="recSyncToFin != null" >
+        #{recSyncToFin,jdbcType=INTEGER},
+      </if>
+      <if test="paySyncToFin != null" >
+        #{paySyncToFin,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderFinEntity" >
+    update t_space_diet_order_fin
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        bill_num = #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="ordSyncToFin != null" >
+        ord_sync_to_fin = #{ordSyncToFin,jdbcType=INTEGER},
+      </if>
+      <if test="recSyncToFin != null" >
+        rec_sync_to_fin = #{recSyncToFin,jdbcType=INTEGER},
+      </if>
+      <if test="paySyncToFin != null" >
+        pay_sync_to_fin = #{paySyncToFin,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        modify_code = #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.DietOrderFinEntity" >
+    update t_space_diet_order_fin
+    set fid = #{fid,jdbcType=VARCHAR},
+      bill_num = #{billNum,jdbcType=VARCHAR},
+      ord_sync_to_fin = #{ordSyncToFin,jdbcType=INTEGER},
+      rec_sync_to_fin = #{recSyncToFin,jdbcType=INTEGER},
+      pay_sync_to_fin = #{paySyncToFin,jdbcType=INTEGER},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      modify_code = #{modifyCode,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

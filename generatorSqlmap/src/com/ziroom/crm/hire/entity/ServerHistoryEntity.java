@@ -1,0 +1,145 @@
+package com.ziroom.crm.hire.entity;
+
+import java.util.Date;
+
+public class ServerHistoryEntity {
+    private Integer id;
+
+    private String cid;
+
+    private Date time;
+
+    private Long inMsgs;
+
+    private Long outMsgs;
+
+    private Long inBytes;
+
+    private Long outBytes;
+
+    private Long inMsgsSpeed;
+
+    private Long outMsgsSpeed;
+
+    private Long inBytesSpeed;
+
+    private Long outBytesSpeed;
+
+    private Long connections;
+
+    private Long slowConsumers;
+
+    private Long subscriptions;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCid() {
+        return cid;
+    }
+
+    public void setCid(String cid) {
+        this.cid = cid == null ? null : cid.trim();
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    public Long getInMsgs() {
+        return inMsgs;
+    }
+
+    public void setInMsgs(Long inMsgs) {
+        this.inMsgs = inMsgs;
+    }
+
+    public Long getOutMsgs() {
+        return outMsgs;
+    }
+
+    public void setOutMsgs(Long outMsgs) {
+        this.outMsgs = outMsgs;
+    }
+
+    public Long getInBytes() {
+        return inBytes;
+    }
+
+    public void setInBytes(Long inBytes) {
+        this.inBytes = inBytes;
+    }
+
+    public Long getOutBytes() {
+        return outBytes;
+    }
+
+    public void setOutBytes(Long outBytes) {
+        this.outBytes = outBytes;
+    }
+
+    public Long getInMsgsSpeed() {
+        return inMsgsSpeed;
+    }
+
+    public void setInMsgsSpeed(Long inMsgsSpeed) {
+        this.inMsgsSpeed = inMsgsSpeed;
+    }
+
+    public Long getOutMsgsSpeed() {
+        return outMsgsSpeed;
+    }
+
+    public void setOutMsgsSpeed(Long outMsgsSpeed) {
+        this.outMsgsSpeed = outMsgsSpeed;
+    }
+
+    public Long getInBytesSpeed() {
+        return inBytesSpeed;
+    }
+
+    public void setInBytesSpeed(Long inBytesSpeed) {
+        this.inBytesSpeed = inBytesSpeed;
+    }
+
+    public Long getOutBytesSpeed() {
+        return outBytesSpeed;
+    }
+
+    public void setOutBytesSpeed(Long outBytesSpeed) {
+        this.outBytesSpeed = outBytesSpeed;
+    }
+
+    public Long getConnections() {
+        return connections;
+    }
+
+    public void setConnections(Long connections) {
+        this.connections = connections;
+    }
+
+    public Long getSlowConsumers() {
+        return slowConsumers;
+    }
+
+    public void setSlowConsumers(Long slowConsumers) {
+        this.slowConsumers = slowConsumers;
+    }
+
+    public Long getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(Long subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+}

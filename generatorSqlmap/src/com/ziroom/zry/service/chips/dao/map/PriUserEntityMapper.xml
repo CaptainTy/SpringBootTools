@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zry.service.chips.dao.map.PriUserEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zry.service.chips.entity.PriUserEntity" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="VENETO" property="veneto" jdbcType="VARCHAR" />
+    <result column="AREA" property="area" jdbcType="VARCHAR" />
+    <result column="STORE" property="store" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="IS_ENABLE" property="isEnable" jdbcType="INTEGER" />
+    <result column="TYPE" property="type" jdbcType="INTEGER" />
+    <result column="USER_TYPE" property="userType" jdbcType="INTEGER" />
+    <result column="ORG_ID" property="orgId" jdbcType="VARCHAR" />
+    <result column="ORG_NAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="GROUP_NAME" property="groupName" jdbcType="VARCHAR" />
+    <result column="ROLE_NAMES" property="roleNames" jdbcType="VARCHAR" />
+    <result column="GROUP_ID" property="groupId" jdbcType="INTEGER" />
+    <result column="IS_DEL" property="isDel" jdbcType="INTEGER" />
+    <result column="EMPLID" property="emplid" jdbcType="VARCHAR" />
+    <result column="EMPL_RCD" property="emplRcd" jdbcType="INTEGER" />
+    <result column="EFFDT" property="effdt" jdbcType="TIMESTAMP" />
+    <result column="EFFSEQ" property="effseq" jdbcType="INTEGER" />
+    <result column="HL_STATUS" property="hlStatus" jdbcType="VARCHAR" />
+    <result column="NAME1" property="name1" jdbcType="VARCHAR" />
+    <result column="LAST_NAME" property="lastName" jdbcType="VARCHAR" />
+    <result column="FIRST_NAME" property="firstName" jdbcType="VARCHAR" />
+    <result column="NAME_AC" property="nameAc" jdbcType="VARCHAR" />
+    <result column="COUNTRY" property="country" jdbcType="VARCHAR" />
+    <result column="HL_ADDRESS" property="hlAddress" jdbcType="VARCHAR" />
+    <result column="CITY" property="city" jdbcType="VARCHAR" />
+    <result column="COUNTY" property="county" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="POSTAL" property="postal" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="VARCHAR" />
+    <result column="MAR_STATUS" property="marStatus" jdbcType="VARCHAR" />
+    <result column="MAR_STATUS_DT" property="marStatusDt" jdbcType="TIMESTAMP" />
+    <result column="BIRTHDATE" property="birthdate" jdbcType="TIMESTAMP" />
+    <result column="BIRTHCOUNTRY" property="birthcountry" jdbcType="VARCHAR" />
+    <result column="BIRTHSTATE" property="birthstate" jdbcType="VARCHAR" />
+    <result column="COUNTRY_CODE" property="countryCode" jdbcType="VARCHAR" />
+    <result column="PHONE_MOBILE" property="phoneMobile" jdbcType="VARCHAR" />
+    <result column="PHONE_COMPANY" property="phoneCompany" jdbcType="VARCHAR" />
+    <result column="PHONE_HOME" property="phoneHome" jdbcType="VARCHAR" />
+    <result column="HL_USER" property="hlUser" jdbcType="VARCHAR" />
+    <result column="EMAIL_ADDR" property="emailAddr" jdbcType="VARCHAR" />
+    <result column="PHONE_FAX" property="phoneFax" jdbcType="VARCHAR" />
+    <result column="ACTION" property="action" jdbcType="VARCHAR" />
+    <result column="ACTION_REASON" property="actionReason" jdbcType="VARCHAR" />
+    <result column="SETID_DEPT" property="setidDept" jdbcType="VARCHAR" />
+    <result column="SETID_JOBCODE" property="setidJobcode" jdbcType="VARCHAR" />
+    <result column="SETID_LOCATION" property="setidLocation" jdbcType="VARCHAR" />
+    <result column="DEPTID" property="deptid" jdbcType="VARCHAR" />
+    <result column="HL_TREEPATH" property="hlTreepath" jdbcType="VARCHAR" />
+    <result column="JOBCODE" property="jobcode" jdbcType="VARCHAR" />
+    <result column="SUPERVISOR_ID" property="supervisorId" jdbcType="VARCHAR" />
+    <result column="EMPL_STATUS" property="emplStatus" jdbcType="VARCHAR" />
+    <result column="LOCATION" property="location" jdbcType="VARCHAR" />
+    <result column="COMPANY" property="company" jdbcType="VARCHAR" />
+    <result column="HL_APP_CHECK" property="hlAppCheck" jdbcType="VARCHAR" />
+    <result column="HL_TEM_CLOSE" property="hlTemClose" jdbcType="VARCHAR" />
+    <result column="EFFDT_FROM" property="effdtFrom" jdbcType="TIMESTAMP" />
+    <result column="HL_OUT_DT" property="hlOutDt" jdbcType="TIMESTAMP" />
+    <result column="HL_GLS_FLAG" property="hlGlsFlag" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="DEPTID_NEW" property="deptidNew" jdbcType="VARCHAR" />
+    <result column="HL_TREEPATH_NEW" property="hlTreepathNew" jdbcType="VARCHAR" />
+    <result column="JOBCODE_NEW" property="jobcodeNew" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFY_TIME_SYNCHRONOUS" property="lastModifyTimeSynchronous" jdbcType="TIMESTAMP" />
+    <result column="TERRITORY_CODE" property="territoryCode" jdbcType="INTEGER" />
+    <result column="ZC_USER_ID" property="zcUserId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, VENETO, AREA, STORE, NAME, USERNAME, PASSWORD, IS_ENABLE, TYPE, USER_TYPE, ORG_ID, 
+    ORG_NAME, GROUP_NAME, ROLE_NAMES, GROUP_ID, IS_DEL, EMPLID, EMPL_RCD, EFFDT, EFFSEQ, 
+    HL_STATUS, NAME1, LAST_NAME, FIRST_NAME, NAME_AC, COUNTRY, HL_ADDRESS, CITY, COUNTY, 
+    STATE, POSTAL, SEX, MAR_STATUS, MAR_STATUS_DT, BIRTHDATE, BIRTHCOUNTRY, BIRTHSTATE, 
+    COUNTRY_CODE, PHONE_MOBILE, PHONE_COMPANY, PHONE_HOME, HL_USER, EMAIL_ADDR, PHONE_FAX, 
+    ACTION, ACTION_REASON, SETID_DEPT, SETID_JOBCODE, SETID_LOCATION, DEPTID, HL_TREEPATH, 
+    JOBCODE, SUPERVISOR_ID, EMPL_STATUS, LOCATION, COMPANY, HL_APP_CHECK, HL_TEM_CLOSE, 
+    EFFDT_FROM, HL_OUT_DT, HL_GLS_FLAG, CREATE_DATE, DEPTID_NEW, HL_TREEPATH_NEW, JOBCODE_NEW, 
+    LAST_MODIFY_TIME_SYNCHRONOUS, TERRITORY_CODE, ZC_USER_ID
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pri_user
+    where ID = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_pri_user
+    where ID = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zry.service.chips.entity.PriUserEntity" >
+    insert into t_pri_user (ID, VENETO, AREA, 
+      STORE, NAME, USERNAME, 
+      PASSWORD, IS_ENABLE, TYPE, 
+      USER_TYPE, ORG_ID, ORG_NAME, 
+      GROUP_NAME, ROLE_NAMES, GROUP_ID, 
+      IS_DEL, EMPLID, EMPL_RCD, 
+      EFFDT, EFFSEQ, HL_STATUS, 
+      NAME1, LAST_NAME, FIRST_NAME, 
+      NAME_AC, COUNTRY, HL_ADDRESS, 
+      CITY, COUNTY, STATE, 
+      POSTAL, SEX, MAR_STATUS, 
+      MAR_STATUS_DT, BIRTHDATE, BIRTHCOUNTRY, 
+      BIRTHSTATE, COUNTRY_CODE, PHONE_MOBILE, 
+      PHONE_COMPANY, PHONE_HOME, HL_USER, 
+      EMAIL_ADDR, PHONE_FAX, ACTION, 
+      ACTION_REASON, SETID_DEPT, SETID_JOBCODE, 
+      SETID_LOCATION, DEPTID, HL_TREEPATH, 
+      JOBCODE, SUPERVISOR_ID, EMPL_STATUS, 
+      LOCATION, COMPANY, HL_APP_CHECK, 
+      HL_TEM_CLOSE, EFFDT_FROM, HL_OUT_DT, 
+      HL_GLS_FLAG, CREATE_DATE, DEPTID_NEW, 
+      HL_TREEPATH_NEW, JOBCODE_NEW, LAST_MODIFY_TIME_SYNCHRONOUS, 
+      TERRITORY_CODE, ZC_USER_ID)
+    values (#{id,jdbcType=BIGINT}, #{veneto,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR}, 
+      #{store,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{isEnable,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{userType,jdbcType=INTEGER}, #{orgId,jdbcType=VARCHAR}, #{orgName,jdbcType=VARCHAR}, 
+      #{groupName,jdbcType=VARCHAR}, #{roleNames,jdbcType=VARCHAR}, #{groupId,jdbcType=INTEGER}, 
+      #{isDel,jdbcType=INTEGER}, #{emplid,jdbcType=VARCHAR}, #{emplRcd,jdbcType=INTEGER}, 
+      #{effdt,jdbcType=TIMESTAMP}, #{effseq,jdbcType=INTEGER}, #{hlStatus,jdbcType=VARCHAR}, 
+      #{name1,jdbcType=VARCHAR}, #{lastName,jdbcType=VARCHAR}, #{firstName,jdbcType=VARCHAR}, 
+      #{nameAc,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR}, #{hlAddress,jdbcType=VARCHAR}, 
+      #{city,jdbcType=VARCHAR}, #{county,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, 
+      #{postal,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{marStatus,jdbcType=VARCHAR}, 
+      #{marStatusDt,jdbcType=TIMESTAMP}, #{birthdate,jdbcType=TIMESTAMP}, #{birthcountry,jdbcType=VARCHAR}, 
+      #{birthstate,jdbcType=VARCHAR}, #{countryCode,jdbcType=VARCHAR}, #{phoneMobile,jdbcType=VARCHAR}, 
+      #{phoneCompany,jdbcType=VARCHAR}, #{phoneHome,jdbcType=VARCHAR}, #{hlUser,jdbcType=VARCHAR}, 
+      #{emailAddr,jdbcType=VARCHAR}, #{phoneFax,jdbcType=VARCHAR}, #{action,jdbcType=VARCHAR}, 
+      #{actionReason,jdbcType=VARCHAR}, #{setidDept,jdbcType=VARCHAR}, #{setidJobcode,jdbcType=VARCHAR}, 
+      #{setidLocation,jdbcType=VARCHAR}, #{deptid,jdbcType=VARCHAR}, #{hlTreepath,jdbcType=VARCHAR}, 
+      #{jobcode,jdbcType=VARCHAR}, #{supervisorId,jdbcType=VARCHAR}, #{emplStatus,jdbcType=VARCHAR}, 
+      #{location,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR}, #{hlAppCheck,jdbcType=VARCHAR}, 
+      #{hlTemClose,jdbcType=VARCHAR}, #{effdtFrom,jdbcType=TIMESTAMP}, #{hlOutDt,jdbcType=TIMESTAMP}, 
+      #{hlGlsFlag,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{deptidNew,jdbcType=VARCHAR}, 
+      #{hlTreepathNew,jdbcType=VARCHAR}, #{jobcodeNew,jdbcType=VARCHAR}, #{lastModifyTimeSynchronous,jdbcType=TIMESTAMP}, 
+      #{territoryCode,jdbcType=INTEGER}, #{zcUserId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zry.service.chips.entity.PriUserEntity" >
+    insert into t_pri_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="veneto != null" >
+        VENETO,
+      </if>
+      <if test="area != null" >
+        AREA,
+      </if>
+      <if test="store != null" >
+        STORE,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="isEnable != null" >
+        IS_ENABLE,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="userType != null" >
+        USER_TYPE,
+      </if>
+      <if test="orgId != null" >
+        ORG_ID,
+      </if>
+      <if test="orgName != null" >
+        ORG_NAME,
+      </if>
+      <if test="groupName != null" >
+        GROUP_NAME,
+      </if>
+      <if test="roleNames != null" >
+        ROLE_NAMES,
+      </if>
+      <if test="groupId != null" >
+        GROUP_ID,
+      </if>
+      <if test="isDel != null" >
+        IS_DEL,
+      </if>
+      <if test="emplid != null" >
+        EMPLID,
+      </if>
+      <if test="emplRcd != null" >
+        EMPL_RCD,
+      </if>
+      <if test="effdt != null" >
+        EFFDT,
+      </if>
+      <if test="effseq != null" >
+        EFFSEQ,
+      </if>
+      <if test="hlStatus != null" >
+        HL_STATUS,
+      </if>
+      <if test="name1 != null" >
+        NAME1,
+      </if>
+      <if test="lastName != null" >
+        LAST_NAME,
+      </if>
+      <if test="firstName != null" >
+        FIRST_NAME,
+      </if>
+      <if test="nameAc != null" >
+        NAME_AC,
+      </if>
+      <if test="country != null" >
+        COUNTRY,
+      </if>
+      <if test="hlAddress != null" >
+        HL_ADDRESS,
+      </if>
+      <if test="city != null" >
+        CITY,
+      </if>
+      <if test="county != null" >
+        COUNTY,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="postal != null" >
+        POSTAL,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="marStatus != null" >
+        MAR_STATUS,
+      </if>
+      <if test="marStatusDt != null" >
+        MAR_STATUS_DT,
+      </if>
+      <if test="birthdate != null" >
+        BIRTHDATE,
+      </if>
+      <if test="birthcountry != null" >
+        BIRTHCOUNTRY,
+      </if>
+      <if test="birthstate != null" >
+        BIRTHSTATE,
+      </if>
+      <if test="countryCode != null" >
+        COUNTRY_CODE,
+      </if>
+      <if test="phoneMobile != null" >
+        PHONE_MOBILE,
+      </if>
+      <if test="phoneCompany != null" >
+        PHONE_COMPANY,
+      </if>
+      <if test="phoneHome != null" >
+        PHONE_HOME,
+      </if>
+      <if test="hlUser != null" >
+        HL_USER,
+      </if>
+      <if test="emailAddr != null" >
+        EMAIL_ADDR,
+      </if>
+      <if test="phoneFax != null" >
+        PHONE_FAX,
+      </if>
+      <if test="action != null" >
+        ACTION,
+      </if>
+      <if test="actionReason != null" >
+        ACTION_REASON,
+      </if>
+      <if test="setidDept != null" >
+        SETID_DEPT,
+      </if>
+      <if test="setidJobcode != null" >
+        SETID_JOBCODE,
+      </if>
+      <if test="setidLocation != null" >
+        SETID_LOCATION,
+      </if>
+      <if test="deptid != null" >
+        DEPTID,
+      </if>
+      <if test="hlTreepath != null" >
+        HL_TREEPATH,
+      </if>
+      <if test="jobcode != null" >
+        JOBCODE,
+      </if>
+      <if test="supervisorId != null" >
+        SUPERVISOR_ID,
+      </if>
+      <if test="emplStatus != null" >
+        EMPL_STATUS,
+      </if>
+      <if test="location != null" >
+        LOCATION,
+      </if>
+      <if test="company != null" >
+        COMPANY,
+      </if>
+      <if test="hlAppCheck != null" >
+        HL_APP_CHECK,
+      </if>
+      <if test="hlTemClose != null" >
+        HL_TEM_CLOSE,
+      </if>
+      <if test="effdtFrom != null" >
+        EFFDT_FROM,
+      </if>
+      <if test="hlOutDt != null" >
+        HL_OUT_DT,
+      </if>
+      <if test="hlGlsFlag != null" >
+        HL_GLS_FLAG,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="deptidNew != null" >
+        DEPTID_NEW,
+      </if>
+      <if test="hlTreepathNew != null" >
+        HL_TREEPATH_NEW,
+      </if>
+      <if test="jobcodeNew != null" >
+        JOBCODE_NEW,
+      </if>
+      <if test="lastModifyTimeSynchronous != null" >
+        LAST_MODIFY_TIME_SYNCHRONOUS,
+      </if>
+      <if test="territoryCode != null" >
+        TERRITORY_CODE,
+      </if>
+      <if test="zcUserId != null" >
+        ZC_USER_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="veneto != null" >
+        #{veneto,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="store != null" >
+        #{store,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="isEnable != null" >
+        #{isEnable,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupName != null" >
+        #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleNames != null" >
+        #{roleNames,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null" >
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="emplid != null" >
+        #{emplid,jdbcType=VARCHAR},
+      </if>
+      <if test="emplRcd != null" >
+        #{emplRcd,jdbcType=INTEGER},
+      </if>
+      <if test="effdt != null" >
+        #{effdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="effseq != null" >
+        #{effseq,jdbcType=INTEGER},
+      </if>
+      <if test="hlStatus != null" >
+        #{hlStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="name1 != null" >
+        #{name1,jdbcType=VARCHAR},
+      </if>
+      <if test="lastName != null" >
+        #{lastName,jdbcType=VARCHAR},
+      </if>
+      <if test="firstName != null" >
+        #{firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameAc != null" >
+        #{nameAc,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="hlAddress != null" >
+        #{hlAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null" >
+        #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="postal != null" >
+        #{postal,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="marStatus != null" >
+        #{marStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="marStatusDt != null" >
+        #{marStatusDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="birthdate != null" >
+        #{birthdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="birthcountry != null" >
+        #{birthcountry,jdbcType=VARCHAR},
+      </if>
+      <if test="birthstate != null" >
+        #{birthstate,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneMobile != null" >
+        #{phoneMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneCompany != null" >
+        #{phoneCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneHome != null" >
+        #{phoneHome,jdbcType=VARCHAR},
+      </if>
+      <if test="hlUser != null" >
+        #{hlUser,jdbcType=VARCHAR},
+      </if>
+      <if test="emailAddr != null" >
+        #{emailAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneFax != null" >
+        #{phoneFax,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="actionReason != null" >
+        #{actionReason,jdbcType=VARCHAR},
+      </if>
+      <if test="setidDept != null" >
+        #{setidDept,jdbcType=VARCHAR},
+      </if>
+      <if test="setidJobcode != null" >
+        #{setidJobcode,jdbcType=VARCHAR},
+      </if>
+      <if test="setidLocation != null" >
+        #{setidLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="deptid != null" >
+        #{deptid,jdbcType=VARCHAR},
+      </if>
+      <if test="hlTreepath != null" >
+        #{hlTreepath,jdbcType=VARCHAR},
+      </if>
+      <if test="jobcode != null" >
+        #{jobcode,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisorId != null" >
+        #{supervisorId,jdbcType=VARCHAR},
+      </if>
+      <if test="emplStatus != null" >
+        #{emplStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="hlAppCheck != null" >
+        #{hlAppCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="hlTemClose != null" >
+        #{hlTemClose,jdbcType=VARCHAR},
+      </if>
+      <if test="effdtFrom != null" >
+        #{effdtFrom,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hlOutDt != null" >
+        #{hlOutDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hlGlsFlag != null" >
+        #{hlGlsFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptidNew != null" >
+        #{deptidNew,jdbcType=VARCHAR},
+      </if>
+      <if test="hlTreepathNew != null" >
+        #{hlTreepathNew,jdbcType=VARCHAR},
+      </if>
+      <if test="jobcodeNew != null" >
+        #{jobcodeNew,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTimeSynchronous != null" >
+        #{lastModifyTimeSynchronous,jdbcType=TIMESTAMP},
+      </if>
+      <if test="territoryCode != null" >
+        #{territoryCode,jdbcType=INTEGER},
+      </if>
+      <if test="zcUserId != null" >
+        #{zcUserId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zry.service.chips.entity.PriUserEntity" >
+    update t_pri_user
+    <set >
+      <if test="veneto != null" >
+        VENETO = #{veneto,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        AREA = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="store != null" >
+        STORE = #{store,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="isEnable != null" >
+        IS_ENABLE = #{isEnable,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null" >
+        USER_TYPE = #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null" >
+        ORG_ID = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        ORG_NAME = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="groupName != null" >
+        GROUP_NAME = #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleNames != null" >
+        ROLE_NAMES = #{roleNames,jdbcType=VARCHAR},
+      </if>
+      <if test="groupId != null" >
+        GROUP_ID = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="isDel != null" >
+        IS_DEL = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="emplid != null" >
+        EMPLID = #{emplid,jdbcType=VARCHAR},
+      </if>
+      <if test="emplRcd != null" >
+        EMPL_RCD = #{emplRcd,jdbcType=INTEGER},
+      </if>
+      <if test="effdt != null" >
+        EFFDT = #{effdt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="effseq != null" >
+        EFFSEQ = #{effseq,jdbcType=INTEGER},
+      </if>
+      <if test="hlStatus != null" >
+        HL_STATUS = #{hlStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="name1 != null" >
+        NAME1 = #{name1,jdbcType=VARCHAR},
+      </if>
+      <if test="lastName != null" >
+        LAST_NAME = #{lastName,jdbcType=VARCHAR},
+      </if>
+      <if test="firstName != null" >
+        FIRST_NAME = #{firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameAc != null" >
+        NAME_AC = #{nameAc,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        COUNTRY = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="hlAddress != null" >
+        HL_ADDRESS = #{hlAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        CITY = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="county != null" >
+        COUNTY = #{county,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="postal != null" >
+        POSTAL = #{postal,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="marStatus != null" >
+        MAR_STATUS = #{marStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="marStatusDt != null" >
+        MAR_STATUS_DT = #{marStatusDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="birthdate != null" >
+        BIRTHDATE = #{birthdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="birthcountry != null" >
+        BIRTHCOUNTRY = #{birthcountry,jdbcType=VARCHAR},
+      </if>
+      <if test="birthstate != null" >
+        BIRTHSTATE = #{birthstate,jdbcType=VARCHAR},
+      </if>
+      <if test="countryCode != null" >
+        COUNTRY_CODE = #{countryCode,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneMobile != null" >
+        PHONE_MOBILE = #{phoneMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneCompany != null" >
+        PHONE_COMPANY = #{phoneCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneHome != null" >
+        PHONE_HOME = #{phoneHome,jdbcType=VARCHAR},
+      </if>
+      <if test="hlUser != null" >
+        HL_USER = #{hlUser,jdbcType=VARCHAR},
+      </if>
+      <if test="emailAddr != null" >
+        EMAIL_ADDR = #{emailAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneFax != null" >
+        PHONE_FAX = #{phoneFax,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        ACTION = #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="actionReason != null" >
+        ACTION_REASON = #{actionReason,jdbcType=VARCHAR},
+      </if>
+      <if test="setidDept != null" >
+        SETID_DEPT = #{setidDept,jdbcType=VARCHAR},
+      </if>
+      <if test="setidJobcode != null" >
+        SETID_JOBCODE = #{setidJobcode,jdbcType=VARCHAR},
+      </if>
+      <if test="setidLocation != null" >
+        SETID_LOCATION = #{setidLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="deptid != null" >
+        DEPTID = #{deptid,jdbcType=VARCHAR},
+      </if>
+      <if test="hlTreepath != null" >
+        HL_TREEPATH = #{hlTreepath,jdbcType=VARCHAR},
+      </if>
+      <if test="jobcode != null" >
+        JOBCODE = #{jobcode,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisorId != null" >
+        SUPERVISOR_ID = #{supervisorId,jdbcType=VARCHAR},
+      </if>
+      <if test="emplStatus != null" >
+        EMPL_STATUS = #{emplStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="location != null" >
+        LOCATION = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        COMPANY = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="hlAppCheck != null" >
+        HL_APP_CHECK = #{hlAppCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="hlTemClose != null" >
+        HL_TEM_CLOSE = #{hlTemClose,jdbcType=VARCHAR},
+      </if>
+      <if test="effdtFrom != null" >
+        EFFDT_FROM = #{effdtFrom,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hlOutDt != null" >
+        HL_OUT_DT = #{hlOutDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="hlGlsFlag != null" >
+        HL_GLS_FLAG = #{hlGlsFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptidNew != null" >
+        DEPTID_NEW = #{deptidNew,jdbcType=VARCHAR},
+      </if>
+      <if test="hlTreepathNew != null" >
+        HL_TREEPATH_NEW = #{hlTreepathNew,jdbcType=VARCHAR},
+      </if>
+      <if test="jobcodeNew != null" >
+        JOBCODE_NEW = #{jobcodeNew,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyTimeSynchronous != null" >
+        LAST_MODIFY_TIME_SYNCHRONOUS = #{lastModifyTimeSynchronous,jdbcType=TIMESTAMP},
+      </if>
+      <if test="territoryCode != null" >
+        TERRITORY_CODE = #{territoryCode,jdbcType=INTEGER},
+      </if>
+      <if test="zcUserId != null" >
+        ZC_USER_ID = #{zcUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zry.service.chips.entity.PriUserEntity" >
+    update t_pri_user
+    set VENETO = #{veneto,jdbcType=VARCHAR},
+      AREA = #{area,jdbcType=VARCHAR},
+      STORE = #{store,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      IS_ENABLE = #{isEnable,jdbcType=INTEGER},
+      TYPE = #{type,jdbcType=INTEGER},
+      USER_TYPE = #{userType,jdbcType=INTEGER},
+      ORG_ID = #{orgId,jdbcType=VARCHAR},
+      ORG_NAME = #{orgName,jdbcType=VARCHAR},
+      GROUP_NAME = #{groupName,jdbcType=VARCHAR},
+      ROLE_NAMES = #{roleNames,jdbcType=VARCHAR},
+      GROUP_ID = #{groupId,jdbcType=INTEGER},
+      IS_DEL = #{isDel,jdbcType=INTEGER},
+      EMPLID = #{emplid,jdbcType=VARCHAR},
+      EMPL_RCD = #{emplRcd,jdbcType=INTEGER},
+      EFFDT = #{effdt,jdbcType=TIMESTAMP},
+      EFFSEQ = #{effseq,jdbcType=INTEGER},
+      HL_STATUS = #{hlStatus,jdbcType=VARCHAR},
+      NAME1 = #{name1,jdbcType=VARCHAR},
+      LAST_NAME = #{lastName,jdbcType=VARCHAR},
+      FIRST_NAME = #{firstName,jdbcType=VARCHAR},
+      NAME_AC = #{nameAc,jdbcType=VARCHAR},
+      COUNTRY = #{country,jdbcType=VARCHAR},
+      HL_ADDRESS = #{hlAddress,jdbcType=VARCHAR},
+      CITY = #{city,jdbcType=VARCHAR},
+      COUNTY = #{county,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      POSTAL = #{postal,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=VARCHAR},
+      MAR_STATUS = #{marStatus,jdbcType=VARCHAR},
+      MAR_STATUS_DT = #{marStatusDt,jdbcType=TIMESTAMP},
+      BIRTHDATE = #{birthdate,jdbcType=TIMESTAMP},
+      BIRTHCOUNTRY = #{birthcountry,jdbcType=VARCHAR},
+      BIRTHSTATE = #{birthstate,jdbcType=VARCHAR},
+      COUNTRY_CODE = #{countryCode,jdbcType=VARCHAR},
+      PHONE_MOBILE = #{phoneMobile,jdbcType=VARCHAR},
+      PHONE_COMPANY = #{phoneCompany,jdbcType=VARCHAR},
+      PHONE_HOME = #{phoneHome,jdbcType=VARCHAR},
+      HL_USER = #{hlUser,jdbcType=VARCHAR},
+      EMAIL_ADDR = #{emailAddr,jdbcType=VARCHAR},
+      PHONE_FAX = #{phoneFax,jdbcType=VARCHAR},
+      ACTION = #{action,jdbcType=VARCHAR},
+      ACTION_REASON = #{actionReason,jdbcType=VARCHAR},
+      SETID_DEPT = #{setidDept,jdbcType=VARCHAR},
+      SETID_JOBCODE = #{setidJobcode,jdbcType=VARCHAR},
+      SETID_LOCATION = #{setidLocation,jdbcType=VARCHAR},
+      DEPTID = #{deptid,jdbcType=VARCHAR},
+      HL_TREEPATH = #{hlTreepath,jdbcType=VARCHAR},
+      JOBCODE = #{jobcode,jdbcType=VARCHAR},
+      SUPERVISOR_ID = #{supervisorId,jdbcType=VARCHAR},
+      EMPL_STATUS = #{emplStatus,jdbcType=VARCHAR},
+      LOCATION = #{location,jdbcType=VARCHAR},
+      COMPANY = #{company,jdbcType=VARCHAR},
+      HL_APP_CHECK = #{hlAppCheck,jdbcType=VARCHAR},
+      HL_TEM_CLOSE = #{hlTemClose,jdbcType=VARCHAR},
+      EFFDT_FROM = #{effdtFrom,jdbcType=TIMESTAMP},
+      HL_OUT_DT = #{hlOutDt,jdbcType=TIMESTAMP},
+      HL_GLS_FLAG = #{hlGlsFlag,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      DEPTID_NEW = #{deptidNew,jdbcType=VARCHAR},
+      HL_TREEPATH_NEW = #{hlTreepathNew,jdbcType=VARCHAR},
+      JOBCODE_NEW = #{jobcodeNew,jdbcType=VARCHAR},
+      LAST_MODIFY_TIME_SYNCHRONOUS = #{lastModifyTimeSynchronous,jdbcType=TIMESTAMP},
+      TERRITORY_CODE = #{territoryCode,jdbcType=INTEGER},
+      ZC_USER_ID = #{zcUserId,jdbcType=BIGINT}
+    where ID = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

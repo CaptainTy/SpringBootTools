@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.crm.hire.dao.map.ConnectionHistoryEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.crm.hire.entity.ConnectionHistoryEntity" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="in_msgs" property="inMsgs" jdbcType="BIGINT" />
+    <result column="out_msgs" property="outMsgs" jdbcType="BIGINT" />
+    <result column="in_bytes" property="inBytes" jdbcType="BIGINT" />
+    <result column="out_bytes" property="outBytes" jdbcType="BIGINT" />
+    <result column="in_msgs_speed" property="inMsgsSpeed" jdbcType="BIGINT" />
+    <result column="out_msgs_speed" property="outMsgsSpeed" jdbcType="BIGINT" />
+    <result column="in_bytes_speed" property="inBytesSpeed" jdbcType="BIGINT" />
+    <result column="out_bytes_speed" property="outBytesSpeed" jdbcType="BIGINT" />
+    <result column="subscriptions" property="subscriptions" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, time, in_msgs, out_msgs, in_bytes, out_bytes, in_msgs_speed, out_msgs_speed, 
+    in_bytes_speed, out_bytes_speed, subscriptions
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from connection_history
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from connection_history
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.crm.hire.entity.ConnectionHistoryEntity" >
+    insert into connection_history (id, time, in_msgs, 
+      out_msgs, in_bytes, out_bytes, 
+      in_msgs_speed, out_msgs_speed, in_bytes_speed, 
+      out_bytes_speed, subscriptions)
+    values (#{id,jdbcType=BIGINT}, #{time,jdbcType=TIMESTAMP}, #{inMsgs,jdbcType=BIGINT}, 
+      #{outMsgs,jdbcType=BIGINT}, #{inBytes,jdbcType=BIGINT}, #{outBytes,jdbcType=BIGINT}, 
+      #{inMsgsSpeed,jdbcType=BIGINT}, #{outMsgsSpeed,jdbcType=BIGINT}, #{inBytesSpeed,jdbcType=BIGINT}, 
+      #{outBytesSpeed,jdbcType=BIGINT}, #{subscriptions,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.crm.hire.entity.ConnectionHistoryEntity" >
+    insert into connection_history
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="inMsgs != null" >
+        in_msgs,
+      </if>
+      <if test="outMsgs != null" >
+        out_msgs,
+      </if>
+      <if test="inBytes != null" >
+        in_bytes,
+      </if>
+      <if test="outBytes != null" >
+        out_bytes,
+      </if>
+      <if test="inMsgsSpeed != null" >
+        in_msgs_speed,
+      </if>
+      <if test="outMsgsSpeed != null" >
+        out_msgs_speed,
+      </if>
+      <if test="inBytesSpeed != null" >
+        in_bytes_speed,
+      </if>
+      <if test="outBytesSpeed != null" >
+        out_bytes_speed,
+      </if>
+      <if test="subscriptions != null" >
+        subscriptions,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inMsgs != null" >
+        #{inMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgs != null" >
+        #{outMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="inBytes != null" >
+        #{inBytes,jdbcType=BIGINT},
+      </if>
+      <if test="outBytes != null" >
+        #{outBytes,jdbcType=BIGINT},
+      </if>
+      <if test="inMsgsSpeed != null" >
+        #{inMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgsSpeed != null" >
+        #{outMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="inBytesSpeed != null" >
+        #{inBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outBytesSpeed != null" >
+        #{outBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="subscriptions != null" >
+        #{subscriptions,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.crm.hire.entity.ConnectionHistoryEntity" >
+    update connection_history
+    <set >
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inMsgs != null" >
+        in_msgs = #{inMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgs != null" >
+        out_msgs = #{outMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="inBytes != null" >
+        in_bytes = #{inBytes,jdbcType=BIGINT},
+      </if>
+      <if test="outBytes != null" >
+        out_bytes = #{outBytes,jdbcType=BIGINT},
+      </if>
+      <if test="inMsgsSpeed != null" >
+        in_msgs_speed = #{inMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgsSpeed != null" >
+        out_msgs_speed = #{outMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="inBytesSpeed != null" >
+        in_bytes_speed = #{inBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outBytesSpeed != null" >
+        out_bytes_speed = #{outBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="subscriptions != null" >
+        subscriptions = #{subscriptions,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.crm.hire.entity.ConnectionHistoryEntity" >
+    update connection_history
+    set time = #{time,jdbcType=TIMESTAMP},
+      in_msgs = #{inMsgs,jdbcType=BIGINT},
+      out_msgs = #{outMsgs,jdbcType=BIGINT},
+      in_bytes = #{inBytes,jdbcType=BIGINT},
+      out_bytes = #{outBytes,jdbcType=BIGINT},
+      in_msgs_speed = #{inMsgsSpeed,jdbcType=BIGINT},
+      out_msgs_speed = #{outMsgsSpeed,jdbcType=BIGINT},
+      in_bytes_speed = #{inBytesSpeed,jdbcType=BIGINT},
+      out_bytes_speed = #{outBytesSpeed,jdbcType=BIGINT},
+      subscriptions = #{subscriptions,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

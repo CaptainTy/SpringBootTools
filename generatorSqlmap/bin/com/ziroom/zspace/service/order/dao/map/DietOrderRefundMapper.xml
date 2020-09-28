@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.zspace.service.order.dao.map.DietOrderRefundMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.zspace.service.order.entity.DietOrderRefundEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="fid" property="fid" jdbcType="VARCHAR" />
+    <result column="bill_num" property="billNum" jdbcType="VARCHAR" />
+    <result column="bill_amount" property="billAmount" jdbcType="INTEGER" />
+    <result column="real_amount" property="realAmount" jdbcType="INTEGER" />
+    <result column="item_sale" property="itemSale" jdbcType="INTEGER" />
+    <result column="service_fee_income" property="serviceFeeIncome" jdbcType="INTEGER" />
+    <result column="back_money_item" property="backMoneyItem" jdbcType="INTEGER" />
+    <result column="discount_money" property="discountMoney" jdbcType="INTEGER" />
+    <result column="reduction_money" property="reductionMoney" jdbcType="INTEGER" />
+    <result column="free_money" property="freeMoney" jdbcType="INTEGER" />
+    <result column="moling_money" property="molingMoney" jdbcType="INTEGER" />
+    <result column="coupons_ds" property="couponsDs" jdbcType="INTEGER" />
+    <result column="refund_status" property="refundStatus" jdbcType="INTEGER" />
+    <result column="create_code" property="createCode" jdbcType="VARCHAR" />
+    <result column="modify_code" property="modifyCode" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+    <result column="last_modify_date" property="lastModifyDate" jdbcType="TIMESTAMP" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, fid, bill_num, bill_amount, real_amount, item_sale, service_fee_income, back_money_item, 
+    discount_money, reduction_money, free_money, moling_money, coupons_ds, refund_status, 
+    create_code, modify_code, is_del, last_modify_date, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_space_diet_order_refund
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_space_diet_order_refund
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundEntity" >
+    insert into t_space_diet_order_refund (id, fid, bill_num, 
+      bill_amount, real_amount, item_sale, 
+      service_fee_income, back_money_item, discount_money, 
+      reduction_money, free_money, moling_money, 
+      coupons_ds, refund_status, create_code, 
+      modify_code, is_del, last_modify_date, 
+      create_date)
+    values (#{id,jdbcType=INTEGER}, #{fid,jdbcType=VARCHAR}, #{billNum,jdbcType=VARCHAR}, 
+      #{billAmount,jdbcType=INTEGER}, #{realAmount,jdbcType=INTEGER}, #{itemSale,jdbcType=INTEGER}, 
+      #{serviceFeeIncome,jdbcType=INTEGER}, #{backMoneyItem,jdbcType=INTEGER}, #{discountMoney,jdbcType=INTEGER}, 
+      #{reductionMoney,jdbcType=INTEGER}, #{freeMoney,jdbcType=INTEGER}, #{molingMoney,jdbcType=INTEGER}, 
+      #{couponsDs,jdbcType=INTEGER}, #{refundStatus,jdbcType=INTEGER}, #{createCode,jdbcType=VARCHAR}, 
+      #{modifyCode,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
+      #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundEntity" >
+    insert into t_space_diet_order_refund
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="fid != null" >
+        fid,
+      </if>
+      <if test="billNum != null" >
+        bill_num,
+      </if>
+      <if test="billAmount != null" >
+        bill_amount,
+      </if>
+      <if test="realAmount != null" >
+        real_amount,
+      </if>
+      <if test="itemSale != null" >
+        item_sale,
+      </if>
+      <if test="serviceFeeIncome != null" >
+        service_fee_income,
+      </if>
+      <if test="backMoneyItem != null" >
+        back_money_item,
+      </if>
+      <if test="discountMoney != null" >
+        discount_money,
+      </if>
+      <if test="reductionMoney != null" >
+        reduction_money,
+      </if>
+      <if test="freeMoney != null" >
+        free_money,
+      </if>
+      <if test="molingMoney != null" >
+        moling_money,
+      </if>
+      <if test="couponsDs != null" >
+        coupons_ds,
+      </if>
+      <if test="refundStatus != null" >
+        refund_status,
+      </if>
+      <if test="createCode != null" >
+        create_code,
+      </if>
+      <if test="modifyCode != null" >
+        modify_code,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="fid != null" >
+        #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="billAmount != null" >
+        #{billAmount,jdbcType=INTEGER},
+      </if>
+      <if test="realAmount != null" >
+        #{realAmount,jdbcType=INTEGER},
+      </if>
+      <if test="itemSale != null" >
+        #{itemSale,jdbcType=INTEGER},
+      </if>
+      <if test="serviceFeeIncome != null" >
+        #{serviceFeeIncome,jdbcType=INTEGER},
+      </if>
+      <if test="backMoneyItem != null" >
+        #{backMoneyItem,jdbcType=INTEGER},
+      </if>
+      <if test="discountMoney != null" >
+        #{discountMoney,jdbcType=INTEGER},
+      </if>
+      <if test="reductionMoney != null" >
+        #{reductionMoney,jdbcType=INTEGER},
+      </if>
+      <if test="freeMoney != null" >
+        #{freeMoney,jdbcType=INTEGER},
+      </if>
+      <if test="molingMoney != null" >
+        #{molingMoney,jdbcType=INTEGER},
+      </if>
+      <if test="couponsDs != null" >
+        #{couponsDs,jdbcType=INTEGER},
+      </if>
+      <if test="refundStatus != null" >
+        #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundEntity" >
+    update t_space_diet_order_refund
+    <set >
+      <if test="fid != null" >
+        fid = #{fid,jdbcType=VARCHAR},
+      </if>
+      <if test="billNum != null" >
+        bill_num = #{billNum,jdbcType=VARCHAR},
+      </if>
+      <if test="billAmount != null" >
+        bill_amount = #{billAmount,jdbcType=INTEGER},
+      </if>
+      <if test="realAmount != null" >
+        real_amount = #{realAmount,jdbcType=INTEGER},
+      </if>
+      <if test="itemSale != null" >
+        item_sale = #{itemSale,jdbcType=INTEGER},
+      </if>
+      <if test="serviceFeeIncome != null" >
+        service_fee_income = #{serviceFeeIncome,jdbcType=INTEGER},
+      </if>
+      <if test="backMoneyItem != null" >
+        back_money_item = #{backMoneyItem,jdbcType=INTEGER},
+      </if>
+      <if test="discountMoney != null" >
+        discount_money = #{discountMoney,jdbcType=INTEGER},
+      </if>
+      <if test="reductionMoney != null" >
+        reduction_money = #{reductionMoney,jdbcType=INTEGER},
+      </if>
+      <if test="freeMoney != null" >
+        free_money = #{freeMoney,jdbcType=INTEGER},
+      </if>
+      <if test="molingMoney != null" >
+        moling_money = #{molingMoney,jdbcType=INTEGER},
+      </if>
+      <if test="couponsDs != null" >
+        coupons_ds = #{couponsDs,jdbcType=INTEGER},
+      </if>
+      <if test="refundStatus != null" >
+        refund_status = #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="createCode != null" >
+        create_code = #{createCode,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyCode != null" >
+        modify_code = #{modifyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyDate != null" >
+        last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.zspace.service.order.entity.DietOrderRefundEntity" >
+    update t_space_diet_order_refund
+    set fid = #{fid,jdbcType=VARCHAR},
+      bill_num = #{billNum,jdbcType=VARCHAR},
+      bill_amount = #{billAmount,jdbcType=INTEGER},
+      real_amount = #{realAmount,jdbcType=INTEGER},
+      item_sale = #{itemSale,jdbcType=INTEGER},
+      service_fee_income = #{serviceFeeIncome,jdbcType=INTEGER},
+      back_money_item = #{backMoneyItem,jdbcType=INTEGER},
+      discount_money = #{discountMoney,jdbcType=INTEGER},
+      reduction_money = #{reductionMoney,jdbcType=INTEGER},
+      free_money = #{freeMoney,jdbcType=INTEGER},
+      moling_money = #{molingMoney,jdbcType=INTEGER},
+      coupons_ds = #{couponsDs,jdbcType=INTEGER},
+      refund_status = #{refundStatus,jdbcType=INTEGER},
+      create_code = #{createCode,jdbcType=VARCHAR},
+      modify_code = #{modifyCode,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER},
+      last_modify_date = #{lastModifyDate,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

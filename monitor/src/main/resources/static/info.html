@@ -1,0 +1,230 @@
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">链接历史数据</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <div class="card overflow-hidden">
+            <div class="card-body">
+                <div class="row m-0">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class=" mb-0">
+                                <div class="row card-body">
+                                    <div class="col-12" id="drawl_msg_speed" style="width:650px;height: 350px; margin: 0 auto;"></div><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-0">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class=" mb-0">
+                                <div class="row card-body">
+                                    <div class="col-12" id="drawl_bytes_speed" style="width:650px;height: 350px; margin: 0 auto;"></div><!-- end col -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function() {
+        get_client_history();
+    });
+
+    //获取消息服务历史状态
+    function get_client_history() {
+        var cid = getQueryVariable('id');
+        $.ajax({
+            url: client_history_url,
+            type:"get",
+            data:{},
+            dataType:"json",
+            success:function (data) {
+
+                //组合图标参数
+                var msg_speed_data = [
+                    {
+                        name: '接收消息速度 条/s',
+                        type: 'line',
+                        data: []
+                    },
+                    {
+                        name: '发送消息速度 条/s',
+                        type: 'line',
+                        data: []
+                    }
+                ];
+
+                var bytes_speed_data = [
+                    {
+                        name: '消息生产速度',
+                        type: 'line',
+                        data: []
+                    },
+                    {
+                        name: '消息消费速度',
+                        type: 'line',
+                        data: []
+                    }
+                ];
+
+                var time_data = [];
+
+                for (var i in data.history) {
+                    var obj = data.history[i];
+
+                    time_data.push(obj.time);
+
+                    msg_speed_data[0].data.push(obj.in_msgs_speed);
+                    msg_speed_data[1].data.push(obj.out_msgs_speed);
+
+                    bytes_speed_data[0].data.push(obj.in_bytes_speed);
+                    bytes_speed_data[1].data.push(obj.out_bytes_speed);
+
+                }
+
+                //绘制消息统计
+                var obj_msg_speed = echarts.init(document.getElementById('drawl_msg_speed'));
+                var option_msg_speed = {
+                    title: {
+                        text: '消息数据统计'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['接收消息速度 条/s', '发送消息速度 条/s']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: time_data
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    dataZoom: [
+                        {
+                            show: true,
+                            type: 'inside',
+                            start: 70,
+                            end: 100
+                        },
+                        {
+                            start: 0,
+                            end: 100,
+                            handleSize: '80%',
+                            handleStyle: {
+                                color: '#fff',
+                                shadowBlur: 3,
+                                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                                shadowOffsetX: 2,
+                                shadowOffsetY: 2
+                            }
+                        }
+                    ],
+                    series: msg_speed_data
+                };
+                obj_msg_speed.setOption(option_msg_speed, true);
+
+                //绘制流量统计
+                var obj_bytes_speed = echarts.init(document.getElementById('drawl_bytes_speed'));
+                var option_bytes_speed = {
+                    title: {
+                        text: '消息数据统计'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: function (params) {
+                            return params[0][1] + "<br>"
+                                + params[0][0] + ":" + renderSize(params[0][2]) + "/s<br>"
+                                + params[1][0] + ":" + renderSize(params[1][2]) + "/s"
+                        }
+                    },
+                    legend: {
+                        data: [ '消息生产速度', '消息消费速度']
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '10%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: time_data
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLabel: {
+                            formatter: function (params) {
+                                return renderSize(params);
+                            }
+                        },
+
+                    },
+                    dataZoom: [
+                        {
+                            show: true,
+                            type: 'inside',
+                            start: 70,
+                            end: 100
+                        },
+                        {
+                            start: 0,
+                            end: 100,
+                            handleSize: '80%',
+                            handleStyle: {
+                                color: '#fff',
+                                shadowBlur: 3,
+                                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                                shadowOffsetX: 2,
+                                shadowOffsetY: 2
+                            }
+                        }
+                    ],
+                    series: bytes_speed_data
+                };
+                obj_bytes_speed.setOption(option_bytes_speed, true);
+
+                console.log(option_bytes_speed);
+            },
+            error:function (data) {
+
+            }
+        })
+    }
+
+    //获取传递的ID
+    function getQueryVariable(variable)
+    {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable){return pair[1];}
+        }
+        return(false);
+    }
+
+</script>

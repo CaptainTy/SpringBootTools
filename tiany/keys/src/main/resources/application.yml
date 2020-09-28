@@ -1,0 +1,15 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://192.168.202.1:3306/keysdb
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  mapper-locations: classpath:com.tiany.keys.dao.mapper/*.xml
+  type-aliases-package: com.tiany.keys.entity

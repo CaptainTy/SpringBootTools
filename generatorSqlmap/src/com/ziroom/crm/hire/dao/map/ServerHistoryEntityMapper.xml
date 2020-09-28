@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ziroom.crm.hire.dao.map.ServerHistoryEntityMapper" >
+  <resultMap id="BaseResultMap" type="com.ziroom.crm.hire.entity.ServerHistoryEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="cid" property="cid" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="in_msgs" property="inMsgs" jdbcType="BIGINT" />
+    <result column="out_msgs" property="outMsgs" jdbcType="BIGINT" />
+    <result column="in_bytes" property="inBytes" jdbcType="BIGINT" />
+    <result column="out_bytes" property="outBytes" jdbcType="BIGINT" />
+    <result column="in_msgs_speed" property="inMsgsSpeed" jdbcType="BIGINT" />
+    <result column="out_msgs_speed" property="outMsgsSpeed" jdbcType="BIGINT" />
+    <result column="in_bytes_speed" property="inBytesSpeed" jdbcType="BIGINT" />
+    <result column="out_bytes_speed" property="outBytesSpeed" jdbcType="BIGINT" />
+    <result column="connections" property="connections" jdbcType="BIGINT" />
+    <result column="slow_consumers" property="slowConsumers" jdbcType="BIGINT" />
+    <result column="subscriptions" property="subscriptions" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, cid, time, in_msgs, out_msgs, in_bytes, out_bytes, in_msgs_speed, out_msgs_speed, 
+    in_bytes_speed, out_bytes_speed, connections, slow_consumers, subscriptions
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from server_history
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from server_history
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ziroom.crm.hire.entity.ServerHistoryEntity" >
+    insert into server_history (id, cid, time, 
+      in_msgs, out_msgs, in_bytes, 
+      out_bytes, in_msgs_speed, out_msgs_speed, 
+      in_bytes_speed, out_bytes_speed, connections, 
+      slow_consumers, subscriptions)
+    values (#{id,jdbcType=INTEGER}, #{cid,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, 
+      #{inMsgs,jdbcType=BIGINT}, #{outMsgs,jdbcType=BIGINT}, #{inBytes,jdbcType=BIGINT}, 
+      #{outBytes,jdbcType=BIGINT}, #{inMsgsSpeed,jdbcType=BIGINT}, #{outMsgsSpeed,jdbcType=BIGINT}, 
+      #{inBytesSpeed,jdbcType=BIGINT}, #{outBytesSpeed,jdbcType=BIGINT}, #{connections,jdbcType=BIGINT}, 
+      #{slowConsumers,jdbcType=BIGINT}, #{subscriptions,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ziroom.crm.hire.entity.ServerHistoryEntity" >
+    insert into server_history
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="inMsgs != null" >
+        in_msgs,
+      </if>
+      <if test="outMsgs != null" >
+        out_msgs,
+      </if>
+      <if test="inBytes != null" >
+        in_bytes,
+      </if>
+      <if test="outBytes != null" >
+        out_bytes,
+      </if>
+      <if test="inMsgsSpeed != null" >
+        in_msgs_speed,
+      </if>
+      <if test="outMsgsSpeed != null" >
+        out_msgs_speed,
+      </if>
+      <if test="inBytesSpeed != null" >
+        in_bytes_speed,
+      </if>
+      <if test="outBytesSpeed != null" >
+        out_bytes_speed,
+      </if>
+      <if test="connections != null" >
+        connections,
+      </if>
+      <if test="slowConsumers != null" >
+        slow_consumers,
+      </if>
+      <if test="subscriptions != null" >
+        subscriptions,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inMsgs != null" >
+        #{inMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgs != null" >
+        #{outMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="inBytes != null" >
+        #{inBytes,jdbcType=BIGINT},
+      </if>
+      <if test="outBytes != null" >
+        #{outBytes,jdbcType=BIGINT},
+      </if>
+      <if test="inMsgsSpeed != null" >
+        #{inMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgsSpeed != null" >
+        #{outMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="inBytesSpeed != null" >
+        #{inBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outBytesSpeed != null" >
+        #{outBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="connections != null" >
+        #{connections,jdbcType=BIGINT},
+      </if>
+      <if test="slowConsumers != null" >
+        #{slowConsumers,jdbcType=BIGINT},
+      </if>
+      <if test="subscriptions != null" >
+        #{subscriptions,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ziroom.crm.hire.entity.ServerHistoryEntity" >
+    update server_history
+    <set >
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inMsgs != null" >
+        in_msgs = #{inMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgs != null" >
+        out_msgs = #{outMsgs,jdbcType=BIGINT},
+      </if>
+      <if test="inBytes != null" >
+        in_bytes = #{inBytes,jdbcType=BIGINT},
+      </if>
+      <if test="outBytes != null" >
+        out_bytes = #{outBytes,jdbcType=BIGINT},
+      </if>
+      <if test="inMsgsSpeed != null" >
+        in_msgs_speed = #{inMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outMsgsSpeed != null" >
+        out_msgs_speed = #{outMsgsSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="inBytesSpeed != null" >
+        in_bytes_speed = #{inBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="outBytesSpeed != null" >
+        out_bytes_speed = #{outBytesSpeed,jdbcType=BIGINT},
+      </if>
+      <if test="connections != null" >
+        connections = #{connections,jdbcType=BIGINT},
+      </if>
+      <if test="slowConsumers != null" >
+        slow_consumers = #{slowConsumers,jdbcType=BIGINT},
+      </if>
+      <if test="subscriptions != null" >
+        subscriptions = #{subscriptions,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ziroom.crm.hire.entity.ServerHistoryEntity" >
+    update server_history
+    set cid = #{cid,jdbcType=VARCHAR},
+      time = #{time,jdbcType=TIMESTAMP},
+      in_msgs = #{inMsgs,jdbcType=BIGINT},
+      out_msgs = #{outMsgs,jdbcType=BIGINT},
+      in_bytes = #{inBytes,jdbcType=BIGINT},
+      out_bytes = #{outBytes,jdbcType=BIGINT},
+      in_msgs_speed = #{inMsgsSpeed,jdbcType=BIGINT},
+      out_msgs_speed = #{outMsgsSpeed,jdbcType=BIGINT},
+      in_bytes_speed = #{inBytesSpeed,jdbcType=BIGINT},
+      out_bytes_speed = #{outBytesSpeed,jdbcType=BIGINT},
+      connections = #{connections,jdbcType=BIGINT},
+      slow_consumers = #{slowConsumers,jdbcType=BIGINT},
+      subscriptions = #{subscriptions,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
