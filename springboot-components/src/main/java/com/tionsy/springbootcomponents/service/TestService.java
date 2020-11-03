@@ -16,4 +16,6 @@ package com.tionsy.springbootcomponents.service;
  */
 public interface TestService {
     String listener();
+
+    String testInterceptor();
 }

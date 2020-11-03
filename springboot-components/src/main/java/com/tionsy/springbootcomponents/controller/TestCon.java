@@ -1,5 +1,6 @@
 package com.tionsy.springbootcomponents.controller;
 
+import com.tionsy.springbootcomponents.interceptor.MyMethod;
 import com.tionsy.springbootcomponents.service.TestService;
 import com.tionsy.springbootcomponents.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,13 @@ public class TestCon {
     @GetMapping("testListener")
     public String testListener() {
         return testService.listener();
+
+    }
+
+    @MyMethod
+    @GetMapping("interceptor")
+    public String testInterceptor() {
+        return testService.testInterceptor();
 
     }
 }
