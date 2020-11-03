@@ -2,11 +2,8 @@ package com.tionsy.springbootcomponents.controller;
 
 import com.tionsy.springbootcomponents.interceptor.MyMethod;
 import com.tionsy.springbootcomponents.service.TestService;
-import com.tionsy.springbootcomponents.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,6 +38,12 @@ public class TestCon {
     @GetMapping("interceptor")
     public String testInterceptor() {
         return testService.testInterceptor();
+
+    }
+
+    @GetMapping("filter")
+    public String testFilter() {
+        return testService.testFilter();
 
     }
 }

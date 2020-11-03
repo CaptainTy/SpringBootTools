@@ -33,14 +33,17 @@ public class MyInterceptorConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        // 如果有多个拦截器
+        //1.加入的顺序就是拦截器执行的顺序，
+        //2.按顺序执行所有拦截器的preHandle
+        //3.所有的preHandle 执行完再执行全部postHandle 最后是postHandle
 
         //注册拦截器
         registry
                 //注册拦截器
                 .addInterceptor(myInterceptor)
                 //要拦截的请求路径
-                .addPathPatterns("/testBoot/**")
-                .addPathPatterns("/testDome/*");
+                .addPathPatterns("/**/interceptor");
 
     }
 }

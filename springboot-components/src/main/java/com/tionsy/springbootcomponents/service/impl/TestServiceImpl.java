@@ -39,4 +39,10 @@ public class TestServiceImpl implements TestService {
         log.info("测试拦截器!");
         return "success";
     }
+
+    @Override
+    public String testFilter() {
+        log.info("测试过滤器!");
+        return "success";
+    }
 }
