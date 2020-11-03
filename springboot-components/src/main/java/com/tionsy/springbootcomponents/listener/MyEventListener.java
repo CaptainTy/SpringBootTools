@@ -23,6 +23,8 @@ import org.springframework.stereotype.Component;
 public class MyEventListener {
     @EventListener
     public void handleMailSendEvent(MyEventTest event) {
+        //调用处理事件方法
+        event.dealWithEvent();
         log.info("内容为:{}",  event.getSource());
     }
 }

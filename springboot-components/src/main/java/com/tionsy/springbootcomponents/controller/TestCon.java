@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p></p>
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @date Created in 2020年10月27日 17:10
  * @since 1.0
  */
-@Controller
+@RestController
 @RequestMapping("/testDome")
 public class TestCon {
 
