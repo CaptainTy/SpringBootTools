@@ -1,6 +1,15 @@
 package com.tionsy.springbootcomponents;
 
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+import org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
+import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
+import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream;
+import org.apache.commons.io.IOUtils;
+import org.codehaus.plexus.archiver.tar.TarEntry;
+import org.codehaus.plexus.archiver.tar.TarOutputStream;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,11 +17,9 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Arrays;
+import java.util.zip.ZipOutputStream;
 
 /**
  * <p></p>
@@ -73,33 +80,5 @@ public class TestCalc2 {
 
         return arr;
     }
-
-    @Test
-    public void test2() throws IOException {
-        File file = new File("E:\\myProjiect\\springboot-components\\src\\main\\resources\\META-INF\\testfile\\test.tar");
-        System.out.println(file.length());
-        FileInputStream inputStream = new FileInputStream(file);
-        MultipartFile multipartFile = new MockMultipartFile(file.getName(), file.getName(),
-                "application/octet-stream", inputStream);
-        InputStream in = new FileInputStream(file);
-        String md5Hex = DigestUtils.md5Hex(in);
-        System.out.println(md5Hex);
-
-        // 获取文件名
-        String fileName = multipartFile.getOriginalFilename();
-        // 获取文件后缀
-        String prefix = fileName.substring(fileName.lastIndexOf("."));
-        try {
-            File file1 = File.createTempFile(fileName, prefix);
-            multipartFile.transferTo(file1);
-            InputStream inputStream1 = new FileInputStream(file1);
-            String md5Hex2 = DigestUtils.md5Hex(inputStream1);
-            System.out.println(md5Hex.equals(md5Hex2));
-            System.out.println(file.length() ==  file1.length());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 
 }
