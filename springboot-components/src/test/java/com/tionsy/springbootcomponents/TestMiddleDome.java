@@ -1,5 +1,7 @@
 package com.tionsy.springbootcomponents;
 
+import com.tionsy.springbootcomponents.mq.MqDelegateSender;
+import com.tionsy.springbootcomponents.mq.RoutingKeyEnum;
 import com.tionsy.springbootcomponents.util.RedisUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,6 +30,9 @@ public class TestMiddleDome {
     @Autowired
     private RedisUtils redisUtils;
 
+    @Autowired
+    private MqDelegateSender mqSender;
+
     @Test
     public void testRedis(){
         redisUtils.set("name","1234");
@@ -37,5 +42,11 @@ public class TestMiddleDome {
 
         redisUtils.del(name);
         System.out.println();
+    }
+
+    @Test
+    public void testMq(){
+        mqSender.sendMessage(RoutingKeyEnum.DEMO,"123");
+        System.out.println("发送mq完毕");
     }
 }
