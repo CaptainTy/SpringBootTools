@@ -1,5 +1,6 @@
 package com.tionsy.springbootcomponents;
 
+import com.alibaba.fastjson.JSON;
 import com.tionsy.springbootcomponents.mq.MqDelegateSender;
 import com.tionsy.springbootcomponents.mq.RoutingKeyEnum;
 import com.tionsy.springbootcomponents.util.RedisUtils;
@@ -46,7 +47,8 @@ public class TestMiddleDome {
 
     @Test
     public void testMq(){
-        mqSender.sendMessage(RoutingKeyEnum.DEMO,"123");
+        String name = "张三";
+        mqSender.sendMessage(RoutingKeyEnum.DEMO, name);
         System.out.println("发送mq完毕");
     }
 }

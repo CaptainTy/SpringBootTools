@@ -21,8 +21,8 @@ public enum ExchangeEnum {
     /**
      * demo
      */
-    TIANY("tiany", ExchangeTypes.TOPIC, true, false);
-    public static ExchangeEnum defaultExchange = TIANY;
+    DEMO("demo", ExchangeTypes.DIRECT, true, false);
+    public static ExchangeEnum defaultExchange = DEMO;
     private static final String EXCHANGE = "Exchange";
     private static final String EXCHANGE_PREFIX = "test.e.";
 

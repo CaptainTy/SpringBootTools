@@ -16,13 +16,6 @@ package com.tionsy.springbootcomponents.mq;
  */
 public interface ConsumerQueue {
 
-    String DEMO_QUEUE = "crm.q.trade.service.consumer.demo";
-
-    String LIVE_EXPENSE_AUDIT_PASS_QUEUE = "crm.q.live.expense.audit.pass.queue";
-
-    String CONTRACT_EXPIRE_QUEUE = "crm.q.contract.expire.queue";
-
-    //管家变更通知
-    String EX_COSMOS_EMP_SYNC_QUEUE = "crm.q.hire.cosmos.emp.notify.queue";
+    String DEMO_QUEUE = "test01";
 
 }

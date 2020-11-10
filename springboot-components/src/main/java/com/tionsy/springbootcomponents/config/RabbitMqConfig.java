@@ -57,7 +57,7 @@ public class RabbitMqConfig {
         return connectionFactory;
     }
 
-    @Bean(value = "newClusterListenerFactoryForRentBack")
+    @Bean(value = "myListenerFactory")
     public SimpleRabbitListenerContainerFactory newClusterListenerFactoryWithManualAck(@Qualifier("jsonMessageConverter")MessageConverter jsonMessageConverter,
                                                                                        @Qualifier("connectionFactory") ConnectionFactory connectionFactory) {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
