@@ -5,12 +5,15 @@
 
 <!--https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md-->
 <configuration>
-    <plugins>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+<!--    <plugins>
         <plugin interceptor="com.github.pagehelper.PageInterceptor">
             <property name="helperDialect" value="mysql"/>
             <property name="offsetAsPageNum" value="true"/>
             <property name="supportMethodsArguments" value="true" />
             <property name="params" value="pageNum=pageNum;pageSize=pageSize;"/>
         </plugin>
-    </plugins>
+    </plugins>-->
 </configuration>
